@@ -130,9 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="graficosGlut.cpp" />
-    <ClCompile Include="mundo.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="mundo.cpp" />
     <ClCompile Include="v0_0.cpp" />
   </ItemGroup>
   <ItemGroup>
