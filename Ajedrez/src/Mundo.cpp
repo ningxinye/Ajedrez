@@ -16,7 +16,7 @@ Mundo::~Mundo()
 
 void Mundo::dibuja()
 {
-	if (estado==INICIO) {
+	if (estado==INICIO) { //dibuja la pantalla del menu del inicio
 
 		gluLookAt(0, 7.5, 30,  // posicion del ojo
 			0.0, 7.5, 0.0,      // hacia que punto mira  (0,0,0) 
@@ -37,7 +37,7 @@ void Mundo::dibuja()
  }
 	else if (estado == JUEGO_BABY) {
 
-
+		ajedrez.dibuja();
 	}
 
 	else if (estado == JUEGO_GARDNER) {
@@ -53,8 +53,15 @@ void Mundo::dibuja()
 }
 
 
-
+//navegacion por teclado para avanzar el juego
 void Mundo::tecla(unsigned char key)
 {
+	switch (estado) {
+	case INICIO:
+		if (key == 'Q') {
+			estado = JUEGO_BABY;
+
+		}
+	}
 
 }
