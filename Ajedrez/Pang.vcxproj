@@ -19,12 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Pieza.cpp" />
     <ClCompile Include="src\Ajedrez.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Pang.cpp" />
     <ClCompile Include="src\Pieza.cpp" />
-    <ClCompile Include="Tablero.cpp" />
+    <ClCompile Include="src\Tablero.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Ajedrez.h" />
