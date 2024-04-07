@@ -23,13 +23,14 @@
     <ClCompile Include="src\Ajedrez.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Pang.cpp" />
+    <ClCompile Include="src\Pieza.cpp" />
     <ClCompile Include="Tablero.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Ajedrez.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Pieza.h" />
-    <ClInclude Include="Tablero.h" />
+    <ClInclude Include="src\Tablero.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -19,11 +19,11 @@
       "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:src\\Ajedrez.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\PROGRAM FILES (X86)\\WINDOWS KITS\\10\\INCLUDE\\10.0.22621.0\\UM\\APIQUERY2.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E575FADE-B6EB-4154-A1ED-8067A12EAE98}|Pang.vcxproj|solutionrelative:src\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\apiquery2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,8 +45,7 @@
               "RelativeToolTip": "src\\Mundo.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-07T14:46:13.432Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-07T14:46:13.432Z"
             },
             {
               "$type": "Document",
@@ -56,7 +55,7 @@
               "RelativeDocumentMoniker": "src\\Pang.cpp",
               "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Pang.cpp",
               "RelativeToolTip": "src\\Pang.cpp",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAAC4AAAAAAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAEQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-07T14:47:29.935Z",
               "EditorCaption": ""
@@ -71,8 +70,7 @@
               "RelativeToolTip": "src\\Pieza.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-07T14:46:16.196Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-07T14:46:16.196Z"
             },
             {
               "$type": "Document",
@@ -84,12 +82,11 @@
               "RelativeToolTip": "src\\Ajedrez.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-07T14:46:12.298Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-07T14:46:12.298Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "apiquery2.h",
               "DocumentMoniker": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\apiquery2.h",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\apiquery2.h",
@@ -97,12 +94,11 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\apiquery2.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-07T14:46:05.442Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-07T14:46:05.442Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Ajedrez.cpp",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Ajedrez.cpp",
               "RelativeDocumentMoniker": "src\\Ajedrez.cpp",
@@ -110,8 +106,7 @@
               "RelativeToolTip": "src\\Ajedrez.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-07T14:45:46.932Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-07T14:45:46.932Z"
             }
           ]
         }
