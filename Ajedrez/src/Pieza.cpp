@@ -7,8 +7,6 @@ void Pieza::dibuja()
     // Habilitar el uso de texturas
     glEnable(GL_TEXTURE_2D);
 
-    // Calcular las coordenadas x e y de la esquina superior izquierda de la casilla del tablero
-   
 
 
     // Seleccionar la textura adecuada seg¨²n el tipo y color de la pieza
