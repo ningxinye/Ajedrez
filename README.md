@@ -1,6 +1,7 @@
 # Orden de los Peones Algorítmicos
 
-  AJEDREZ BABY + GARDNER 
+  AJEDREZ BABY + GARDNER
+  
   BABY: Juego del miniajedrez Baby que te permite jugar con el ordenador o con un amigo. Esta singular variante del mini ajedrez los contrincantes tienen las piezas colocadas en orden especular invertido en un tablero de 5×5 casillas. Sigue las reglas estándar del Ajedrez, el peón de su posición inicial puede ir adelante de solo una casilla, la captura al paso no es posible y no hay enroque. 
 
 ![image](https://github.com/ningxinye/Ajedrez/assets/61113927/511c68bf-d87d-4012-a2a8-d40734fbcffc)
