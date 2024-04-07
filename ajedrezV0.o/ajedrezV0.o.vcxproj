@@ -129,7 +129,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="graficosGlut.cpp" />
+    <ClCompile Include="mundo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="v0_0.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mundo.h" />
+    <ClInclude Include="pieza.h" />
+    <ClInclude Include="tablero.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
