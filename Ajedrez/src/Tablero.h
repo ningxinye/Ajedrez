@@ -9,13 +9,39 @@ class Tablero
 {
 private:
 	const int n = 5;
+	std::vector<std::vector<Pieza*>> casillas; // Representaci¨®n del tablero
 
 public:
 	Tablero();
 	~Tablero();
 
+	// M¨¦todos para mostrar el tablero, realizar movimientos, etc.
+	void mostrar() const {
+		// Implementaci¨®n para mostrar el tablero en la consola
+	}
+
+	Pieza* obtenerPiezaEnPosicion(int fila, int col) const {
+		return casillas[fila][col];
+	}
+
+	// M¨¦todo para comprobar si una casilla est¨¢ ocupada por una pieza
+	bool estaOcupada(int fila, int col) const {
+		return casillas[fila][col] != nullptr;
+	}
+
+	// M¨¦todo para comprobar si una casilla est¨¢ ocupada por una pieza de un color espec¨ªfico
+	bool estaOcupadaPorColor(int fila, int col, Pieza color) const {
+		if (casillas[fila][col] != nullptr) {
+			
+				return casillas[fila][col]->getColor();
+		}
+		return false;
+	}
+
 	//gr¨¢fico
 	void dibuja();
+	void posicionInicial();
+
 
 
 	//l¨®gico
