@@ -1,0 +1,11 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: El directorio intermedio (tmp\Debug\) contiene archivos compartidos de otro proyecto (Pang.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+  Pieza.cpp
+D:\download\trabajo_inf_2024\Ajedrez\src\Pieza.cpp(48,41): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\download\trabajo_inf_2024\Ajedrez\src\Pieza.cpp(48,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\download\trabajo_inf_2024\Ajedrez\src\Pieza.cpp(51,38): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\download\trabajo_inf_2024\Ajedrez\src\Pieza.cpp(51,24): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\download\trabajo_inf_2024\Ajedrez\src\Pieza.cpp(54,34): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\download\trabajo_inf_2024\Ajedrez\src\Pieza.cpp(54,23): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\download\trabajo_inf_2024\Ajedrez\src\Pieza.cpp(57,38): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+D:\download\trabajo_inf_2024\Ajedrez\src\Pieza.cpp(57,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+  Pang.vcxproj -> D:\download\trabajo_inf_2024\Ajedrez\bin\Ajedrez.exe
