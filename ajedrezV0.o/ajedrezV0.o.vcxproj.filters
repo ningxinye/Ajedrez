@@ -18,21 +18,21 @@
     <ClCompile Include="v0_0.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="mundo.cpp">
+    <ClCompile Include="graficosGlut.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="graficosGlut.cpp">
+    <ClCompile Include="mundo.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pieza.h">
+    <ClInclude Include="mundo.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="tablero.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="mundo.h">
+    <ClInclude Include="pieza.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

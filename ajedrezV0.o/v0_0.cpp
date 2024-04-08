@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "tablero.h"
+
 // Definición de clases
 
 class Juego {
