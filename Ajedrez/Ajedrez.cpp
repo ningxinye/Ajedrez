@@ -14,4 +14,5 @@ void Ajedrez::dibuja()
 
 void Ajedrez::inicializa()
 {
+	//soy irene
 }
