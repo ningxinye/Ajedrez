@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\irene\\Desktop\\2023\u00262024\\Info\\Ajedrez\\Ajedrez\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|C:\\Users\\irene\\Desktop\\2023\u00262024\\Info\\Ajedrez\\Ajedrez\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Ajedrez.cpp",
+              "DocumentMoniker": "C:\\Users\\irene\\Desktop\\2023\u00262024\\Info\\Ajedrez\\Ajedrez\\Ajedrez.cpp",
+              "RelativeDocumentMoniker": "Ajedrez.cpp",
+              "ToolTip": "C:\\Users\\irene\\Desktop\\2023\u00262024\\Info\\Ajedrez\\Ajedrez\\Ajedrez.cpp",
+              "RelativeToolTip": "Ajedrez.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-09T11:50:37.154Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
