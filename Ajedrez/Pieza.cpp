@@ -1,16 +1,24 @@
 #include "Pieza.h"
 
+Pieza::Pieza()
+{
+}
+
+Pieza::~Pieza()
+{
+}
+
 //pintando cada pieza
 void Pieza::dibuja()
 {
-
+    glDisable(GL_LIGHTING);
     // Habilitar el uso de texturas
     glEnable(GL_TEXTURE_2D);
 
 
 
     // Seleccionar la textura adecuada seg¨²n el tipo y color de la pieza
-    const char* rutaImagen{};
+    const char* rutaImagen = nullptr;
     switch (tipo)
     {
     case No_pieza:
@@ -41,7 +49,6 @@ void Pieza::dibuja()
     glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture(rutaImagen).id);
 
     // Especificar coordenadas de textura y v¨¦rtices para la pieza
-    glDisable(GL_LIGHTING);
     glBegin(GL_POLYGON);
     // Esquina superior izquierda
     glTexCoord2d(0, 0);
@@ -55,9 +62,10 @@ void Pieza::dibuja()
     // Esquina inferior izquierda
     glTexCoord2d(0, 1);
     glVertex3f(casilla.c + 1, casilla.f, 0.0f);
-    glEnd();
-    glEnable(GL_LIGHTING);
+    glEnd(); 
     glDisable(GL_TEXTURE_2D);
+    glEnable(GL_LIGHTING);
+ 
 
 }
 

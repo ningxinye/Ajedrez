@@ -38,6 +38,7 @@ void Mundo::dibuja()
 	else if (estado == JUEGO_BABY) {
 
 		ajedrez.dibuja();
+	
 	}
 
 	else if (estado == JUEGO_GARDNER) {

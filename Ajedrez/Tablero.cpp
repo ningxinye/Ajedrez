@@ -1,19 +1,29 @@
 #include "Tablero.h"
+#include <iostream>
+
+
 
 Tablero::Tablero()
 {
     // Inicializar el tablero con piezas en las posiciones iniciales
-    casillas.resize(5, std::vector<Pieza*>(5, nullptr)); // Tablero de 8x8
+    casillas.resize(5, std::vector<Pieza*>(5, nullptr)); // Tablero de 5*5
     // Aqu¨ª debes inicializar las casillas con las piezas en su posici¨®n inicial
 }
 
 Tablero::~Tablero()
 {
+    // Libera la memoria de la pieza de ajedrez en el tablero.
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            delete casillas[i][j];
+        }
+    }
 
 }
 
 void Tablero::dibuja()
 {
+    //dibujar tablero
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
@@ -37,12 +47,29 @@ void Tablero::dibuja()
                 glVertex3f(i + 2.5, j + 1.5, 0);
                 glEnd();
             }
+
             glEnable(GL_LIGHTING);
+        }
+    }
+    //dibujar piezas
+    dibujarPiezas();
+ 
+}
+
+void Tablero::dibujarPiezas()
+{
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            if (casillas[i][j] != nullptr) {
+                casillas[i][j]->dibuja(); // Llame a la funci¨®n de dibujo de la pieza de ajedrez.
+            }
         }
     }
 }
 
-void Tablero::posicionInicial()
+
+
+void Tablero::posicionInicial()//Posicion iniciales de las piezas en el tablero
 {
     // Piezas negras
     casillas[0][0] = new Pieza(Tipo::Torre, Color::Negra, 0, 0);

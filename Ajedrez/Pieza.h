@@ -13,9 +13,10 @@ class Pieza
 {
 
 public:
+    Pieza();
+    ~Pieza();
 
-
-    //gráfico
+    //grafico
     void dibuja();
 
 
