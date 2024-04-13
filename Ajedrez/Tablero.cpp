@@ -3,22 +3,30 @@
 
 
 
-Tablero::Tablero()
+Tablero::Tablero():tabla(nullptr)
 {
     // Inicializar el tablero con piezas en las posiciones iniciales
     casillas.resize(5, std::vector<Pieza*>(5, nullptr)); // Tablero de 5*5
-    // Aqu¨ª debes inicializar las casillas con las piezas en su posici¨®n inicial
+ 
+     // Inicializar tabla
+    tabla = new Pieza * [n];
+    for (int i = 0; i < n; ++i) {
+        tabla[i] = new Pieza[n];
+    }
+
+   // Aqu¨ª debes inicializar las casillas con las piezas en su posici¨®n inicial
+
 }
 
 Tablero::~Tablero()
 {
     // Libera la memoria de la pieza de ajedrez en el tablero.
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n; ++j) {
-            delete casillas[i][j];
+    if (tabla != nullptr) {
+        for (int i = 0; i < n; ++i) {
+            delete[] tabla[i];
         }
+        delete[] tabla;
     }
-
 }
 
 void Tablero::dibuja()
