@@ -2,7 +2,6 @@
 #include <iostream>
 
 
-
 Tablero::Tablero():tabla(nullptr)
 {
     // Inicializar el tablero con piezas en las posiciones iniciales
@@ -40,19 +39,19 @@ void Tablero::dibuja()
                 glDisable(GL_LIGHTING);
                 glColor3ub(45, 87, 44); //verde oscuro 
                 glBegin(GL_POLYGON);
-                glVertex3f(i + 1.5, j + 1.5, 0);
-                glVertex3f(i + 1.5, j + 2.5, 0);
-                glVertex3f(i + 2.5, j + 2.5, 0);
-                glVertex3f(i + 2.5, j + 1.5, 0);
+                glVertex3f(static_cast<GLfloat>(i + 1.5), static_cast<GLfloat>(j + 1.5), 0);
+                glVertex3f(static_cast<GLfloat>(i + 1.5), static_cast<GLfloat>(j + 2.5), 0);
+                glVertex3f(static_cast<GLfloat>(i + 2.5), static_cast<GLfloat>(j + 2.5), 0);
+                glVertex3f(static_cast<GLfloat>(i + 2.5), static_cast<GLfloat>(j + 1.5), 0);
                 glEnd();
             }
             else {
                 glColor3ub(189, 236, 182); //verde claro
                 glBegin(GL_POLYGON);
-                glVertex3f(i + 1.5, j + 1.5, 0);
-                glVertex3f(i + 1.5, j + 2.5, 0);
-                glVertex3f(i + 2.5, j + 2.5, 0);
-                glVertex3f(i + 2.5, j + 1.5, 0);
+                glVertex3f(static_cast<GLfloat>(i + 1.5), static_cast<GLfloat>(j + 1.5), 0);
+                glVertex3f(static_cast<GLfloat>(i + 1.5), static_cast<GLfloat>(j + 2.5), 0);
+                glVertex3f(static_cast<GLfloat>(i + 2.5), static_cast<GLfloat>(j + 2.5), 0);
+                glVertex3f(static_cast<GLfloat>(i + 2.5), static_cast<GLfloat>(j + 1.5), 0);
                 glEnd();
             }
 

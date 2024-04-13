@@ -1,18 +1,2 @@
 ﻿  Tablero.cpp
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(43,39): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(43,30): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(44,39): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(44,30): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(45,39): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(45,30): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(46,39): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(46,30): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(52,39): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(52,30): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(53,39): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(53,30): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(54,39): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(54,30): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(55,39): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Tablero.cpp(55,30): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
   Ajedrez.vcxproj -> D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Ajedrez.exe
