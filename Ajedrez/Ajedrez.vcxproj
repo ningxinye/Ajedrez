@@ -18,6 +18,21 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Ajedrez.cpp" />
+    <ClCompile Include="src\Casilla.cpp" />
+    <ClCompile Include="src\Glut.cpp" />
+    <ClCompile Include="src\Mundo.cpp" />
+    <ClCompile Include="src\Pieza.cpp" />
+    <ClCompile Include="src\Tablero.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Ajedrez.h" />
+    <ClInclude Include="src\Casilla.h" />
+    <ClInclude Include="src\Mundo.h" />
+    <ClInclude Include="src\Pieza.h" />
+    <ClInclude Include="src\Tablero.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -128,21 +143,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Ajedrez.cpp" />
-    <ClCompile Include="Casilla.cpp" />
-    <ClCompile Include="Glut.cpp" />
-    <ClCompile Include="Mundo.cpp" />
-    <ClCompile Include="Pieza.cpp" />
-    <ClCompile Include="Tablero.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Ajedrez.h" />
-    <ClInclude Include="Casilla.h" />
-    <ClInclude Include="Mundo.h" />
-    <ClInclude Include="Pieza.h" />
-    <ClInclude Include="Tablero.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
