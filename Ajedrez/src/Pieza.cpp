@@ -1,13 +1,22 @@
 #include "Pieza.h"
 
+Pieza::Pieza(const Pieza& p)
+{
+    //par¨¢metro constante
+    tipo = p.tipo;
+    color = p.color;
+    casilla = p.casilla;
+    fila = p.fila;
+    col = p.col;
+}
+
+
 //pintando cada pieza
 void Pieza::dibuja()
 {
 
     // Habilitar el uso de texturas
     glEnable(GL_TEXTURE_2D);
-
-
 
     // Seleccionar la textura adecuada seg¨²n el tipo y color de la pieza
     const char* rutaImagen{};
@@ -61,13 +70,4 @@ void Pieza::dibuja()
 
 }
 
-Pieza::Pieza(const Pieza& p)
-{
-    //par¨¢metro constante
-    tipo = p.tipo;
-    color = p.color;
-    casilla = p.casilla;
-    fila = p.fila;
-    col = p.col;
 
-}

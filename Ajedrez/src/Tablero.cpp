@@ -3,7 +3,7 @@
 Tablero::Tablero()
 {
     // Inicializar el tablero con piezas en las posiciones iniciales
-    casillas.resize(5, std::vector<Pieza*>(5, nullptr)); // Tablero de 8x8
+    casillas.resize(5, std::vector<Pieza*>(5, nullptr)); // Tablero de 5x5
     // Aqu¨ª debes inicializar las casillas con las piezas en su posici¨®n inicial
 }
 

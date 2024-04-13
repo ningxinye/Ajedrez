@@ -1,6 +1,4 @@
 #pragma once
-
-#pragma once
 #include <iostream>
 #include"Pieza.h"
 #include "freeglut.h"

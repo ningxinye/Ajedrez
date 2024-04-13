@@ -3,12 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Mundo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Mundo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Pieza.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Pieza.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Pieza.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Pieza.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Casilla.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Casilla.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Ajedrez.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Ajedrez.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Mundo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Mundo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Glut.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Glut.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Casilla.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Casilla.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -21,11 +57,128 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Pieza.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Pieza.cpp",
+              "RelativeDocumentMoniker": "src\\Pieza.cpp",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Pieza.cpp",
+              "RelativeToolTip": "src\\Pieza.cpp",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-13T14:41:29.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Tablero.h",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Tablero.h",
+              "RelativeDocumentMoniker": "src\\Tablero.h",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Tablero.h",
+              "RelativeToolTip": "src\\Tablero.h",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAC0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-13T14:41:35.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Tablero.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Tablero.cpp",
+              "RelativeDocumentMoniker": "src\\Tablero.cpp",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Tablero.cpp",
+              "RelativeToolTip": "src\\Tablero.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-13T14:41:30.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Pieza.h",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Pieza.h",
+              "RelativeDocumentMoniker": "src\\Pieza.h",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Pieza.h",
+              "RelativeToolTip": "src\\Pieza.h",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-13T14:41:34.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Mundo.h",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Mundo.h",
+              "RelativeDocumentMoniker": "src\\Mundo.h",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Mundo.h",
+              "RelativeToolTip": "src\\Mundo.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-13T14:41:34.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Casilla.h",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Casilla.h",
+              "RelativeDocumentMoniker": "src\\Casilla.h",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Casilla.h",
+              "RelativeToolTip": "src\\Casilla.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-13T14:41:33.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Mundo.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Mundo.cpp",
+              "RelativeDocumentMoniker": "src\\Mundo.cpp",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Mundo.cpp",
+              "RelativeToolTip": "src\\Mundo.cpp",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAADQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-13T14:41:28.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Glut.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Glut.cpp",
+              "RelativeDocumentMoniker": "src\\Glut.cpp",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Glut.cpp",
+              "RelativeToolTip": "src\\Glut.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-13T14:41:27.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Casilla.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Casilla.cpp",
+              "RelativeDocumentMoniker": "src\\Casilla.cpp",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Casilla.cpp",
+              "RelativeToolTip": "src\\Casilla.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-13T14:41:26.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Ajedrez.cpp",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Ajedrez.cpp",
               "RelativeDocumentMoniker": "src\\Ajedrez.cpp",
@@ -38,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Ajedrez.h",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Ajedrez\\Ajedrez\\src\\Ajedrez.h",
               "RelativeDocumentMoniker": "src\\Ajedrez.h",
@@ -51,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "Ajedrez.cpp",
               "DocumentMoniker": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\Ajedrez.cpp",
               "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\Ajedrez.cpp",

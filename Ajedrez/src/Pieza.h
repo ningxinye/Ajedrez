@@ -11,14 +11,9 @@ enum  Color { Blanca, Negra };
 
 class Pieza
 {
-
 public:
-
-
     //gráfico
     void dibuja();
-
-
     //Constructor
     Pieza(Tipo tipo, Color color, int fila, int col) : tipo(tipo), color(color), fila(fila), col(col) {}
     Pieza(const Pieza& p);
@@ -35,8 +30,6 @@ public:
     void mover(int nuevafila, int nuevacol) {
         // Implementación del movimiento de la pieza
     }
-
-
     void setTipo(Tipo tipo) { tipo = tipo; }
     void setColor(Color color) { color = color; }
     void setCasilla(int x, int y) { casilla.f = x; casilla.c = y; }
@@ -49,5 +42,4 @@ private:
     Casilla casilla;
     int fila;//fila (1,2...5)
     int col;//columna (a,b,c..e)
-
 };

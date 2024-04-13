@@ -4,14 +4,14 @@
   Mundo.cpp
   Pieza.cpp
   Tablero.cpp
-C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp(48,41): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp(48,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp(51,37): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp(51,23): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp(54,34): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp(54,23): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
-C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp(57,38): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp(57,41): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
 C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp(57,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp(60,37): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp(60,23): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp(63,34): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp(63,23): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp(66,38): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp(66,26): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
 C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Tablero.cpp(25,39): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
 C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Tablero.cpp(25,30): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
 C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Tablero.cpp(26,39): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
@@ -29,5 +29,4 @@ C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Tablero.cpp(36,30): warning C
 C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Tablero.cpp(37,39): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
 C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Tablero.cpp(37,30): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
   Generando código...
-  LINK : no se encontró C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\x64\Debug\Ajedrez.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
   Ajedrez.vcxproj -> C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\x64\Debug\Ajedrez.exe

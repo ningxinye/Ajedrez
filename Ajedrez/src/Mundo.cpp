@@ -58,7 +58,7 @@ void Mundo::tecla(unsigned char key)
 {
 	switch (estado) {
 	case INICIO:
-		if (key == 'Q') {
+		if (key == 'Q' || key == 'q') {
 			estado = JUEGO_BABY;
 
 		}
