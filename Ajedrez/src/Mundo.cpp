@@ -38,7 +38,11 @@ void Mundo::dibuja()
 	}
 	else if (estado == JUEGO_BABY) {
 
+	
 		ajedrez.dibuja();
+		
+
+	
 	
 	}
 
@@ -57,11 +61,29 @@ void Mundo::dibuja()
 
 //navegacion por teclado para avanzar el juego
 void Mundo::tecla(unsigned char key){
+
 	switch (estado) {
 	case INICIO:
 		if (key == 'Q') {
 			estado = JUEGO_BABY;
-
+	
+			break;
 		}
+		break;
+	case JUEGO_BABY:
+		//Agregamos la l車gica clave para manejar el estado del tablero de ajedrez
+		break;
+	case JUEGO_GARDNER:
+		//Agregar l車gica de claves para manejar otro estado del tablero de ajedrez
+		break;
+	case FIN:
+		//Agregamos la l車gica clave para manejar el estado final del juego
+		break;
+	case PAUSA:
+		// Agrega l車gica de clave de procesamiento cuando el juego est芍 en pausa
+		break;
+	default:
+		break;
+
 	}
 }

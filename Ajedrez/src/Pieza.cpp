@@ -29,7 +29,7 @@ void Pieza::dibuja()
         rutaImagen = (color == Negra) ? "bin/imagenes/peon_negro.png" : "bin/imagenes/peon_blanco.png";
         break;
     case Caballo:
-        rutaImagen = (color == Negra) ? "imagenes/caballo_negro.png" : "imagenes/caballo_blanco.png";
+        rutaImagen = (color == Negra) ? "bin/imagenes/caballo_negro.png" : "imagenes/caballo_blanco.png";
         break;
     case Alfil:
         rutaImagen = (color == Negra) ? "imagenes/alfil_negro.png" : "imagenes/alfil_blanco.png";
@@ -53,16 +53,16 @@ void Pieza::dibuja()
     glBegin(GL_POLYGON);
     // Esquina superior izquierda
     glTexCoord2d(0, 0);
-    glVertex3f(casilla.c + 1, casilla.f + 1, 0.0f);
+    glVertex3f(static_cast<GLfloat>(casilla.c + 1), static_cast<GLfloat>(casilla.f + 1), 0.0f);
     // Esquina superior derecha
     glTexCoord2d(1, 0);
-    glVertex3f(casilla.c, casilla.f + 1, 0.0f);
+    glVertex3f(static_cast<GLfloat>(casilla.c), static_cast<GLfloat>(casilla.f + 1), 0.0f);
     // Esquina inferior derecha
     glTexCoord2d(1, 1);
-    glVertex3f(casilla.c, casilla.f, 0.0f);
+    glVertex3f(static_cast<GLfloat>(casilla.c), static_cast<GLfloat>(casilla.f), 0.0f);
     // Esquina inferior izquierda
     glTexCoord2d(0, 1);
-    glVertex3f(casilla.c + 1, casilla.f, 0.0f);
+    glVertex3f(static_cast<GLfloat>(casilla.c + 1), static_cast<GLfloat>(casilla.f), 0.0f);
     glEnd(); 
     glDisable(GL_TEXTURE_2D);
     glEnable(GL_LIGHTING);

@@ -1,6 +1,7 @@
 
 #include "Tablero.h"
 #include <iostream>
+#include <string>
 
 
 Tablero::Tablero():tabla(nullptr)
@@ -31,6 +32,10 @@ Tablero::~Tablero()
 
 void Tablero::dibuja()
 {
+    //dibujar piezas
+    dibujarPiezas();
+    posicionInicial();
+
     //dibujar tablero
     for (int i = 0; i < n; i++)
     {
@@ -59,8 +64,7 @@ void Tablero::dibuja()
             glEnable(GL_LIGHTING);
         }
     }
-    //dibujar piezas
-    dibujarPiezas();
+  
  
 }
 

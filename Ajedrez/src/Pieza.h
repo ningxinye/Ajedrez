@@ -49,8 +49,8 @@ private:
     Tipo tipo;
     Color color;
     Casilla casilla;
-    int fila;//fila (1,2...5)
-    int col;//columna (a,b,c..e)
+    int fila=0;//fila (1,2...5)
+    int col=0;//columna (a,b,c..e)
 
 };
 
