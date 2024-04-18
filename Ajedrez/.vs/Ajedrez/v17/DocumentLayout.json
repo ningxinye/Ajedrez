@@ -65,7 +65,8 @@
               "RelativeToolTip": "src\\Pieza.h",
               "ViewState": "AQIAACQAAAAAAAAAAAAAADAAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-13T20:42:14.8Z"
+              "WhenOpened": "2024-04-13T20:42:14.8Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -73,9 +74,9 @@
               "Title": "Pieza.cpp",
               "DocumentMoniker": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Pieza.cpp",
               "RelativeDocumentMoniker": "src\\Pieza.cpp",
-              "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Pieza.cpp*",
-              "RelativeToolTip": "src\\Pieza.cpp*",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAAwE8AAAAhAAAA",
+              "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Pieza.cpp",
+              "RelativeToolTip": "src\\Pieza.cpp",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAAAJkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-13T20:41:53.417Z",
               "EditorCaption": ""
@@ -90,7 +91,8 @@
               "RelativeToolTip": "src\\Tablero.cpp",
               "ViewState": "AQIAACoAAAAAAAAAAAAAACUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-13T20:38:17.323Z"
+              "WhenOpened": "2024-04-13T20:38:17.323Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -102,7 +104,8 @@
               "RelativeToolTip": "src\\Mundo.cpp",
               "ViewState": "AQIAAB4AAAAAAAAAAAAAACoAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-13T20:40:28.794Z"
+              "WhenOpened": "2024-04-13T20:40:28.794Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -114,7 +117,8 @@
               "RelativeToolTip": "src\\Mundo.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-13T20:41:29.56Z"
+              "WhenOpened": "2024-04-13T20:41:29.56Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -126,7 +130,8 @@
               "RelativeToolTip": "src\\Tablero.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-13T20:38:36.096Z"
+              "WhenOpened": "2024-04-13T20:38:36.096Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -138,7 +143,8 @@
               "RelativeToolTip": "src\\Ajedrez.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-13T20:43:00.873Z"
+              "WhenOpened": "2024-04-13T20:43:00.873Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -150,7 +156,8 @@
               "RelativeToolTip": "src\\Casilla.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-13T20:41:33.841Z"
+              "WhenOpened": "2024-04-13T20:41:33.841Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -162,7 +169,8 @@
               "RelativeToolTip": "src\\Glut.cpp",
               "ViewState": "AQIAAA0AAAAAAAAAAADgvw4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-13T20:41:44.409Z"
+              "WhenOpened": "2024-04-13T20:41:44.409Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -174,7 +182,8 @@
               "RelativeToolTip": "src\\Casilla.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-13T20:41:42.467Z"
+              "WhenOpened": "2024-04-13T20:41:42.467Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -184,7 +193,8 @@
               "ToolTip": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\bcrypt.h",
               "ViewState": "AQIAAJ0DAAAAAAAAAAAgwBEEAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-13T20:37:52.631Z"
+              "WhenOpened": "2024-04-13T20:37:52.631Z",
+              "EditorCaption": ""
             }
           ]
         }
