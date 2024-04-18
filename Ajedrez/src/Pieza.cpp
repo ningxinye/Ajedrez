@@ -1,5 +1,7 @@
 
 #include "Pieza.h"
+#include <iostream>
+#include <filesystem>
 
 Pieza::Pieza()
 {
@@ -12,6 +14,7 @@ Pieza::~Pieza()
 //pintando cada pieza
 void Pieza::dibuja()
 {
+    /*
     glDisable(GL_LIGHTING);
     // Habilitar el uso de texturas
     glEnable(GL_TEXTURE_2D);
@@ -66,7 +69,75 @@ void Pieza::dibuja()
     glEnd(); 
     glDisable(GL_TEXTURE_2D);
     glEnable(GL_LIGHTING);
- 
+    */
+
+    glDisable(GL_LIGHTING);
+    glEnable(GL_TEXTURE_2D);
+
+    // Ruta de sprite de todas las piezas
+    std::filesystem::path currentPath = std::filesystem::current_path();
+    std::cout << "Current working directory: " << currentPath << std::endl;
+    const char* rutaImagen = "bin/imagenes/todas_las_piezas_sprite.png"; // Cambia a la ruta de tu imagen de sprite
+    std::cout << "Image path: " << rutaImagen << std::endl;
+
+    // Carga la textura
+    ETSIDI::GLTexture textura = ETSIDI::getTexture(rutaImagen);
+
+    // Verifica si la textura fue cargada correctamente
+    if (textura.id == 0) {
+        std::cerr << "Error: No se pudo cargar la textura de " << rutaImagen << std::endl;
+        return;
+    }
+
+    // Vincula la textura utilizando el ID de la textura
+    glBindTexture(GL_TEXTURE_2D, textura.id);
+
+    // Determina las coordenadas de textura seg迆n el tipo y color de la pieza
+    const GLfloat texWidth = 1.0f / 6.0f; // Ancho de cada pieza en el sprite es 1/6
+    const GLfloat texHeight = 1.0f / 2.0f; // Altura de cada pieza en el sprite es 1/2
+
+    // Coordenadas de textura para la pieza
+    GLfloat texX = 0.0f;
+    GLfloat texY = (color == Negra) ? 0.0f : 0.5f; // Color negro en la primera fila, blanco en la segunda
+
+    switch (tipo) {
+    case Torre:
+        texX = 0.0f; // La torre est芍 en la primera posici車n
+        break;
+    case Alfil:
+        texX = texWidth; // El alfil est芍 en la segunda posici車n
+        break;
+    case Rey:
+        texX = 2 * texWidth; // El rey est芍 en la tercera posici車n
+        break;
+    case Reina:
+        texX = 3 * texWidth; // La reina est芍 en la cuarta posici車n
+        break;
+    case Caballo:
+        texX = 4 * texWidth; // El caballo est芍 en la quinta posici車n
+        break;
+    case Peon:
+        texX = 5 * texWidth; // El pe車n est芍 en la sexta posici車n
+        break;
+    case No_pieza:
+        // Si no hay pieza, no se dibuja nada
+        return;
+    }
+
+    // Dibuja la pieza con las coordenadas de textura calculadas
+    glBegin(GL_POLYGON);
+    glTexCoord2f(texX, texY + texHeight);
+    glVertex3f(static_cast<GLfloat>(casilla.c + 1), static_cast<GLfloat>(casilla.f + 1), 0.0f); // Esquina superior izquierda
+    glTexCoord2f(texX + texWidth, texY + texHeight);
+    glVertex3f(static_cast<GLfloat>(casilla.c), static_cast<GLfloat>(casilla.f + 1), 0.0f); // Esquina superior derecha
+    glTexCoord2f(texX + texWidth, texY);
+    glVertex3f(static_cast<GLfloat>(casilla.c), static_cast<GLfloat>(casilla.f), 0.0f); // Esquina inferior derecha
+    glTexCoord2f(texX, texY);
+    glVertex3f(static_cast<GLfloat>(casilla.c + 1), static_cast<GLfloat>(casilla.f), 0.0f); // Esquina inferior izquierda
+    glEnd();
+
+    glDisable(GL_TEXTURE_2D);
+    glEnable(GL_LIGHTING);
 
 }
 

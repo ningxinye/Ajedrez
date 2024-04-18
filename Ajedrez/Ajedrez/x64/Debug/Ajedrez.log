@@ -1,7 +1,7 @@
-﻿  Ajedrez.cpp
-  Glut.cpp
-  Mundo.cpp
-  Pieza.cpp
-  Tablero.cpp
-  正在生成代码...
+﻿  Pieza.cpp
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Pieza.cpp(80,30): warning C4129: “d”: 不可识别的字符转义序列
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Pieza.cpp(80,30): warning C4129: “N”: 不可识别的字符转义序列
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Pieza.cpp(80,30): warning C4129: “A”: 不可识别的字符转义序列
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Pieza.cpp(80,30): warning C4129: “ ”: 不可识别的字符转义序列
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Pieza.cpp(80,30): warning C4129: “i”: 不可识别的字符转义序列
   Ajedrez.vcxproj -> D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Ajedrez.exe
