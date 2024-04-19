@@ -77,7 +77,7 @@ void Pieza::dibuja()
     // Ruta de sprite de todas las piezas
     std::filesystem::path currentPath = std::filesystem::current_path();
     std::cout << "Current working directory: " << currentPath << std::endl;
-    const char* rutaImagen = "bin/imagenes/todas_las_piezas_sprite.png"; // Cambia a la ruta de tu imagen de sprite
+    const char* rutaImagen = "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/todas_las_piezas_sprite.png";  // Cambia a la ruta de tu imagen de sprite
     std::cout << "Image path: " << rutaImagen << std::endl;
 
     // Carga la textura
