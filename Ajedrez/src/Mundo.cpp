@@ -25,7 +25,7 @@ void Mundo::dibuja()
 
 		ETSIDI::setTextColor(1, 1, 0);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 16);
-		ETSIDI::printxy("Mini juego de ajedrez", -5, 12);
+		ETSIDI::printxy("Mini juegos de ajedrez", -5, 12);
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 12);
 		ETSIDI::printxy("PULSE LA TECLA Q PARA EMPEZAR AJEDREZ BABY ", -7, 9);

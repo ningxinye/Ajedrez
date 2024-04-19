@@ -23,7 +23,7 @@ void Pieza::dibuja()
     // Seleccionar la textura adecuada seg¨²n el tipo y color de la pieza
     const char* rutaImagen = nullptr;
 
-    if (color == Sin_color) {
+    if (color == Sin_color || tipo == No_pieza) {
         // Si el color es Sin_color, no hay pieza que dibujar
         return;
     }
@@ -58,7 +58,7 @@ void Pieza::dibuja()
 
     glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture(rutaImagen).id);
 
-
+    
     // Especificar coordenadas de textura y v¨¦rtices para la pieza
     glBegin(GL_POLYGON);
     // Esquina superior izquierda

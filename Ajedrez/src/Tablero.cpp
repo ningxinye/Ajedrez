@@ -83,24 +83,24 @@ void Tablero::dibujarPiezas()
 
 void Tablero::posicionInicial()//Posicion iniciales de las piezas en el tablero
 {
-    // Piezas negras
-    casillas[0][0] = new Pieza(Tipo::Torre, Color::Negra, 0, 0);
-    casillas[0][1] = new Pieza(Tipo::Caballo, Color::Negra, 0, 1);
-    casillas[0][2] = new Pieza(Tipo::Alfil, Color::Negra, 0, 2);
-    casillas[0][3] = new Pieza(Tipo::Rey, Color::Negra, 0, 3);
-    casillas[0][4] = new Pieza(Tipo::Reina, Color::Negra, 0, 4);
+    // Piezas Blanca
+    casillas[0][0] = new Pieza(Tipo::Torre, Color::Blanca, 0, 0);
+    casillas[0][1] = new Pieza(Tipo::Caballo, Color::Blanca, 0, 1);
+    casillas[0][2] = new Pieza(Tipo::Alfil, Color::Blanca, 0, 2);
+    casillas[0][3] = new Pieza(Tipo::Rey, Color::Blanca, 0, 3);
+    casillas[0][4] = new Pieza(Tipo::Reina, Color::Blanca, 0, 4);
     for (int i = 0; i < 5; ++i) {
-        casillas[1][i] = new Pieza(Tipo::Peon, Color::Negra, 1, i);
+        casillas[1][i] = new Pieza(Tipo::Peon, Color::Blanca, 1, i);
     }
-
-    // Piezas blancas
-    casillas[3][0] = new Pieza(Tipo::Rey, Color::Blanca, 3, 0);
-    casillas[3][1] = new Pieza(Tipo::Reina, Color::Blanca, 3, 1);
-    casillas[3][2] = new Pieza(Tipo::Alfil, Color::Blanca, 3, 2);
-    casillas[3][3] = new Pieza(Tipo::Caballo, Color::Blanca, 3, 3);
-    casillas[3][4] = new Pieza(Tipo::Torre, Color::Blanca, 3, 4);
+    
+    // Piezas Negra
+    casillas[4][0] = new Pieza(Tipo::Rey, Color::Negra, 4, 0);
+    casillas[4][1] = new Pieza(Tipo::Reina, Color::Negra, 4, 1);
+    casillas[4][2] = new Pieza(Tipo::Alfil, Color::Negra, 4, 2);
+    casillas[4][3] = new Pieza(Tipo::Caballo, Color::Negra, 4, 3);
+    casillas[4][4] = new Pieza(Tipo::Torre, Color::Negra, 4, 4);
     for (int i = 0; i < 5; ++i) {
-        casillas[4][i] = new Pieza(Tipo::Peon, Color::Blanca, 4, i);
+        casillas[3][i] = new Pieza(Tipo::Peon, Color::Negra, 3, i);
     }
      
 }
