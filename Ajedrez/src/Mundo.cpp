@@ -38,7 +38,6 @@ void Mundo::dibuja()
 	}
 	else if (estado == JUEGO_BABY) {
 
-	
 		ajedrez.dibuja();
 		
 
@@ -64,10 +63,9 @@ void Mundo::tecla(unsigned char key){
 
 	switch (estado) {
 	case INICIO:
+		ajedrez.inicializa();
 		if (key == 'Q') {
 			estado = JUEGO_BABY;
-	
-			break;
 		}
 		break;
 	case JUEGO_BABY:

@@ -9,6 +9,9 @@ public:
 
 	//constructor
 	Casilla(int x = -1, int y = -1);
+	//DESTRUCTOR
+	Casilla(const Casilla& cas);
+	~Casilla();
 
 	friend class Pieza;
 	friend class Tablero;

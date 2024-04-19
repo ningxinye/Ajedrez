@@ -3,44 +3,36 @@
   "WorkspaceRootPath": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Mundo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Mundo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Mundo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Mundo.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Pieza.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Pieza.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Pieza.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Pieza.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Pieza.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Pieza.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Tablero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Glut.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Glut.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Mundo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Mundo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Casilla.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Casilla.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Ajedrez.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Casilla.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Casilla.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Tablero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Glut.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0EFDF74E-43BE-4BC8-973F-EC171BB62E82}|Ajedrez.vcxproj|solutionrelative:src\\Glut.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\bcrypt.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -53,83 +45,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Pieza.h",
-              "DocumentMoniker": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Pieza.h",
-              "RelativeDocumentMoniker": "src\\Pieza.h",
-              "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Pieza.h",
-              "RelativeToolTip": "src\\Pieza.h",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAADAAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-13T20:42:14.8Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Pieza.cpp",
-              "DocumentMoniker": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Pieza.cpp",
-              "RelativeDocumentMoniker": "src\\Pieza.cpp",
-              "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Pieza.cpp",
-              "RelativeToolTip": "src\\Pieza.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-13T20:41:53.417Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Tablero.cpp",
-              "DocumentMoniker": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Tablero.cpp",
-              "RelativeDocumentMoniker": "src\\Tablero.cpp",
-              "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Tablero.cpp",
-              "RelativeToolTip": "src\\Tablero.cpp",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAADgAAABcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-13T20:38:17.323Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Mundo.cpp",
-              "DocumentMoniker": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Mundo.cpp",
-              "RelativeDocumentMoniker": "src\\Mundo.cpp",
-              "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Mundo.cpp",
-              "RelativeToolTip": "src\\Mundo.cpp",
-              "ViewState": "AQIAACcAAABAzczMzMwswB4AAABIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-13T20:40:28.794Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Mundo.h",
-              "DocumentMoniker": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Mundo.h",
-              "RelativeDocumentMoniker": "src\\Mundo.h",
-              "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Mundo.h",
-              "RelativeToolTip": "src\\Mundo.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-13T20:41:29.56Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Tablero.h",
               "DocumentMoniker": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Tablero.h",
               "RelativeDocumentMoniker": "src\\Tablero.h",
               "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Tablero.h",
               "RelativeToolTip": "src\\Tablero.h",
-              "ViewState": "AQIAAAwAAAAAAAAAAABgvS8AAAAAAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAABgvQwAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-04-13T20:38:36.096Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Tablero.cpp",
+              "DocumentMoniker": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Tablero.cpp",
+              "RelativeDocumentMoniker": "src\\Tablero.cpp",
+              "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Tablero.cpp",
+              "RelativeToolTip": "src\\Tablero.cpp",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAADAAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-13T20:38:17.323Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Pieza.cpp",
+              "DocumentMoniker": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Pieza.cpp",
+              "RelativeDocumentMoniker": "src\\Pieza.cpp",
+              "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Pieza.cpp*",
+              "RelativeToolTip": "src\\Pieza.cpp*",
+              "ViewState": "AQIAADkAAAAAAAAAAAAkwEIAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-13T20:41:53.417Z",
               "EditorCaption": ""
             },
             {
@@ -140,22 +96,49 @@
               "RelativeDocumentMoniker": "src\\Ajedrez.cpp",
               "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Ajedrez.cpp",
               "RelativeToolTip": "src\\Ajedrez.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-13T20:43:00.873Z",
+              "WhenOpened": "2024-04-19T18:31:06.171Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Casilla.h",
-              "DocumentMoniker": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Casilla.h",
-              "RelativeDocumentMoniker": "src\\Casilla.h",
-              "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Casilla.h",
-              "RelativeToolTip": "src\\Casilla.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "Pieza.h",
+              "DocumentMoniker": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Pieza.h",
+              "RelativeDocumentMoniker": "src\\Pieza.h",
+              "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Pieza.h",
+              "RelativeToolTip": "src\\Pieza.h",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABgAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-13T20:41:33.841Z"
+              "WhenOpened": "2024-04-13T20:42:14.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Mundo.cpp",
+              "DocumentMoniker": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Mundo.cpp",
+              "RelativeDocumentMoniker": "src\\Mundo.cpp",
+              "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Mundo.cpp",
+              "RelativeToolTip": "src\\Mundo.cpp",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAEoAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-13T20:40:28.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Casilla.cpp",
+              "DocumentMoniker": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Casilla.cpp",
+              "RelativeDocumentMoniker": "src\\Casilla.cpp",
+              "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Casilla.cpp",
+              "RelativeToolTip": "src\\Casilla.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-19T18:30:07.03Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -171,19 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Casilla.cpp",
-              "DocumentMoniker": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Casilla.cpp",
-              "RelativeDocumentMoniker": "src\\Casilla.cpp",
-              "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Casilla.cpp",
-              "RelativeToolTip": "src\\Casilla.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-13T20:41:42.467Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "bcrypt.h",
               "DocumentMoniker": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\bcrypt.h",
               "ToolTip": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\bcrypt.h",

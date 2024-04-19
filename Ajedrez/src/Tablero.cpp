@@ -65,7 +65,7 @@ void Tablero::dibuja()
         }
     }
   
- 
+  
 }
 
 void Tablero::dibujarPiezas()
@@ -102,4 +102,5 @@ void Tablero::posicionInicial()//Posicion iniciales de las piezas en el tablero
     for (int i = 0; i < 5; ++i) {
         casillas[4][i] = new Pieza(Tipo::Peon, Color::Blanca, 4, i);
     }
+     
 }

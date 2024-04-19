@@ -8,7 +8,7 @@
 #include"freeglut.h"
 
 enum  Tipo { No_pieza, Peon, Caballo, Alfil, Torre, Rey, Reina };
-enum  Color { Blanca, Negra };
+enum  Color { Sin_color, Blanca, Negra };
 
 class Pieza
 {
@@ -22,7 +22,9 @@ public:
 
 
     //Constructor
-    Pieza(Tipo tipo, Color color, int fila, int col) : tipo(tipo), color(color), fila(fila), col(col) {}
+   Pieza(Tipo tipo, Color color, int fila, int col):tipo(tipo), color(color), casilla(fila, col), fila(fila), col(col)
+    {
+    }
     Pieza(const Pieza& p);
 
     // Métodos para obtener información sobre la pieza

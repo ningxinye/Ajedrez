@@ -26,14 +26,20 @@
     <ClCompile Include="src\Peon.cpp" />
     <ClCompile Include="src\Pieza.cpp" />
     <ClCompile Include="src\Tablero.cpp" />
+    <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="src\Ajedrez.h" />
     <ClInclude Include="src\Casilla.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Peon.h" />
     <ClInclude Include="src\Pieza.h" />
     <ClInclude Include="src\Tablero.h" />
+    <ClInclude Include="src\Vector2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Ajedrez.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
