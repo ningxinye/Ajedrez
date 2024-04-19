@@ -23,6 +23,7 @@
     <ClCompile Include="src\Casilla.cpp" />
     <ClCompile Include="src\Glut.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
+    <ClCompile Include="src\Peon.cpp" />
     <ClCompile Include="src\Pieza.cpp" />
     <ClCompile Include="src\Tablero.cpp" />
   </ItemGroup>
@@ -30,6 +31,7 @@
     <ClInclude Include="src\Ajedrez.h" />
     <ClInclude Include="src\Casilla.h" />
     <ClInclude Include="src\Mundo.h" />
+    <ClInclude Include="src\Peon.h" />
     <ClInclude Include="src\Pieza.h" />
     <ClInclude Include="src\Tablero.h" />
   </ItemGroup>
