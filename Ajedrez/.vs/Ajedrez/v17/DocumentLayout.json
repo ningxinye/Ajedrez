@@ -80,8 +80,7 @@
               "RelativeToolTip": "src\\Pieza.cpp",
               "ViewState": "AQIAAEsAAAAAAAAAAAAAADwAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-13T20:41:53.417Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-13T20:41:53.417Z"
             },
             {
               "$type": "Document",
@@ -91,7 +90,7 @@
               "RelativeDocumentMoniker": "src\\Ajedrez.cpp",
               "ToolTip": "D:\\download\\trabajo_inf_2024\\NUEVA CARPETA\\Ajedrez\\Ajedrez\\Ajedrez\\src\\Ajedrez.cpp*",
               "RelativeToolTip": "src\\Ajedrez.cpp*",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-19T18:31:06.171Z",
               "EditorCaption": ""
