@@ -1,6 +1,4 @@
 #pragma once
-
-#pragma once
 #include <iostream>
 #include"Pieza.h"
 #include "freeglut.h"
@@ -12,6 +10,7 @@ class Tablero
 private:
 	const int n = 5;
 	std::vector<std::vector<Pieza*>> casillas; // Representaci¨®n del tablero
+	Pieza** tabla; //Tablero es una matriz de piezas
 
 public:
 	Tablero();
@@ -42,9 +41,9 @@ public:
 
 	//gr¨¢fico
 	void dibuja();
-	void posicionInicial();
-
-
+	void dibujarPiezas();
 
 	//logico
+	void posicionInicial();
+
 };

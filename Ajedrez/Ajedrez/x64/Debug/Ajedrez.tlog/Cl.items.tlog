@@ -1,6 +1,8 @@
-C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Ajedrez.cpp;C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Ajedrez.obj
-C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Casilla.cpp;C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Casilla.obj
-C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Glut.cpp;C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Glut.obj
-C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Mundo.cpp;C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Mundo.obj
-C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Pieza.cpp;C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Pieza.obj
-C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Tablero.cpp;C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Tablero.obj
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Ajedrez.cpp;D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Ajedrez.obj
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Casilla.cpp;D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Casilla.obj
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Glut.cpp;D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Glut.obj
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Mundo.cpp;D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Mundo.obj
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Peon.cpp;D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Peon.obj
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Pieza.cpp;D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Pieza.obj
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Tablero.cpp;D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Tablero.obj
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Vector2D.cpp;D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Vector2D.obj

@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include <iostream>
@@ -7,20 +8,23 @@
 #include"freeglut.h"
 
 enum  Tipo { No_pieza, Peon, Caballo, Alfil, Torre, Rey, Reina };
-enum  Color { Blanca, Negra };
+enum  Color { Sin_color, Blanca, Negra };
 
 class Pieza
 {
 
 public:
+    Pieza();
+    ~Pieza();
 
-
-    //gráfico
+    //grafico
     void dibuja();
 
 
     //Constructor
-    Pieza(Tipo tipo, Color color, int fila, int col) : tipo(tipo), color(color), fila(fila), col(col) {}
+   Pieza(Tipo tipo, Color color, int fila, int col):tipo(tipo), color(color), casilla(fila, col), fila(fila), col(col)
+    {
+    }
     Pieza(const Pieza& p);
 
     // Métodos para obtener información sobre la pieza
@@ -47,7 +51,9 @@ private:
     Tipo tipo;
     Color color;
     Casilla casilla;
-    int fila;//fila (1,2...5)
-    int col;//columna (a,b,c..e)
+    int fila=0;//fila (1,2...5)
+    int col=0;//columna (a,b,c..e)
 
 };
+
+
