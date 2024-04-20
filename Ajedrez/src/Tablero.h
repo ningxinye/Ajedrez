@@ -41,9 +41,10 @@ public:
 
 	//gr¨¢fico
 	void dibuja();
-	void dibujarPiezas();
+	//void dibujarPiezas();
 
 	//logico
 	void posicionInicial();
+
 
 };

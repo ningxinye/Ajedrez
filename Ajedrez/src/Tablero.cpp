@@ -1,4 +1,4 @@
-
+Ôªø
 #include "Tablero.h"
 #include <iostream>
 #include <string>
@@ -15,7 +15,7 @@ Tablero::Tablero():tabla(nullptr)
         tabla[i] = new Pieza[n];
     }
 
-   // Aqu®™ debes inicializar las casillas con las piezas en su posici®Æn inicial
+   // Aqu√≠ debes inicializar las casillas con las piezas en su posici√≥n inicial
 
 }
 
@@ -30,54 +30,54 @@ Tablero::~Tablero()
     }
 }
 
-void Tablero::dibuja()
-{
-    //dibujar piezas
-    dibujarPiezas();
-    posicionInicial();
+void Tablero::dibuja() {
 
-    //dibujar tablero
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
+    // Dibujar tablero y piezas juntos
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            // Dibujar tablero
             if ((i + j) % 2 == 0) {
                 glDisable(GL_LIGHTING);
-                glColor3ub(45, 87, 44); //verde oscuro 
-                glBegin(GL_POLYGON);
-                glVertex3f(static_cast<GLfloat>(i + 1.5), static_cast<GLfloat>(j + 1.5), 0);
-                glVertex3f(static_cast<GLfloat>(i + 1.5), static_cast<GLfloat>(j + 2.5), 0);
-                glVertex3f(static_cast<GLfloat>(i + 2.5), static_cast<GLfloat>(j + 2.5), 0);
-                glVertex3f(static_cast<GLfloat>(i + 2.5), static_cast<GLfloat>(j + 1.5), 0);
-                glEnd();
+                glColor3ub(45, 87, 44); // verde oscuro
             }
             else {
-                glColor3ub(189, 236, 182); //verde claro
-                glBegin(GL_POLYGON);
-                glVertex3f(static_cast<GLfloat>(i + 1.5), static_cast<GLfloat>(j + 1.5), 0);
-                glVertex3f(static_cast<GLfloat>(i + 1.5), static_cast<GLfloat>(j + 2.5), 0);
-                glVertex3f(static_cast<GLfloat>(i + 2.5), static_cast<GLfloat>(j + 2.5), 0);
-                glVertex3f(static_cast<GLfloat>(i + 2.5), static_cast<GLfloat>(j + 1.5), 0);
-                glEnd();
+                glColor3ub(189, 236, 182); // verde claro
             }
+         
+            glBegin(GL_POLYGON);
+            // Usando las coordenadas correctas, dibuja las celdas del tablero de ajedrez a un tama√±o de 1x1
+            glVertex3f(-0.5, -0.5, -0.5f);
+            glVertex3f(-0.5, 5.5, -0.5f);
+            glVertex3f(5.5, 5.5, -0.5f);
+            glVertex3f(5.5, -0.5, -0.5f);
+            glEnd();
 
             glEnable(GL_LIGHTING);
+
+            // Dibujar las piezas
+            if (casillas[i][j] != nullptr) {
+                // Antes de dibujar la pieza de ajedrez, aseg√∫rate de establecer las coordenadas de la pieza de ajedrez
+                casillas[i][j]->setCasilla(i, j);
+                casillas[i][j]->dibuja();// Dibuja la pieza de ajedrez usando las coordenadas de la celda actual
+
+
+
+            }
         }
     }
-  
-  
 }
 
-void Tablero::dibujarPiezas()
+/*void Tablero::dibujarPiezas()
 {
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
             if (casillas[i][j] != nullptr) {
-                casillas[i][j]->dibuja(); // Llame a la funci®Æn de dibujo de la pieza de ajedrez.
+                casillas[i][j]->dibuja(); // Llame a la funci√≥n de dibujo de la pieza de ajedrez.
             }
         }
     }
 }
+*/
 
 
 
@@ -87,8 +87,8 @@ void Tablero::posicionInicial()//Posicion iniciales de las piezas en el tablero
     casillas[0][0] = new Pieza(Tipo::Torre, Color::Blanca, 0, 0);
     casillas[0][1] = new Pieza(Tipo::Caballo, Color::Blanca, 0, 1);
     casillas[0][2] = new Pieza(Tipo::Alfil, Color::Blanca, 0, 2);
-    casillas[0][3] = new Pieza(Tipo::Rey, Color::Blanca, 0, 3);
-    casillas[0][4] = new Pieza(Tipo::Reina, Color::Blanca, 0, 4);
+    casillas[0][3] = new Pieza(Tipo::Reina, Color::Blanca, 0, 3);
+    casillas[0][4] = new Pieza(Tipo::Rey, Color::Blanca, 0, 4);
     for (int i = 0; i < 5; ++i) {
         casillas[1][i] = new Pieza(Tipo::Peon, Color::Blanca, 1, i);
     }
@@ -102,5 +102,12 @@ void Tablero::posicionInicial()//Posicion iniciales de las piezas en el tablero
     for (int i = 0; i < 5; ++i) {
         casillas[3][i] = new Pieza(Tipo::Peon, Color::Negra, 3, i);
     }
+
+
+
      
 }
+
+
+
+
