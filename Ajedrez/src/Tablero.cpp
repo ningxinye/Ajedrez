@@ -102,10 +102,10 @@ void Tablero::posicionInicial()//Posicion iniciales de las piezas en el tablero
     for (int i = 0; i < 5; ++i) {
         casillas[3][i] = new Pieza(Tipo::Peon, Color::Negra, 3, i);
     }
-
-
-
-     
+    // Vacios
+    for (int i = 0; i < 5; ++i) {
+        casillas[2][i] = new Pieza(Tipo::No_pieza, Color:: Sin_color, 2, i);
+    }
 }
 
 

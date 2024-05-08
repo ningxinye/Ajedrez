@@ -23,12 +23,12 @@ void Pieza::dibuja()
     // Seleccionar la textura adecuada seg¨²n el tipo y color de la pieza
     const char* rutaImagen = nullptr;
 
-    if (color == Sin_color || tipo == No_pieza) {
+    if ( tipo == No_pieza ||color == Sin_color) {
         // Si el color es Sin_color, no hay pieza que dibujar
-        return;
+        rutaImagen = "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/vacio.png";
     }
-
-    switch (tipo)
+    else {
+        switch (tipo)
     {
     case Peon:
         rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/peon_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/peon_blanco.png";
@@ -48,9 +48,11 @@ void Pieza::dibuja()
     case Reina:
         rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/reina_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/reina_blanco.png";
         break;
+
     default:
         // Caso por defecto, para manejar otros tipos de piezas inesperados
         return;
+    }
     }
 
     glDisable(GL_LIGHTING);
