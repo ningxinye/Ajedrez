@@ -1,7 +1,7 @@
 ﻿  Ajedrez.cpp
-  Casilla.cpp
   Glut.cpp
   Mundo.cpp
+  Peon.cpp
   Pieza.cpp
   Tablero.cpp
   正在生成代码...
