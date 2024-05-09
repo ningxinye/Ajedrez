@@ -85,3 +85,8 @@ void Mundo::tecla(unsigned char key){
 
 	}
 }
+
+void Mundo::pulsar_raton(int button, int state, int x, int y)
+{
+
+}

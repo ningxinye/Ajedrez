@@ -19,4 +19,7 @@ public:
 	void dibuja(); //pantalla
 	void tecla(unsigned char key);
 
+	//metodos logicos
+	void pulsar_raton(int button, int state, int x, int y);
+
 };
