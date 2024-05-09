@@ -16,6 +16,9 @@ public:
 
 	//l¨®gico
 
-
+	// Devuelve una referencia constante al tablero
+	const Tablero& getTablero() const {
+		return tablero;
+	}
 
 };

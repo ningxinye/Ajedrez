@@ -28,7 +28,7 @@ public:
     }
     Pieza(const Pieza& p);
 
-    // Métodos para obtener información sobre la pieza
+    // Metodos para obtener informacion sobre la pieza
     Tipo getTipo() const { return tipo; }
     Color getColor() const { return color; }
     Casilla getCasilla() { return casilla; }
@@ -36,9 +36,9 @@ public:
     int getCol() const { return col; }
 
 
-    // Métodos para mover la pieza y otras operaciones relacionadas
+    // Metodos para mover la pieza y otras operaciones relacionadas
     void mover(int nuevafila, int nuevacol) {
-        // Implementación del movimiento de la pieza
+        // Implementacion del movimiento de la pieza
     }
 
 

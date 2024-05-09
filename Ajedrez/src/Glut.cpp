@@ -65,10 +65,20 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 
 void OnMouseDown(int button, int state, int x, int y)
 {
-	if (button == GLUT_LEFT_BUTTON&&state == GLUT_DOWN && x >= 125 && x <= 677 && y >= 25 && y <= 577)
+	// Verificar si se ha presionado el bot車n izquierdo del rat車n y el estado es de presionado
+	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
 	{
-		
+		// Convertir las coordenadas de la ventana a coordenadas del tablero de ajedrez
+		// Ajusta la escala seg迆n el tama?o del tablero y la ventana
+		int fila = static_cast<int>((y - 25) / 110.4);
+		int col = static_cast<int>((x - 125) / 110.4);
 
+		// Aseg迆rate de que las coordenadas est芍n dentro de los l赤mites del tablero
+		if (fila >= 0 && fila < 5 && col >= 0 && col < 5)
+		{
+			// Llama a la funci車n de Mundo para procesar el clic del rat車n
+			mundo.pulsar_raton(button, state, x, y);
+		}
 	}
 }
 
