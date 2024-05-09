@@ -45,6 +45,11 @@ public:
 
 	//logico
 	void posicionInicial();
+	// Verifica si una casilla est¨¢ dentro del tablero
+	bool estaDentroDelTablero(const Casilla& casilla) const;
+	// Verifica si una pieza puede moverse desde la casilla de origen a la de destino
+	bool puedeMoverse(Pieza* pieza, const Casilla& origen, const Casilla& destino);
+	bool moverPieza(Pieza* pieza, const Casilla& origen, const Casilla& destino);
 
 
 };

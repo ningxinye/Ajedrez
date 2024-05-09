@@ -11,6 +11,13 @@ private:
 	enum Estados { INICIO, JUEGO_BABY, JUEGO_GARDNER, FIN, PAUSA };
 	Estados estado;
 
+	//posicion original y posicion de destino
+	Casilla origen;
+	Casilla destino;
+
+	//verificacion de la selecion o no
+	bool piezaSeleccionada;
+
 
 public:
 	Mundo();

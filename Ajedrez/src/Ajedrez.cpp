@@ -3,6 +3,11 @@
 
 using namespace std;
 
+Color Ajedrez::getTurno() const
+{
+	return turno;
+}
+
 void Ajedrez::dibuja()
 {
 	gluLookAt(2.5, 2.5, 12,  // posicion del ojo

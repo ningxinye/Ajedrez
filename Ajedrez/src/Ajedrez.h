@@ -7,14 +7,19 @@ class Ajedrez
 {
 private:
 	Tablero tablero;
+	Color turno;
 
 
 public:
+
+
 	//gr¨¢fica
 	void dibuja();
 	void inicializa();
 
 	//l¨®gico
+	Color getTurno()const;
+
 
 	// Devuelve una referencia constante al tablero
 	const Tablero& getTablero() const {

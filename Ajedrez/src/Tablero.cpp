@@ -1,7 +1,9 @@
 ﻿
 #include "Tablero.h"
+
 #include <iostream>
 #include <string>
+
 
 
 Tablero::Tablero():tabla(nullptr)
@@ -106,6 +108,43 @@ void Tablero::posicionInicial()//Posicion iniciales de las piezas en el tablero
     for (int i = 0; i < 5; ++i) {
         casillas[2][i] = new Pieza(Tipo::No_pieza, Color:: Sin_color, 2, i);
     }
+}
+
+bool Tablero::estaDentroDelTablero(const Casilla& casilla) const
+{
+    // Verifica si la casilla está dentro de los límites del tablero
+    return casilla.f >= 0 && casilla.f < 5 && casilla.c >= 0 && casilla.c < 5;
+}
+
+bool Tablero::puedeMoverse(Pieza* pieza, const Casilla& origen, const Casilla& destino)
+{
+    // Lógica para verificar si una pieza puede moverse desde origen a destino
+        // Esto puede incluir verificar las reglas de movimiento de la pieza específica
+        // Aquí puede implementar la lógica de movimiento específica de cada tipo de pieza
+    if (pieza->getTipo() == Tipo::Peon) {
+        // Si la pieza es un peón, realiza la conversión de tipo
+        Peon* peon = dynamic_cast<Peon*>(pieza);
+        if (peon && peon->Mov(origen, destino, casillas)) {
+            return true;
+        }
+    }
+    // Agregue lógica para otros tipos de piezas aquí
+    return false;  // Por defecto, retorna falso si el movimiento no es válido
+}
+
+bool Tablero::moverPieza(Pieza* pieza, const Casilla& origen, const Casilla& destino)
+{
+    // Verifica si la posición de destino es válida y si el movimiento cumple con las reglas del juego
+    // Por ejemplo, puedes verificar si la posición de destino está dentro de los límites del tablero
+    // Comprueba si se puede mover a la posición de destino
+    if (estaDentroDelTablero(destino) && puedeMoverse(pieza, origen, destino)) {
+        // Mueve la pieza
+        casillas[destino.f][destino.c] = pieza;
+        casillas[origen.f][origen.c] = nullptr; // Limpia la posición de origen
+        pieza->setCasilla(destino.f, destino.c);
+        return true;  // Movimiento exitoso
+    }
+    return false;  // Movimiento fallido
 }
 
 
