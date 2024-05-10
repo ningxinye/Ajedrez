@@ -1,5 +1,6 @@
 ﻿
 #include "Tablero.h"
+#include "Peon.h"
 
 #include <iostream>
 #include <string>
