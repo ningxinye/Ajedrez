@@ -1,32 +1,29 @@
 #include "Peon.h"
 #include <math.h>
 
-bool Peon::Mov(Casilla cd, Casilla co, Pieza** tab)
+bool Peon::puedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* casillas[5][5])
 {
-	//verificar la posicion de la piaza de ahora y posicion objetiva tiene la misma columna
-    if (cd.c == co.c) {
+    int direction = (getColor() == Blanca) ? 1 : -1;
 
-		if (tab[co.f][co.c].getColor() == Blanca) {
-			if (((cd.f - co.f) == 1)) {
-				return true;
-			}
-		
-			else { return false; }
-		}
-		else if (tab[co.f][co.c].getColor() == Negra)
-		{
-			if (((cd.f - co.f) == -1)) {
-				return true;
-			}
-			
-			else { return false; }
-		}
-	}
-	else { return false; }
-	
-}
+    // Verifica si el movimiento es hacia adelante
+    if (destino.c == origen.c) {
+        // Permite mover un paso hacia adelante si la casilla est¨¢ vac¨ªa
+        if (destino.f == origen.f + direction && casillas[destino.f][destino.c] == nullptr) {
+            return true;
+        }
+        // Permite mover dos pasos hacia adelante desde la posici¨®n inicial
+        if (!getMovida() && destino.f == origen.f + (2 * direction) && casillas[destino.f][destino.c] == nullptr &&
+            casillas[origen.f + direction][origen.c] == nullptr) {
+            return true;
+        }
+    }
 
-bool Peon::Comer(Casilla cd, Casilla co, Pieza** tab)
-{
-    return false;
+    // Verifica movimiento diagonal para comer piezas
+    if (abs(destino.c - origen.c) == 1 && destino.f == origen.f + direction) {
+        Pieza* destinoPieza = casillas[destino.f][destino.c];
+        // Permite comer si la casilla de destino contiene una pieza del color opuesto
+        return destinoPieza != nullptr && destinoPieza->getColor() != getColor();
+    }
+
+    return false; // Movimiento no v¨¢lido
 }

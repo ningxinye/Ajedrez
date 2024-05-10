@@ -1,5 +1,6 @@
 ﻿
 #include "Tablero.h"
+#include "Peon.h"
 #include <iostream>
 #include <string>
 
@@ -115,35 +116,49 @@ bool Tablero::estaDentroDelTablero(const Casilla& casilla) const
     return casilla.f >= 0 && casilla.f < 5 && casilla.c >= 0 && casilla.c < 5;
 }
 
-/*bool Tablero::puedeMoverse(Pieza* pieza, const Casilla& origen, const Casilla& destino)
+
+
+bool Tablero::puedeMoverse(Pieza* pieza, const Casilla& origen, const Casilla& destino)
 {
-    // Lógica para verificar si una pieza puede moverse desde origen a destino
-        // Esto puede incluir verificar las reglas de movimiento de la pieza específica
-        // Aquí puede implementar la lógica de movimiento específica de cada tipo de pieza
-    if (pieza->getTipo() == Tipo::Peon) {
-        // Si la pieza es un peón, realiza la conversión de tipo
-        Peon* peon = dynamic_cast<Peon*>(pieza);
-        if (peon && peon->Mov(origen, destino, casillas)) {
-            return true;
+    if (!estaDentroDelTablero(destino)) {
+        return false;
+    }
+
+    // Convertir casillas a tipo Pieza*[][5]
+    Pieza* tablero[5][5];
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            tablero[i][j] = casillas[i][j];
         }
     }
-    // Agregue lógica para otros tipos de piezas aquí
-    return false;  // Por defecto, retorna falso si el movimiento no es válido
-}*/
+
+    // Llama al método puedeMoverse de la pieza
+    return pieza->puedeMoverse(origen, destino, tablero);
+
+    
+}
 
 bool Tablero::moverPieza(Pieza* pieza, const Casilla& origen, const Casilla& destino)
 {
-    // Verifica si la posición de destino es válida y si el movimiento cumple con las reglas del juego
-    // Por ejemplo, puedes verificar si la posición de destino está dentro de los límites del tablero
-    // Comprueba si se puede mover a la posición de destino
-    if (estaDentroDelTablero(destino)) { // && puedeMoverse(pieza, origen, destino)
-        // Mueve la pieza
-        casillas[destino.f][destino.c] = pieza;
-        casillas[origen.f][origen.c] = nullptr; // Limpia la posición de origen
-        pieza->setCasilla(destino.f, destino.c);
-        return true;  // Movimiento exitoso
+    // Verifica si la posición de destino está dentro de los límites del tablero
+    if (!estaDentroDelTablero(destino)) {
+        return false;
     }
-    return false;  // Movimiento fallido
+
+    // Verifica si el movimiento es válido
+    if (!puedeMoverse(pieza, origen, destino)) {
+        return false;
+    }
+
+    // Realiza el movimiento
+    casillas[destino.f][destino.c] = pieza;
+    casillas[origen.f][origen.c] = nullptr;
+    pieza->setCasilla(destino.f, destino.c);
+
+    // Configurar `movida` a `true`，porque la pieza se movió
+    pieza->setMovida(true);
+
+    return true;
 }
 
 

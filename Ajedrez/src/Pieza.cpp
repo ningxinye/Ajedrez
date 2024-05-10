@@ -5,6 +5,8 @@
 
 Pieza::Pieza()
 {
+    //movida = 0;
+
 }
 
 Pieza::~Pieza()
@@ -162,5 +164,6 @@ Pieza::Pieza(const Pieza& p)
     casilla = p.casilla;
     fila = p.fila;
     col = p.col;
+    //movida = p.movida;
 
 }
