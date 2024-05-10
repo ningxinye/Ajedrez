@@ -1,15 +1,3 @@
-﻿  Mundo.cpp
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Mundo.cpp(121,50): error C2662: “bool Tablero::moverPieza(Pieza *,const Casilla &,const Casilla &)”: 不能将“this”指针从“const Tablero”转换为“Tablero &”
-  D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Mundo.cpp(121,37):
-  转换丢失限定符
-  D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Tablero.h(52,7):
-  参见“Tablero::moverPieza”的声明
-  D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Mundo.cpp(121,50):
-  尝试匹配参数列表“(Pieza *, Casilla, Casilla)”时
-  
-  Tablero.cpp
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Tablero.cpp(127,15): error C2065: “peon”: 未声明的标识符
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Tablero.cpp(127,35): error C2061: 语法错误: 标识符“Peon”
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Tablero.cpp(128,13): error C2065: “peon”: 未声明的标识符
-D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Tablero.cpp(128,21): error C2065: “peon”: 未声明的标识符
-  正在生成代码...
+﻿  Peon.cpp
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Peon.cpp(27,1): warning C4715: “Peon::Mov”: 不是所有的控件路径都返回值
+  Ajedrez.vcxproj -> D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Ajedrez.exe

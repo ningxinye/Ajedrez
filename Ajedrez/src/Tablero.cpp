@@ -1,7 +1,5 @@
 ﻿
 #include "Tablero.h"
-#include "Peon.h"
-
 #include <iostream>
 #include <string>
 
@@ -117,7 +115,7 @@ bool Tablero::estaDentroDelTablero(const Casilla& casilla) const
     return casilla.f >= 0 && casilla.f < 5 && casilla.c >= 0 && casilla.c < 5;
 }
 
-bool Tablero::puedeMoverse(Pieza* pieza, const Casilla& origen, const Casilla& destino)
+/*bool Tablero::puedeMoverse(Pieza* pieza, const Casilla& origen, const Casilla& destino)
 {
     // Lógica para verificar si una pieza puede moverse desde origen a destino
         // Esto puede incluir verificar las reglas de movimiento de la pieza específica
@@ -131,14 +129,14 @@ bool Tablero::puedeMoverse(Pieza* pieza, const Casilla& origen, const Casilla& d
     }
     // Agregue lógica para otros tipos de piezas aquí
     return false;  // Por defecto, retorna falso si el movimiento no es válido
-}
+}*/
 
 bool Tablero::moverPieza(Pieza* pieza, const Casilla& origen, const Casilla& destino)
 {
     // Verifica si la posición de destino es válida y si el movimiento cumple con las reglas del juego
     // Por ejemplo, puedes verificar si la posición de destino está dentro de los límites del tablero
     // Comprueba si se puede mover a la posición de destino
-    if (estaDentroDelTablero(destino) && puedeMoverse(pieza, origen, destino)) {
+    if (estaDentroDelTablero(destino)) { // && puedeMoverse(pieza, origen, destino)
         // Mueve la pieza
         casillas[destino.f][destino.c] = pieza;
         casillas[origen.f][origen.c] = nullptr; // Limpia la posición de origen

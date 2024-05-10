@@ -1,9 +1,8 @@
 #pragma once
-
 #include "Pieza.h"
 
 
-class Peon
+class Peon : public Pieza //La clase Pe¨®n hereda de la clase Pieza.
 {
 public:
  

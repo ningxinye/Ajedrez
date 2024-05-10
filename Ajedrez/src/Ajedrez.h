@@ -26,4 +26,9 @@ public:
 		return tablero;
 	}
 
+	// Devuelve una referencia no constante al tablero
+	Tablero& getTablero() {
+		return tablero;
+	}
+
 };
