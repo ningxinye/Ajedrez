@@ -2,7 +2,7 @@
 #include "Pieza.h"
 
 
-class Peon : public Pieza //La clase Pe¨®n hereda de la clase Pieza.
+class Peon// : public Pieza //La clase Pe¨®n hereda de la clase Pieza.
 {
 public:
  
