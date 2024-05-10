@@ -3,27 +3,25 @@
 
 bool Peon::puedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* casillas[5][5])
 {
+    //El color del pe車n determina la direcci車n del progreso.
     int direction = (getColor() == Blanca) ? 1 : -1;
 
     // Verifica si el movimiento es hacia adelante
-    if (destino.c == origen.c) {
-        // Permite mover un paso hacia adelante si la casilla est芍 vac赤a
-        if (destino.f == origen.f + direction && casillas[destino.f][destino.c] == nullptr) {
-            return true;
-        }
-        // Permite mover dos pasos hacia adelante desde la posici車n inicial
-        if (!getMovida() && destino.f == origen.f + (2 * direction) && casillas[destino.f][destino.c] == nullptr &&
-            casillas[origen.f + direction][origen.c] == nullptr) {
+    if (destino.c == origen.c && destino.f == origen.f + direction) {
+        // posicion objetiva debe ser vacia
+        if (casillas[destino.f][destino.c] == nullptr) {
             return true;
         }
     }
+
 
     // Verifica movimiento diagonal para comer piezas
     if (abs(destino.c - origen.c) == 1 && destino.f == origen.f + direction) {
         Pieza* destinoPieza = casillas[destino.f][destino.c];
-        // Permite comer si la casilla de destino contiene una pieza del color opuesto
-        return destinoPieza != nullptr && destinoPieza->getColor() != getColor();
+        // Comprobar si hay una pieza del oponente en la posici車n objetivo
+        if (destinoPieza != nullptr && destinoPieza->getColor() != casillas[origen.f][origen.c]->getColor()) {
+            return true;
+        }
     }
-
     return false; // Movimiento no v芍lido
 }
