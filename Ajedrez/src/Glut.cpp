@@ -1,5 +1,7 @@
 #include "Mundo.h"
 #include "freeglut.h"
+#include <iostream>
+#include <fstream>
 
 Mundo mundo;
 
@@ -13,6 +15,17 @@ void OnMouseDown(int button, int state, int x, int y);//cuando se pulse el rat車
 
 int main(int argc, char* argv[])
 {
+	// Redirigir la salida est芍ndar de forma segura
+	FILE* flujo;
+	errno_t error;
+
+	error = freopen_s(&flujo, "output.txt", "w", stdout);
+	if (error != 0) {
+		std::cerr << "No se pudo redirigir stdout." << std::endl;
+		return 1;
+	}
+
+
 	//Inicializar el gestor de ventanas GLUT
 	//y crear la ventana
 	glutInit(&argc, argv);
@@ -32,7 +45,7 @@ int main(int argc, char* argv[])
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25, OnTimer, 0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
 	glutKeyboardFunc(OnKeyboardDown);
-
+	glutMouseFunc(OnMouseDown);
 
 
 	//pasarle el control a GLUT,que llamara a los callbacks
@@ -66,19 +79,12 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 void OnMouseDown(int button, int state, int x, int y)
 {
 	// Verificar si se ha presionado el bot車n izquierdo del rat車n y el estado es de presionado
-	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
+	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN && x >= 125 && x <= 677 && y >= 25 && y <= 577)
 	{
-		// Convertir las coordenadas de la ventana a coordenadas del tablero de ajedrez
-		// Ajusta la escala seg迆n el tama?o del tablero y la ventana
-		int fila = static_cast<int>((y - 25) / 110.4);
-		int col = static_cast<int>((x - 125) / 110.4);
-
-		// Aseg迆rate de que las coordenadas est芍n dentro de los l赤mites del tablero
-		if (fila >= 0 && fila < 5 && col >= 0 && col < 5)
-		{
 			// Llama a la funci車n de Mundo para procesar el clic del rat車n
 			mundo.pulsar_raton(button, state, x, y);
-		}
+
+
 	}
 }
 

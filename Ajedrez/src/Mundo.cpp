@@ -88,39 +88,16 @@ void Mundo::tecla(unsigned char key){
 
 void Mundo::pulsar_raton(int button, int state, int x, int y)
 {
-	if (estado != JUEGO_BABY) return;  // Solo permitir movimientos en el estado JUEGO_BABY
+	if (estado != JUEGO_BABY) return; // Solo procesar eventos en el estado JUEGO_BABY
 
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-		int col = static_cast<int>((x - 125) / 110.4);
-		int fila = static_cast<int>((y - 25) / 110.4);
+		// Convertir coordenadas de pantalla a coordenadas del tablero
+		int col = static_cast<int>((x - 125) / 69);
+		int fila = static_cast<int>((y - 25) / 69);
 
-		// Aseg¨²rate de que la posici¨®n est¨¢ dentro de los l¨ªmites del tablero
+		// Verificar que las coordenadas est¨¢n dentro del rango del tablero
 		if (fila >= 0 && fila < 5 && col >= 0 && col < 5) {
-			if (!piezaSeleccionada) {
-				// Intentar seleccionar una pieza
-				Pieza* pieza = ajedrez.getTablero().obtenerPiezaEnPosicion(fila, col);
-				if (pieza != nullptr && pieza->getColor() == ajedrez.getTurno()) {
-					origen = Casilla(fila, col);
-					piezaSeleccionada = true;
-				}
-			}
-			else {
-				// Intentar mover la pieza seleccionada
-				destino = Casilla(fila, col);
-				Pieza* pieza = ajedrez.getTablero().obtenerPiezaEnPosicion(origen.f, origen.c);
-
-				// Intenta mover la pieza y verifica si el movimiento fue exitoso
-				if (pieza != nullptr && ajedrez.getTablero().moverPieza(pieza, origen, destino)) {
-					// Mover exitosamente la pieza
-					piezaSeleccionada = false;
-
-					// renovar el estado de las piezas a true
-					pieza->setMovida(true);
-
-					// Actualizar la pantalla
-					glutPostRedisplay();
-				}
-			}
+			ajedrez.jugada(col, fila); // Procesar la jugada en el objeto ajedrez
 		}
 	}
 }

@@ -6,29 +6,23 @@
 
 
 
-Tablero::Tablero():tabla(nullptr)
-{
+
+Tablero::Tablero() {
+
     // Inicializar el tablero con piezas en las posiciones iniciales
     casillas.resize(5, std::vector<Pieza*>(5, nullptr)); // Tablero de 5*5
- 
-     // Inicializar tabla
-    tabla = new Pieza * [n];
-    for (int i = 0; i < n; ++i) {
-        tabla[i] = new Pieza[n];
-    }
-
-   // Aquí debes inicializar las casillas con las piezas en su posición inicial
-
+    posicionInicial(); // Asegúrate de que las piezas están configuradas desde el inicio
 }
 
 Tablero::~Tablero()
 {
     // Libera la memoria de la pieza de ajedrez en el tablero.
-    if (tabla != nullptr) {
-        for (int i = 0; i < n; ++i) {
-            delete[] tabla[i];
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 5; j++) 
+        {
+            delete casillas[i][j]; // Eliminar pieza individualmente
         }
-        delete[] tabla;
     }
 }
 
@@ -45,7 +39,7 @@ void Tablero::dibuja() {
             else {
                 glColor3ub(189, 236, 182); // verde claro
             }
-         
+
             glBegin(GL_POLYGON);
             // Usando las coordenadas correctas, dibuja las celdas del tablero de ajedrez a un tamaño de 1x1
             glVertex3f(-0.5, -0.5, -0.5f);
@@ -81,8 +75,6 @@ void Tablero::dibuja() {
 }
 */
 
-
-
 void Tablero::posicionInicial()//Posicion iniciales de las piezas en el tablero
 {
     // Piezas Blanca
@@ -94,7 +86,7 @@ void Tablero::posicionInicial()//Posicion iniciales de las piezas en el tablero
     for (int i = 0; i < 5; ++i) {
         casillas[1][i] = new Pieza(Tipo::Peon, Color::Blanca, 1, i);
     }
-    
+
     // Piezas Negra
     casillas[4][0] = new Pieza(Tipo::Rey, Color::Negra, 4, 0);
     casillas[4][1] = new Pieza(Tipo::Reina, Color::Negra, 4, 1);
@@ -106,8 +98,49 @@ void Tablero::posicionInicial()//Posicion iniciales de las piezas en el tablero
     }
     // Vacios
     for (int i = 0; i < 5; ++i) {
-        casillas[2][i] = new Pieza(Tipo::No_pieza, Color:: Sin_color, 2, i);
+        casillas[2][i] = new Pieza(Tipo::No_pieza, Color::Sin_color, 2, i);
     }
+}
+
+
+Color Tablero::getColor(Casilla cas)
+{
+    if (cas.f < 0 || cas.f >= 5 || cas.c < 0 || cas.c >= 5) return Sin_color; // Asegurar los límites
+    if (casillas[cas.f][cas.c] == nullptr) return Sin_color;
+    return casillas[cas.f][cas.c]->getColor();
+}
+
+void Tablero::mostrarPosiblesMovimientos(Casilla cas)
+{
+
+}
+
+void Tablero::resetearAyudaMovimiento()
+{
+    // Resetea o limpia los posibles movimientos mostrados anteriormente
+}
+
+bool Tablero::validarMovimiento(Casilla origen, Casilla destino)
+{
+    // Validación de movimiento basada en las reglas de la pieza
+    if (!estaDentroDelTablero(origen) || !estaDentroDelTablero(destino)) return false;
+    Pieza* pieza = casillas[origen.f][origen.c];
+
+    // Convertir casillas a tipo Pieza*[][5]
+    Pieza* tablero[5][5];
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            tablero[i][j] = casillas[i][j];
+        }
+    }
+
+    return pieza && pieza->puedeMoverse(origen, destino, tablero);
+}
+
+
+Pieza* Tablero::obtenerPiezaEnPosicion(int fila, int col) const
+{
+    return casillas[fila][col];
 }
 
 bool Tablero::estaDentroDelTablero(const Casilla& casilla) const
@@ -120,10 +153,10 @@ bool Tablero::estaDentroDelTablero(const Casilla& casilla) const
 
 bool Tablero::puedeMoverse(Pieza* pieza, const Casilla& origen, const Casilla& destino)
 {
-    if (!estaDentroDelTablero(destino)) {
+    if (!estaDentroDelTablero(destino)) 
         return false;
-    }
 
+    /**/
     // Convertir casillas a tipo Pieza*[][5]
     Pieza* tablero[5][5];
     for (int i = 0; i < 5; i++) {
@@ -142,11 +175,13 @@ bool Tablero::moverPieza(Pieza* pieza, const Casilla& origen, const Casilla& des
 {
     // Verifica si la posición de destino está dentro de los límites del tablero
     if (!estaDentroDelTablero(destino)) {
+        std::cout << "Movimiento fuera del tablero." << std::endl;
         return false;
     }
 
     // Verifica si el movimiento es válido
     if (!puedeMoverse(pieza, origen, destino)) {
+        std::cout << "Movimiento no permitido por las reglas de la pieza." << std::endl;
         return false;
     }
 

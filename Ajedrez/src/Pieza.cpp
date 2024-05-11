@@ -5,7 +5,7 @@
 
 Pieza::Pieza()
 {
-    //movida = 0;
+    movida = 0;
 
 }
 
