@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <vector>
 #include"Pieza.h"
 #include "freeglut.h"
 
@@ -8,36 +9,14 @@
 class Tablero
 {
 private:
-	const int n = 5;
+	static const int n = 5;
 	std::vector<std::vector<Pieza*>> casillas; // Representaci¨®n del tablero
-	Pieza** tabla; //Tablero es una matriz de piezas
+   // Pieza** PIE; //PIE es una matriz de piezas
+	int** mov; //matriz auxiliar para implementar la ayuda al movimiento
 
 public:
 	Tablero();
 	~Tablero();
-
-	// M¨¦todos para mostrar el tablero, realizar movimientos, etc.
-	void mostrar() const {
-		// Implementaci¨®n para mostrar el tablero en la consola
-	}
-
-	Pieza* obtenerPiezaEnPosicion(int fila, int col) const {
-		return casillas[fila][col];
-	}
-
-	// M¨¦todo para comprobar si una casilla est¨¢ ocupada por una pieza
-	bool estaOcupada(int fila, int col) const {
-		return casillas[fila][col] != nullptr;
-	}
-
-	// M¨¦todo para comprobar si una casilla est¨¢ ocupada por una pieza de un color espec¨ªfico
-	bool estaOcupadaPorColor(int fila, int col, Pieza color) const {
-		if (casillas[fila][col] != nullptr) {
-
-			return casillas[fila][col]->getColor();
-		}
-		return false;
-	}
 
 	//gr¨¢fico
 	void dibuja();
@@ -45,6 +24,12 @@ public:
 
 	//logico
 	void posicionInicial();
+	int getColor(Casilla& cas); // Obtener el color de la pieza de ajedrez en una posici¨®n determinada.
+    int validarEnroque( Casilla& origen,  Casilla& destino);
+    bool validarMovimiento(const Casilla& origen, const Casilla& destino);
+	void actualizarMovimiento(Casilla& origen, Casilla& destino);
+	int PosiblesMovimientos(Casilla& origen);
+	void setMovInicial();
 
 
 };

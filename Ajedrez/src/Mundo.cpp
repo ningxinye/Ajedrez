@@ -39,9 +39,6 @@ void Mundo::dibuja()
 	else if (estado == JUEGO_BABY) {
 
 		ajedrez.dibuja();
-		
-
-	
 	
 	}
 
@@ -85,3 +82,14 @@ void Mundo::tecla(unsigned char key){
 
 	}
 }
+
+void Mundo::JUEGA(int button, int state, int x, int y)
+{
+	if (estado == JUEGO_BABY) {
+		ajedrez.JUEGO(button, state, x, y);
+	}
+}
+
+
+
+

@@ -2,7 +2,6 @@
 #include "Ajedrez.h"
 
 //desde archivo Mundo, implementamos una sensilla m¨¢quina de estado 
-
 class Mundo
 {
 private:
@@ -18,5 +17,7 @@ public:
 
 	void dibuja(); //pantalla
 	void tecla(unsigned char key);
+	//MOMENTOS QUE PUEDEN JUGAR CON EL RATON
+	void JUEGA(int button, int state, int x, int y);
 
 };

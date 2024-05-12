@@ -1,10 +1,9 @@
-
 #pragma once
-
 #include <iostream>
 #include <vector>
 #include"ETSIDI.h"
 #include "Casilla.h"
+#include"Peon.h"
 #include"freeglut.h"
 
 enum  Tipo { No_pieza, Peon, Caballo, Alfil, Torre, Rey, Reina };
@@ -18,8 +17,7 @@ public:
     ~Pieza();
 
     //grafico
-    void dibuja();
-
+    void dibuja(int AUX, int auxmov);
 
     //Constructor
    Pieza(Tipo tipo, Color color, int fila, int col):tipo(tipo), color(color), casilla(fila, col), fila(fila), col(col)
@@ -27,25 +25,29 @@ public:
     }
     Pieza(const Pieza& p);
 
-    // Métodos para obtener información sobre la pieza
+    // Metodos para obtener informacion sobre la pieza
     Tipo getTipo() const { return tipo; }
     Color getColor() const { return color; }
     Casilla getCasilla() { return casilla; }
+    bool getMovida() const { return movida; }
     int getFila() const { return fila; }
     int getCol() const { return col; }
 
-
-    // Métodos para mover la pieza y otras operaciones relacionadas
-    void mover(int nuevafila, int nuevacol) {
-        // Implementación del movimiento de la pieza
-    }
-
-
+    // con el valor de movida: logica de mov de las piezas, verificaciones.....
     void setTipo(Tipo tipo) { tipo = tipo; }
     void setColor(Color color) { color = color; }
     void setCasilla(int x, int y) { casilla.f = x; casilla.c = y; }
+    void setMovida(bool a) { movida = a; }
     int setFila(int fila) { fila = fila; }
     int setCol(int col) { col = col; }
+
+     // Define el m¨¦todo virtual puedeMoverse
+    virtual bool puedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* casillas[5][5]) {
+        // De forma predeterminada, retorna false (los subtipos deben anular este m¨¦todo)
+        return false;
+    }
+
+    
 
 private:
     Tipo tipo;
@@ -53,6 +55,7 @@ private:
     Casilla casilla;
     int fila=0;//fila (1,2...5)
     int col=0;//columna (a,b,c..e)
+    bool movida;//indica si la pieza se ha movido durante la partida o no
 
 };
 
