@@ -1,2 +1,3 @@
-﻿  Glut.cpp
+﻿  Peon.cpp
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Peon.cpp(51,1): warning C4715: “Peon::puedecomer”: 不是所有的控件路径都返回值
   Ajedrez.vcxproj -> D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Ajedrez.exe

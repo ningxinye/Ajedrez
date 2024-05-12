@@ -103,66 +103,75 @@ void Tablero::posicionInicial()//Posicion iniciales de las piezas en el tablero
 
 int Tablero::getColor(Casilla& cas)
 {
-    std::cout << "Checking color at position - f: " << cas.f << ", c: " << cas.c << std::endl;
     if (cas.f < 0 || cas.f >= 5 || cas.c < 0 || cas.c >= 5) {
-        std::cout << "Position out of bounds." << std::endl;
         return Sin_color; // Asegurar los límites
     }
     if (casillas[cas.f][cas.c] == nullptr) {
-        std::cout << "No piece at the selected position." << std::endl;
         return Sin_color;
     }
     int color = casillas[cas.f][cas.c]->getColor();
-    std::cout << "Color at position: " << color << std::endl;
     return color;
 }
 
 int Tablero::validarEnroque(Casilla& origen, Casilla& destino)
 {
-    if ((casillas[origen.f][origen.c]->getMovida() != 0) || (casillas[destino.f][destino.c]->getMovida() != 0)) return 0;	//evalua si las piezas se han movido
-    else if (casillas[origen.f][origen.c]->getColor() != casillas[destino.f][destino.c]->getColor()) return 0;	//evalua si son del mismo color
-    else if (origen.c > destino.c) return 1; //enroque largo
-    else return -1;	//enroque corto
+    return 0;
 }
 
 bool Tablero::validarMovimiento(const Casilla& origen, const Casilla& destino)
 {
     //Comprobación de enroque si procede
-    //cod
-    // Validación de movimiento basada en las reglas de la pieza
-    if (casillas[origen.f][origen.c]->getColor() == casillas[destino.f][destino.c]->getColor())
-    {
-        //Si el color de destino es igual que el de origen invalida el movimiento
+     //cod
+
+     // Validación de movimiento basada en las reglas de la pieza
+    if (casillas[origen.f][origen.c]->getColor() == casillas[destino.f][destino.c]->getColor() && casillas[destino.f][destino.c]->getTipo() != No_pieza) {
+        // Si el color de destino es igual que el de origen y hay una pieza en destino, invalida el movimiento
         return false;
     }
     else {
-        Pieza* tempCasillas[5][5];
-        for (int i = 0; i < 5; ++i) {
-            for (int j = 0; j < 5; ++j) {
-                tempCasillas[i][j] = casillas[i][j];
-            }
-        }
-        bool R = false;
-        switch (casillas[origen.f][origen.c]->getTipo()) { //Comprobación del movimiento en función de la pieza de origen y destino
+        bool resultado = false;  // Variable para almacenar el resultado del movimiento
+        switch (casillas[origen.f][origen.c]->getTipo()) { // Comprobación del movimiento en función de la pieza de origen y destino
         case Peon:
-           if (((casillas[origen.f][origen.c]->getColor() == Blanca) && (casillas[destino.f][destino.c]->getColor() == Negra)) || ((casillas[origen.f][origen.c]->getColor() == Negra) && (casillas[destino.f][destino.c]->getColor() == Blanca)))
-            {
-                R = Peon::puedecomer(origen, destino, tempCasillas);
-            } //Si hay una Pieza de Negro en el destino de un peon blanco o al reves se llama al metodo que comprueba el movimiento de comer
-            else { R = Peon::puedeMoverse(origen, destino, tempCasillas); }
+            // Crea una copia temporal del tablero para evaluar los movimientos sin alterar el tablero original
+            Pieza* tempCasillas[5][5];
+            for (int i = 0; i < 5; ++i) {
+                for (int j = 0; j < 5; ++j) {
+                    tempCasillas[i][j] = casillas[i][j];
+                }
+            }
+            if (((casillas[origen.f][origen.c]->getColor() == Blanca) && (casillas[destino.f][destino.c]->getColor() == Negra)) ||
+                ((casillas[origen.f][origen.c]->getColor() == Negra) && (casillas[destino.f][destino.c]->getColor() == Blanca))) {
+                // Si hay una pieza de color opuesto en el destino, se verifica si el peón puede comer
+                std::cout << "Llamando a puedeMoverse con origen: (" << origen.f << ", " << origen.c << ") Y destino: (" << destino.f << ", " << destino.c << ")\n";
+                     resultado = Peon::puedecomer(origen, destino, tempCasillas);
+                     std::cout << "Result of puedeMoverse: " << resultado << std::endl;
+           
+            }
+            else {
+                // Se verifica si el peón puede moverse a una casilla vacía
+                resultado = Peon::puedeMoverse(origen, destino, tempCasillas);
+            }
             break;
         case Torre:
+            // Implementar lógica de movimiento de la torre
             break;
         case Caballo:
+            // Implementar lógica de movimiento del caballo
             break;
         case Alfil:
+            // Implementar lógica de movimiento del alfil
             break;
         case Reina:
+            // Implementar lógica de movimiento de la reina
             break;
         case Rey:
+            // Implementar lógica de movimiento del rey
+            break;
+        default:
+            resultado = false;  // Si no se reconoce el tipo de pieza, el movimiento es inválido
             break;
         }
-        return false;
+        return resultado;  // Devuelve el resultado de la validación del movimiento
     }
 }
 
