@@ -39,9 +39,6 @@ void Mundo::dibuja()
 	else if (estado == JUEGO_BABY) {
 
 		ajedrez.dibuja();
-		
-
-	
 	
 	}
 
@@ -86,19 +83,13 @@ void Mundo::tecla(unsigned char key){
 	}
 }
 
-void Mundo::pulsar_raton(int button, int state, int x, int y)
+void Mundo::JUEGA(int button, int state, int x, int y)
 {
-	if (estado != JUEGO_BABY) return; // Solo procesar eventos en el estado JUEGO_BABY
-
-	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-		// Convertir coordenadas de pantalla a coordenadas del tablero
-		int col = static_cast<int>((x - 125) / 69);
-		int fila = static_cast<int>((y - 25) / 69);
-
-		// Verificar que las coordenadas est¨¢n dentro del rango del tablero
-		if (fila >= 0 && fila < 5 && col >= 0 && col < 5) {
-			ajedrez.jugada(col, fila); // Procesar la jugada en el objeto ajedrez
-		}
+	if (estado == JUEGO_BABY) {
+		ajedrez.JUEGO(button, state, x, y);
 	}
 }
+
+
+
 

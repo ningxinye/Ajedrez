@@ -2,7 +2,6 @@
 #include "Ajedrez.h"
 
 //desde archivo Mundo, implementamos una sensilla m¨¢quina de estado 
-
 class Mundo
 {
 private:
@@ -11,13 +10,6 @@ private:
 	enum Estados { INICIO, JUEGO_BABY, JUEGO_GARDNER, FIN, PAUSA };
 	Estados estado;
 
-	//posicion original y posicion de destino
-	Casilla origen;
-	Casilla destino;
-
-	//verificacion de la selecion o no
-	bool piezaSeleccionada;
-
 
 public:
 	Mundo();
@@ -25,8 +17,7 @@ public:
 
 	void dibuja(); //pantalla
 	void tecla(unsigned char key);
-
-	//metodos logicos
-	void pulsar_raton(int button, int state, int x, int y);
+	//MOMENTOS QUE PUEDEN JUGAR CON EL RATON
+	void JUEGA(int button, int state, int x, int y);
 
 };

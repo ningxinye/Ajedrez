@@ -4,7 +4,9 @@
 using namespace std;
 
 
-Ajedrez::Ajedrez() : turno(Color::Blanca), piezaSeleccionada(false), origen(-1, -1), destino(-1, -1) {}
+Ajedrez::Ajedrez()
+{
+}
 
 void Ajedrez::dibuja()
 {
@@ -20,67 +22,105 @@ void Ajedrez::dibuja()
 void Ajedrez::inicializa()
 {
 	tablero.posicionInicial();
-    turno = Color::Blanca;
-    piezaSeleccionada = false;
-
+	tablero.setMovInicial();
+	
 }
-Color Ajedrez::getTurno() const
+
+bool Ajedrez::verificarturno(int color)
 {
-    return turno;
+	std::cout << "Verificando turno. Turno actual: " << turno << ", Color de pieza: " << color << std::endl;
+	if ((turno % 2 == 0 && color != 0) || (turno % 2 == 1 && color != 1)) {
+		std::cout << "Volverse incorrecto o color de la pieza incorrecta." << std::endl;
+		return false;
+	}
+	return true;
 }
 
-const Tablero& Ajedrez::getTablero() const
+Casilla Ajedrez::getCasilla(int x, int y) //Devuelve la casilla en función de las coordenadas x,y del ratón
 {
-    return tablero;
+	Casilla casilla; 
+	casilla.c=  floor((x - 226) / 70); //Obtenido experimentalmente para el tama?o de ventana del juego
+	casilla.f = 4 - floor((y - 126) / 70);
+	return casilla;
 }
 
-Tablero& Ajedrez::getTablero()
+int Ajedrez::JUEGO(int button, int state, int x, int y)
 {
-    return tablero;
+	// 日志：鼠标事件接收
+	std::cout << "Evento del RATON recibido - Botón: " << button << ", ESTADO: " << state << ", x: " << x << ", y: " << y << std::endl;
+	if (origen.f == HOME && origen.c == HOME) { //Si no hay origen seleccionado, se slecciona uno
+
+		origen = getCasilla(x, y);
+		std::cout << "Origen seleccionado - f: " << origen.f << ", c: " << origen.c << std::endl; // 日志：选定起始位置
+		if (!verificarturno(tablero.getColor(origen))) { //Si no es el turno o se pulsa una casilla vacía se borra el origen
+
+			origen.f = origen.c = HOME;
+			std::cout << "Origen no válido debido a turno o casilla vacía" << std::endl; // 日志：无效起始位置
+			return 0;
+		}
+		tablero.PosiblesMovimientos(origen); //Muestra los posibles movimiento de la pieza seleccionada
+
+	}
+	else if (origen.f != HOME && origen.c != HOME && destino.f == HOME && destino.c == HOME) {	//Si ya está guarado el origen
+		//slecciona el destino
+		destino = getCasilla(x, y);
+		std::cout << "Destino seleccionado - f: " << destino.f << ", c: " << destino.c << std::endl; // 日志：选定目标位置
+
+
+		if (destino == origen) { //Si el origen es igual al destino, se borra el origen y el destino
+
+			origen.f = origen.c = destino.f = destino.c = HOME;
+			tablero.setMovInicial(); //Borra la matriz de ayuda el movimeinto
+			std::cout << "El origen y el destino son los mismos. Reiniciando." << std::endl; // 日志：起始和目标位置相同
+			return 0;
+
+		}
+		else if (!tablero.validarMovimiento(origen, destino)) {//Si el movimiento no es válido borra el destino
+
+			destino.f = destino.c = HOME;
+			std::cout << "Movimiento no válido. Restablecer destino." << std::endl; // 日志：无效移动
+			return 0;
+
+		}
+
+		else if ((tablero.validarEnroque(origen, destino) != 0) && tablero.validarMovimiento(origen, destino)) {		//Si se dan condiciones de enroque y no hay piezas en medio 
+
+			if (tablero.validarEnroque(origen, destino) > 0) {		//ENROQUE LARGO	
+				tablero.actualizarMovimiento(origen, destino = { origen.f, origen.c - 2 });
+				tablero.actualizarMovimiento(destino, destino = { destino.f, destino.c + 3 });
+			}
+
+			else if (tablero.validarEnroque(origen, destino) < 0) {		//ENROQUE CORTO
+				tablero.actualizarMovimiento(origen,destino= { origen.f, origen.c + 2 });
+				tablero.actualizarMovimiento(destino, destino = { destino.f, destino.c - 2 });
+			}
+			turno++; //Se completa el movimiento y se aumenta el turno
+			origen.f = origen.c = destino.f = destino.c = HOME; //Se borran origen y destino
+			tablero.setMovInicial();
+	
+			return 0;
+
+		}
+		else { //Se valida el movimiento y no es enroque
+
+			tablero.actualizarMovimiento(origen, destino);						//Atualiza la matriz del tablero
+			turno++;												//Aumenta el turno
+			origen.f = origen.c = destino.f = destino.c = HOME;		//Resetea las casillas de origen y destino
+			tablero.setMovInicial();									//Resetea la matriz de ayuda al movimiento
+
+			}
+
+		}
+	
+	if (turno > 9) 
+	{
+		turno = 0;
+	}
+	return 0;
 }
 
-void Ajedrez::jugada(int col, int fila)
+void Ajedrez::setTurno(int v)
 {
-    //Casilla destino = { fila, col };
-
-    if (!piezaSeleccionada) {
-
-        Casilla nuevaOrigen(col, fila);
-
-        if (tablero.obtenerPiezaEnPosicion(origen.f, origen.c) && tablero.getColor(origen) == turno) {
-            // Si la pieza seleccionada pertenece al jugador en la ronda actual
-            origen = nuevaOrigen;
-            piezaSeleccionada = true;
-            tablero.mostrarPosiblesMovimientos(origen); // Mostrar posibles movimientos, si se implementan
-        }
-
-        else {
-            // Si no hay ninguna pieza de ajedrez en la posición seleccionada o no es la pieza de ajedrez del jugador actual
-            origen = Casilla(-1, -1); // restablecer origen
-            piezaSeleccionada = false;
-        }
-    }
-    else {
-        // Si una pieza ya ha sido seleccionada, maneja la selección de la posición de destino.
-        Casilla nuevoDestino(col, fila);
-        if (nuevoDestino == origen) {
-            // Si la posición de destino es la misma que el origen, anule la selección
-            origen = Casilla(-1, -1);
-            piezaSeleccionada = false;
-           // tablero.resetearAyudaMovimiento(); // Mostrar posibles movimientos
-        }
-        else if (tablero.validarMovimiento(origen, destino)) {
-            // Comprueba si es un movimiento válido.
-            Pieza* pieza = tablero.obtenerPiezaEnPosicion(origen.f, origen.c);
-            if (pieza) {
-                tablero.moverPieza(pieza, origen, nuevoDestino);
-                turno = (turno == Color::Blanca) ? Color::Negra : Color::Blanca;// Cambiar de ronda
-                origen = Casilla(-1, -1);
-                destino = Casilla(-1, -1);
-                piezaSeleccionada = false;
-              //  tablero.resetearAyudaMovimiento(); //Posibles movimientos para restablecer la pantalla
-            }
-        }
-      
-    }
+	turno = v;
 }
+

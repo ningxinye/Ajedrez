@@ -9,9 +9,10 @@
 class Tablero
 {
 private:
-	const int n = 5;
+	static const int n = 5;
 	std::vector<std::vector<Pieza*>> casillas; // Representaci車n del tablero
-//	Pieza** tabla; //Tablero es una matriz de piezas
+   // Pieza** PIE; //PIE es una matriz de piezas
+	int** mov; //matriz auxiliar para implementar la ayuda al movimiento
 
 public:
 	Tablero();
@@ -23,36 +24,12 @@ public:
 
 	//logico
 	void posicionInicial();
-	Pieza* obtenerPiezaEnPosicion(int fila, int col) const;
-	bool validarMovimiento(Casilla origen, Casilla destino);
-	bool moverPieza(Pieza* pieza, const Casilla& origen, const Casilla& destino);
-	// Verifica si una casilla est芍 dentro del tablero
-	bool estaDentroDelTablero(const Casilla& casilla) const;
-	// Verifica si una pieza puede moverse desde la casilla de origen a la de destino
-	bool puedeMoverse(Pieza* pieza, const Casilla& origen, const Casilla& destino);
-	Color getColor(Casilla cas); // Obtener el color de la pieza de ajedrez en una posici車n determinada.
-	void mostrarPosiblesMovimientos(Casilla cas);
-	void resetearAyudaMovimiento();
+	int getColor(Casilla& cas); // Obtener el color de la pieza de ajedrez en una posici車n determinada.
+    int validarEnroque( Casilla& origen,  Casilla& destino);
+    bool validarMovimiento(const Casilla& origen, const Casilla& destino);
+	void actualizarMovimiento(Casilla& origen, Casilla& destino);
+	int PosiblesMovimientos(Casilla& origen);
+	void setMovInicial();
 
 
-	/*
-	// M谷todo para comprobar si una casilla est芍 ocupada por una pieza
-	bool estaOcupada(int fila, int col) const {
-		return casillas[fila][col] != nullptr;
-	}
-
-	// M谷todo para comprobar si una casilla est芍 ocupada por una pieza de un color espec赤fico
-	bool estaOcupadaPorColor(int fila, int col, Pieza color) const {
-		if (casillas[fila][col] != nullptr) {
-
-			return casillas[fila][col]->getColor();
-		}
-		return false;
-	}
-
-	// M谷todos para mostrar el tablero, realizar movimientos, etc.
-	void mostrar() const {
-		// Implementaci車n para mostrar el tablero en la consola
-	}
-	*/
 };

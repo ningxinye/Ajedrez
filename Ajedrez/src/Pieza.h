@@ -1,11 +1,9 @@
-
 #pragma once
-
 #include <iostream>
 #include <vector>
 #include"ETSIDI.h"
 #include "Casilla.h"
-//#include"Peon.h"
+#include"Peon.h"
 #include"freeglut.h"
 
 enum  Tipo { No_pieza, Peon, Caballo, Alfil, Torre, Rey, Reina };
@@ -19,8 +17,7 @@ public:
     ~Pieza();
 
     //grafico
-    void dibuja();
-
+    void dibuja(int AUX, int auxmov);
 
     //Constructor
    Pieza(Tipo tipo, Color color, int fila, int col):tipo(tipo), color(color), casilla(fila, col), fila(fila), col(col)
@@ -36,11 +33,6 @@ public:
     int getFila() const { return fila; }
     int getCol() const { return col; }
 
-   /*// Define el m¨¦todo virtual puedeMoverse
-    virtual bool puedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* casillas[5][5]) {
-        // De forma predeterminada, no permite movimiento (los subtipos deben anular)
-        return false;
-    }*/ 
     // con el valor de movida: logica de mov de las piezas, verificaciones.....
     void setTipo(Tipo tipo) { tipo = tipo; }
     void setColor(Color color) { color = color; }
@@ -54,6 +46,8 @@ public:
         // De forma predeterminada, retorna false (los subtipos deben anular este m¨¦todo)
         return false;
     }
+
+    
 
 private:
     Tipo tipo;

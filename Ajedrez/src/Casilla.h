@@ -25,7 +25,7 @@ public:
 	//Operaciones vectoriales // argumento y modulo
 	double modulo() const;// modulo del vector
 	double argumento() const; // argumento del vector
-	Casilla unitario() const; //devuelve un vector unitario
+
 
 	
 

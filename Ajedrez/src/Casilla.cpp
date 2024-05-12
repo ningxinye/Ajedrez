@@ -59,12 +59,3 @@ double Casilla::argumento() const
 	return atan2(static_cast<double>(f), static_cast<double>(c));
 }
 
-Casilla Casilla::unitario() const
-{
-	double mod = modulo();
-	if (mod > 0.00001) {
-		//  static_cast<int>() 
-		return { static_cast<int>(f / mod), static_cast<int>(c / mod) };
-	}
-	return { f, c };
-}
