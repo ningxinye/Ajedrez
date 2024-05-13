@@ -33,14 +33,18 @@ Tablero::~Tablero()
 }
 
 void Tablero::dibuja() {
+
+    std::cout << "Dibujando tablero.\n";
     int aux = 0;
     // Dibujar tablero y piezas juntos
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             // Dibujar tablero  
-  
             aux++;
-            if ((i + j) % 2 == 0) {
+            if(mov[i][j] == 1){
+                glColor3ub(34, 177, 76);
+            }
+            else if ((i + j) % 2 == 0) {
                 glDisable(GL_LIGHTING);
                 glColor3ub(45, 87, 44); // verde oscuro
             }
@@ -181,13 +185,18 @@ void Tablero::actualizarMovimiento(Casilla& origen, Casilla& destino)
     //borra la casilla de origen (No_pieza y Sin_color)
     // y sobreescribe los datos en la de destino
    //Indica que la pieza se ha movido
+
+    std::cout << "Moviendo pieza desde (" << origen.f << ", " << origen.c << ")" << " a (" << destino.f << ", " << destino.c << ")\n";
+    //mover pieza
     casillas[destino.f][destino.c]->setTipo(casillas[origen.f][origen.c]->getTipo());
     casillas[destino.f][destino.c]->setColor(casillas[origen.f][origen.c]->getColor());
 
     casillas[destino.f][destino.c]->setMovida(true);
 
+    //limpiar origen
     casillas[origen.f][origen.c]->setColor(Sin_color);
     casillas[origen.f][origen.c]->setTipo(No_pieza);
+    std::cout << "Pieza movida y actualizada. Tipo en destino: " << casillas[destino.f][destino.c]->getTipo() << "\n";
 }
 
 int Tablero::PosiblesMovimientos(Casilla& origen)
@@ -207,5 +216,27 @@ void Tablero::setMovInicial()
     //Reseta la matriz de ayuda al movimiento a 0
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) { mov[i][j] = 0; }
+    }
+}
+
+void Tablero::resaltarMovimientosLegales(const Casilla& origen)
+{
+    limpiarDestacados();
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            Casilla destino(i, j);
+            if (validarMovimiento(origen, destino)) {
+                mov[i][j] = 1;  // Utilice una matriz auxiliar para marcar la posición a la que puede moverse
+            }
+        }
+    }
+}
+
+void Tablero::limpiarDestacados()
+{
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            mov[i][j] = 0;  // Restablecer matriz auxiliar
+        }
     }
 }

@@ -59,7 +59,7 @@ int Ajedrez::JUEGO(int button, int state, int x, int y)
 			return 0;
 		}
 		tablero.PosiblesMovimientos(origen); //Muestra los posibles movimiento de la pieza seleccionada
-
+		tablero.resaltarMovimientosLegales(origen);
 	}
 	else if (origen.f != HOME && origen.c != HOME && destino.f == HOME && destino.c == HOME) {	//Si ya está guarado el origen
 		//slecciona el destino
@@ -70,6 +70,7 @@ int Ajedrez::JUEGO(int button, int state, int x, int y)
 		if (destino == origen) { //Si el origen es igual al destino, se borra el origen y el destino
 
 			origen.f = origen.c = destino.f = destino.c = HOME;
+			tablero.limpiarDestacados();
 			tablero.setMovInicial(); //Borra la matriz de ayuda el movimeinto
 			std::cout << "El origen y el destino son los mismos. Reiniciando." << std::endl; // 日志：起始和目标位置相同
 			return 0;
@@ -96,6 +97,7 @@ int Ajedrez::JUEGO(int button, int state, int x, int y)
 			}
 			turno++; //Se completa el movimiento y se aumenta el turno
 			origen.f = origen.c = destino.f = destino.c = HOME; //Se borran origen y destino
+			tablero.limpiarDestacados();
 			tablero.setMovInicial();
 	
 			return 0;

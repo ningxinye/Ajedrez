@@ -30,6 +30,7 @@ public:
 	void actualizarMovimiento(Casilla& origen, Casilla& destino);
 	int PosiblesMovimientos(Casilla& origen);
 	void setMovInicial();
-
+	void resaltarMovimientosLegales(const Casilla& origen);
+	void limpiarDestacados();
 
 };
