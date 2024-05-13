@@ -4,6 +4,7 @@
 
 Tablero::Tablero() {
 
+
     casillas.resize(n, std::vector<Pieza*>(n, nullptr));
     //Matriz de posibles movimientos
     mov = new int* [n];
@@ -34,7 +35,7 @@ Tablero::~Tablero()
 
 void Tablero::dibuja() {
 
-    std::cout << "Dibujando tablero.\n";
+  //  std::cout << "Dibujando tablero.\n";
     int aux = 0;
     // Dibujar tablero y piezas juntos
     for (int i = 0; i < n; i++) {
@@ -53,7 +54,11 @@ void Tablero::dibuja() {
                 glColor3ub(189, 236, 182); // verde claro
             }
             aux++;   
+
+           
             casillas[i][j]->dibuja(aux, mov[i][j]);//Llama al dibuja de pieza
+
+   
         }
 
         glBegin(GL_POLYGON);
@@ -74,6 +79,7 @@ void Tablero::posicionInicial()//Posicion iniciales de las piezas en el tablero
 
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 5; j++) {
+      
 
             // Piezas Blanca
             casillas[0][0] = new Pieza(Tipo::Torre, Color::Blanca, 0, 0);
@@ -240,3 +246,14 @@ void Tablero::limpiarDestacados()
         }
     }
 }
+
+/*void Tablero::muevePieza(int x1, int y1, int x2, int y2)
+{
+    //logica del mov de las piezas
+    casillas[x2][y2] = casillas[x1][y1];
+    casillas[x1][y1] = nullptr;
+
+    //marcar las piezas que necesita redibujar
+    necesitoRedibujo[x1][y1] = true;
+    necesitoRedibujo[x2][y2] = true;
+}*/

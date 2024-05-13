@@ -86,15 +86,6 @@ int Ajedrez::JUEGO(int button, int state, int x, int y)
 
 		else if ((tablero.validarEnroque(origen, destino) != 0) && tablero.validarMovimiento(origen, destino)) {		//Si se dan condiciones de enroque y no hay piezas en medio 
 
-			if (tablero.validarEnroque(origen, destino) > 0) {		//ENROQUE LARGO	
-				tablero.actualizarMovimiento(origen, destino = { origen.f, origen.c - 2 });
-				tablero.actualizarMovimiento(destino, destino = { destino.f, destino.c + 3 });
-			}
-
-			else if (tablero.validarEnroque(origen, destino) < 0) {		//ENROQUE CORTO
-				tablero.actualizarMovimiento(origen,destino= { origen.f, origen.c + 2 });
-				tablero.actualizarMovimiento(destino, destino = { destino.f, destino.c - 2 });
-			}
 			turno++; //Se completa el movimiento y se aumenta el turno
 			origen.f = origen.c = destino.f = destino.c = HOME; //Se borran origen y destino
 			tablero.limpiarDestacados();
@@ -108,6 +99,7 @@ int Ajedrez::JUEGO(int button, int state, int x, int y)
 			tablero.actualizarMovimiento(origen, destino);						//Atualiza la matriz del tablero
 			turno++;												//Aumenta el turno
 			origen.f = origen.c = destino.f = destino.c = HOME;		//Resetea las casillas de origen y destino
+			tablero.limpiarDestacados();
 			tablero.setMovInicial();									//Resetea la matriz de ayuda al movimiento
 
 			}
