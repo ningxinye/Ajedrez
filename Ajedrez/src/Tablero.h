@@ -13,6 +13,7 @@ private:
 	std::vector<std::vector<Pieza*>> casillas; // Representaci¨®n del tablero
    // Pieza** PIE; //PIE es una matriz de piezas
 	int** mov; //matriz auxiliar para implementar la ayuda al movimiento
+	//bool necesitoRedibujo[5][5];
 
 public:
 	Tablero();
@@ -30,6 +31,7 @@ public:
 	void actualizarMovimiento(Casilla& origen, Casilla& destino);
 	int PosiblesMovimientos(Casilla& origen);
 	void setMovInicial();
-
+	void resaltarMovimientosLegales(const Casilla& origen);
+	void limpiarDestacados();
 
 };

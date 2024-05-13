@@ -16,6 +16,7 @@ Pieza::~Pieza()
 //pintando cada pieza
 void Pieza::dibuja(int AUX, int auxmov)
 {
+    //std::cout << "Dibujando pieza: Tipo " << tipo << ", Color " << color << " en la casilla (" << casilla.f << ", " << casilla.c << ")\n";
 
     // Habilitar el uso de texturas
     glEnable(GL_TEXTURE_2D);
@@ -81,8 +82,6 @@ void Pieza::dibuja(int AUX, int auxmov)
 
     glDisable(GL_TEXTURE_2D);
     glEnable(GL_LIGHTING);
-  
-
   
 
 }

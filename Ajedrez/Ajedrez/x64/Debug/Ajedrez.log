@@ -1,2 +1,4 @@
 ﻿  Ajedrez.cpp
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Ajedrez.cpp(42,19): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\src\Ajedrez.cpp(43,16): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
   Ajedrez.vcxproj -> D:\download\trabajo_inf_2024\NUEVA CARPETA\Ajedrez\Ajedrez\Ajedrez\x64\Debug\Ajedrez.exe

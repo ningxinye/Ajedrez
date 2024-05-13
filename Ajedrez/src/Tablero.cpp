@@ -4,6 +4,7 @@
 
 Tablero::Tablero() {
 
+
     casillas.resize(n, std::vector<Pieza*>(n, nullptr));
     //Matriz de posibles movimientos
     mov = new int* [n];
@@ -33,14 +34,18 @@ Tablero::~Tablero()
 }
 
 void Tablero::dibuja() {
+
+  //  std::cout << "Dibujando tablero.\n";
     int aux = 0;
     // Dibujar tablero y piezas juntos
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             // Dibujar tablero  
-  
             aux++;
-            if ((i + j) % 2 == 0) {
+            if(mov[i][j] == 1){
+                glColor3ub(34, 177, 76);
+            }
+            else if ((i + j) % 2 == 0) {
                 glDisable(GL_LIGHTING);
                 glColor3ub(45, 87, 44); // verde oscuro
             }
@@ -49,7 +54,11 @@ void Tablero::dibuja() {
                 glColor3ub(189, 236, 182); // verde claro
             }
             aux++;   
+
+           
             casillas[i][j]->dibuja(aux, mov[i][j]);//Llama al dibuja de pieza
+
+   
         }
 
         glBegin(GL_POLYGON);
@@ -70,6 +79,7 @@ void Tablero::posicionInicial()//Posicion iniciales de las piezas en el tablero
 
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 5; j++) {
+      
 
             // Piezas Blanca
             casillas[0][0] = new Pieza(Tipo::Torre, Color::Blanca, 0, 0);
@@ -103,66 +113,75 @@ void Tablero::posicionInicial()//Posicion iniciales de las piezas en el tablero
 
 int Tablero::getColor(Casilla& cas)
 {
-    std::cout << "Checking color at position - f: " << cas.f << ", c: " << cas.c << std::endl;
     if (cas.f < 0 || cas.f >= 5 || cas.c < 0 || cas.c >= 5) {
-        std::cout << "Position out of bounds." << std::endl;
         return Sin_color; // Asegurar los límites
     }
     if (casillas[cas.f][cas.c] == nullptr) {
-        std::cout << "No piece at the selected position." << std::endl;
         return Sin_color;
     }
     int color = casillas[cas.f][cas.c]->getColor();
-    std::cout << "Color at position: " << color << std::endl;
     return color;
 }
 
 int Tablero::validarEnroque(Casilla& origen, Casilla& destino)
 {
-    if ((casillas[origen.f][origen.c]->getMovida() != 0) || (casillas[destino.f][destino.c]->getMovida() != 0)) return 0;	//evalua si las piezas se han movido
-    else if (casillas[origen.f][origen.c]->getColor() != casillas[destino.f][destino.c]->getColor()) return 0;	//evalua si son del mismo color
-    else if (origen.c > destino.c) return 1; //enroque largo
-    else return -1;	//enroque corto
+    return 0;
 }
 
 bool Tablero::validarMovimiento(const Casilla& origen, const Casilla& destino)
 {
     //Comprobación de enroque si procede
-    //cod
-    // Validación de movimiento basada en las reglas de la pieza
-    if (casillas[origen.f][origen.c]->getColor() == casillas[destino.f][destino.c]->getColor())
-    {
-        //Si el color de destino es igual que el de origen invalida el movimiento
+     //cod
+
+     // Validación de movimiento basada en las reglas de la pieza
+    if (casillas[origen.f][origen.c]->getColor() == casillas[destino.f][destino.c]->getColor() && casillas[destino.f][destino.c]->getTipo() != No_pieza) {
+        // Si el color de destino es igual que el de origen y hay una pieza en destino, invalida el movimiento
         return false;
     }
     else {
-        Pieza* tempCasillas[5][5];
-        for (int i = 0; i < 5; ++i) {
-            for (int j = 0; j < 5; ++j) {
-                tempCasillas[i][j] = casillas[i][j];
-            }
-        }
-        bool R = false;
-        switch (casillas[origen.f][origen.c]->getTipo()) { //Comprobación del movimiento en función de la pieza de origen y destino
+        bool resultado = false;  // Variable para almacenar el resultado del movimiento
+        switch (casillas[origen.f][origen.c]->getTipo()) { // Comprobación del movimiento en función de la pieza de origen y destino
         case Peon:
-           if (((casillas[origen.f][origen.c]->getColor() == Blanca) && (casillas[destino.f][destino.c]->getColor() == Negra)) || ((casillas[origen.f][origen.c]->getColor() == Negra) && (casillas[destino.f][destino.c]->getColor() == Blanca)))
-            {
-                R = Peon::puedecomer(origen, destino, tempCasillas);
-            } //Si hay una Pieza de Negro en el destino de un peon blanco o al reves se llama al metodo que comprueba el movimiento de comer
-            else { R = Peon::puedeMoverse(origen, destino, tempCasillas); }
+            // Crea una copia temporal del tablero para evaluar los movimientos sin alterar el tablero original
+            Pieza* tempCasillas[5][5];
+            for (int i = 0; i < 5; ++i) {
+                for (int j = 0; j < 5; ++j) {
+                    tempCasillas[i][j] = casillas[i][j];
+                }
+            }
+            if (((casillas[origen.f][origen.c]->getColor() == Blanca) && (casillas[destino.f][destino.c]->getColor() == Negra)) ||
+                ((casillas[origen.f][origen.c]->getColor() == Negra) && (casillas[destino.f][destino.c]->getColor() == Blanca))) {
+                // Si hay una pieza de color opuesto en el destino, se verifica si el peón puede comer
+                std::cout << "Llamando a puedeMoverse con origen: (" << origen.f << ", " << origen.c << ") Y destino: (" << destino.f << ", " << destino.c << ")\n";
+                     resultado = Peon::puedecomer(origen, destino, tempCasillas);
+                     std::cout << "Result of puedeMoverse: " << resultado << std::endl;
+           
+            }
+            else {
+                // Se verifica si el peón puede moverse a una casilla vacía
+                resultado = Peon::puedeMoverse(origen, destino, tempCasillas);
+            }
             break;
         case Torre:
+            // Implementar lógica de movimiento de la torre
             break;
         case Caballo:
+            // Implementar lógica de movimiento del caballo
             break;
         case Alfil:
+            // Implementar lógica de movimiento del alfil
             break;
         case Reina:
+            // Implementar lógica de movimiento de la reina
             break;
         case Rey:
+            // Implementar lógica de movimiento del rey
+            break;
+        default:
+            resultado = false;  // Si no se reconoce el tipo de pieza, el movimiento es inválido
             break;
         }
-        return false;
+        return resultado;  // Devuelve el resultado de la validación del movimiento
     }
 }
 
@@ -172,13 +191,22 @@ void Tablero::actualizarMovimiento(Casilla& origen, Casilla& destino)
     //borra la casilla de origen (No_pieza y Sin_color)
     // y sobreescribe los datos en la de destino
    //Indica que la pieza se ha movido
+
+    std::cout << "Moviendo pieza desde (" << origen.f << ", " << origen.c << ")" << " a (" << destino.f << ", " << destino.c << ")\n";
+    //mover pieza
     casillas[destino.f][destino.c]->setTipo(casillas[origen.f][origen.c]->getTipo());
     casillas[destino.f][destino.c]->setColor(casillas[origen.f][origen.c]->getColor());
 
-    casillas[destino.f][destino.c]->setMovida(true);
+    //RENOVAR LA POSICION DE LAS PIEZAS
+    //casillas[destino.f][destino.c]->setMovida(true);
+    casillas[destino.f][destino.c]->setCasilla(destino.f, destino.c);
 
+    //limpiar origen
     casillas[origen.f][origen.c]->setColor(Sin_color);
     casillas[origen.f][origen.c]->setTipo(No_pieza);
+    casillas[origen.f][origen.c]->setCasilla(origen.f, origen.c);
+
+    std::cout << "Pieza movida y actualizada. Tipo en destino: " << casillas[destino.f][destino.c]->getTipo() << "\n";
 }
 
 int Tablero::PosiblesMovimientos(Casilla& origen)
@@ -200,3 +228,36 @@ void Tablero::setMovInicial()
         for (int j = 0; j < n; j++) { mov[i][j] = 0; }
     }
 }
+
+void Tablero::resaltarMovimientosLegales(const Casilla& origen)
+{
+    limpiarDestacados();
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            Casilla destino(i, j);
+            if (validarMovimiento(origen, destino)) {
+                mov[i][j] = 1;  // Utilice una matriz auxiliar para marcar la posición a la que puede moverse
+            }
+        }
+    }
+}
+
+void Tablero::limpiarDestacados()
+{
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            mov[i][j] = 0;  // Restablecer matriz auxiliar
+        }
+    }
+}
+
+/*void Tablero::muevePieza(int x1, int y1, int x2, int y2)
+{
+    //logica del mov de las piezas
+    casillas[x2][y2] = casillas[x1][y1];
+    casillas[x1][y1] = nullptr;
+
+    //marcar las piezas que necesita redibujar
+    necesitoRedibujo[x1][y1] = true;
+    necesitoRedibujo[x2][y2] = true;
+}*/

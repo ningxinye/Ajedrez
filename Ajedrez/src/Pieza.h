@@ -34,12 +34,12 @@ public:
     int getCol() const { return col; }
 
     // con el valor de movida: logica de mov de las piezas, verificaciones.....
-    void setTipo(Tipo tipo) { tipo = tipo; }
-    void setColor(Color color) { color = color; }
-    void setCasilla(int x, int y) { casilla.f = x; casilla.c = y; }
+    void setTipo(Tipo nuevoTipo) { tipo = nuevoTipo; }
+    void setColor(Color nuevoColor) { color = nuevoColor; }
+    void setCasilla(int f, int c) { casilla.f = f; casilla.c = c; }
     void setMovida(bool a) { movida = a; }
-    int setFila(int fila) { fila = fila; }
-    int setCol(int col) { col = col; }
+    int setFila(int nuevaFila) { fila = nuevaFila; }
+    int setCol(int nuevaCol) { col = nuevaCol; }
 
      // Define el m¨¦todo virtual puedeMoverse
     virtual bool puedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* casillas[5][5]) {

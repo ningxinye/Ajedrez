@@ -62,8 +62,7 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
 	//poner aqui el código de teclado
 	mundo.tecla(key);
-
-	glutPostRedisplay();
+	glutPostRedisplay();//PARA REPINTAR LA VENTANA
 }
 
 void OnMouseDown(int button, int state, int x, int y)
