@@ -87,6 +87,7 @@ void Mundo::JUEGA(int button, int state, int x, int y)
 {
 	if (estado == JUEGO_BABY) {
 		ajedrez.JUEGO(button, state, x, y);
+
 	}
 }
 

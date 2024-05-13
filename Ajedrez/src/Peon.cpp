@@ -23,8 +23,11 @@ bool Peon::puedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* ca
 		else if (casillas[origen.f][origen.c]->getColor() == Negra)
 		{
 			if (((destino.f - origen.f) == -1)) {
-				// Comprobar si la posici¨®n objetivo no tiene piezas de ajedrez o es una pieza de ajedrez del oponente
-				return casillas[destino.f][destino.c]->getTipo() == No_pieza ||casillas[destino.f][destino.c]->getColor() != Negra;
+
+				if (casillas[destino.f][destino.c]->getTipo() == No_pieza) {
+					return true;
+				}
+				
 			}
 
 	

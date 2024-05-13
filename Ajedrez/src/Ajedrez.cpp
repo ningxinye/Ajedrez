@@ -29,7 +29,7 @@ void Ajedrez::inicializa()
 bool Ajedrez::verificarturno(int color)
 {
 	std::cout << "Verificando turno. Turno actual: " << turno << ", Color de pieza: " << color << std::endl;
-	if ((turno % 2 == 0 && color != 0) || (turno % 2 == 1 && color != 1)) {
+	if ((turno % 2 == 0 && color != Negra) || (turno % 2 == 1 && color != Blanca)) {
 		std::cout << "Volverse incorrecto o color de la pieza incorrecta." << std::endl;
 		return false;
 	}

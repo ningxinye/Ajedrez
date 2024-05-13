@@ -197,11 +197,15 @@ void Tablero::actualizarMovimiento(Casilla& origen, Casilla& destino)
     casillas[destino.f][destino.c]->setTipo(casillas[origen.f][origen.c]->getTipo());
     casillas[destino.f][destino.c]->setColor(casillas[origen.f][origen.c]->getColor());
 
-    casillas[destino.f][destino.c]->setMovida(true);
+    //RENOVAR LA POSICION DE LAS PIEZAS
+    //casillas[destino.f][destino.c]->setMovida(true);
+    casillas[destino.f][destino.c]->setCasilla(destino.f, destino.c);
 
     //limpiar origen
     casillas[origen.f][origen.c]->setColor(Sin_color);
     casillas[origen.f][origen.c]->setTipo(No_pieza);
+    casillas[origen.f][origen.c]->setCasilla(origen.f, origen.c);
+
     std::cout << "Pieza movida y actualizada. Tipo en destino: " << casillas[destino.f][destino.c]->getTipo() << "\n";
 }
 
