@@ -149,18 +149,7 @@ bool Tablero::validarMovimiento(const Casilla& origen, const Casilla& destino)
                     tempCasillas[i][j] = casillas[i][j];
                 }
             }
-            if (((casillas[origen.f][origen.c]->getColor() == Blanca) && (casillas[destino.f][destino.c]->getColor() == Negra)) ||
-                ((casillas[origen.f][origen.c]->getColor() == Negra) && (casillas[destino.f][destino.c]->getColor() == Blanca))) {
-                // Si hay una pieza de color opuesto en el destino, se verifica si el peón puede comer
-                std::cout << "Llamando a puedeMoverse con origen: (" << origen.f << ", " << origen.c << ") Y destino: (" << destino.f << ", " << destino.c << ")\n";
-                     resultado = Peon::puedecomer(origen, destino, tempCasillas);
-                     std::cout << "Result of puedeMoverse: " << resultado << std::endl;
-           
-            }
-            else {
-                // Se verifica si el peón puede moverse a una casilla vacía
-                resultado = Peon::puedeMoverse(origen, destino, tempCasillas);
-            }
+            resultado = Peon::esMovimientoValido(origen, destino, tempCasillas);
             break;
         case Torre:
             // Implementar lógica de movimiento de la torre
