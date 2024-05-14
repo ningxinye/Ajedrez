@@ -29,9 +29,6 @@ public:
 	double argumento() const; // argumento del vector
 
 
-	
-
-
 	friend class Pieza;
 	friend class Tablero;
 	friend class Ajedrez;
