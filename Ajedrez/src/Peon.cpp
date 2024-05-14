@@ -2,54 +2,51 @@
 #include <math.h>
 #include <iostream> 
 
-bool Peon::puedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* casillas[5][5])
+
+
+bool Peon::esMovimientoValido(const Casilla& origen, const Casilla& destino, Pieza* casillas[5][5])
 {
 	std::cout << "Comprobando movimiento del pe¨®n: desde (" << origen.f << ", " << origen.c << ") hasta (" << destino.f << ", " << destino.c << ")\n";
-	if (destino.c == origen.c)
-	{
-		int diferenciaDeFilas = destino.f - origen.f;
-		std::cout << "Movimiento en la misma columna. Cambio de fila: " << diferenciaDeFilas << "\n";
 
-		if (casillas[origen.f][origen.c]->getColor() == Blanca) {
-			std::cout << "Intento de movimiento de una pieza blanca.\n";
-			if (((destino.f - origen.f) == 1)) {
-				std::cout << "Tipo de pieza en destino: " << casillas[destino.f][destino.c]->getTipo() << ", Color: " << casillas[destino.f][destino.c]->getColor() << "\n";
-				if (casillas[destino.f][destino.c]->getTipo() == No_pieza) {  
-					return true;
-				}
+	int diferenciaDeFilas = destino.f - origen.f;
+	int diferenciaDeColumnas = destino.c - origen.c;
+
+	if (casillas[origen.f][origen.c]->getColor() == Blanca) {
+		std::cout << "Intento de movimiento de una pieza blanca.\n";
+
+		// Movimiento hacia adelante
+		if (diferenciaDeColumnas == 0 && diferenciaDeFilas == 1) {
+			std::cout << "Movimiento en la misma columna. Cambio de fila: " << diferenciaDeFilas << "\n";
+			if (casillas[destino.f][destino.c]->getTipo() == No_pieza) {
+				return true;
 			}
-		
 		}
-		else if (casillas[origen.f][origen.c]->getColor() == Negra)
-		{
-			if (((destino.f - origen.f) == -1)) {
 
-				if (casillas[destino.f][destino.c]->getTipo() == No_pieza) {
-					return true;
-				}
-				
+		// Movimiento para comer
+		if (abs(diferenciaDeColumnas) == 1 && diferenciaDeFilas == 1) {
+			if (casillas[destino.f][destino.c]->getColor() == Negra) {
+				return true;
 			}
-
-	
 		}
 	}
-return false; 
-}
+	else if (casillas[origen.f][origen.c]->getColor() == Negra) {
+		std::cout << "Intento de movimiento de una pieza negra.\n";
 
-bool Peon::puedecomer(const Casilla& origen, const Casilla& destino, Pieza* casillas[5][5])
-{
-	if (abs(destino.c - origen.c) == 1) 
-	{
-		if (casillas[origen.f][origen.c]->getColor() == Blanca) {
-			if ((destino.f - origen.f) == 1) { return true; }
-			else { return false; }
+		// Movimiento hacia adelante
+		if (diferenciaDeColumnas == 0 && diferenciaDeFilas == -1) {
+			std::cout << "Movimiento en la misma columna. Cambio de fila: " << diferenciaDeFilas << "\n";
+			if (casillas[destino.f][destino.c]->getTipo() == No_pieza) {
+				return true;
+			}
 		}
-		else if (casillas[origen.f][origen.c]->getColor() == Negra)
-		{
-			if ((destino.f - origen.f) == -1) { return true; }
-			else { return false; }
+
+		// Movimiento para comer
+		if (abs(diferenciaDeColumnas) == 1 && diferenciaDeFilas == -1) {
+			if (casillas[destino.f][destino.c]->getColor() == Blanca) {
+				return true;
+			}
 		}
 	}
-	else { return false; }
-}
 
+	return false;
+}

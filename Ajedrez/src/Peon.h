@@ -2,13 +2,11 @@
 #include "Pieza.h"
 
 
-class Peon //: public Pieza //La clase Pe車n hereda de la clase Pieza.
+class Peon
 {
 public:
-    // Funci車n para verificar los movimientos posibles de un pe車n
-  static bool puedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* casillas[5][5]);
-  static bool puedecomer(const Casilla& origen, const Casilla& destino, Pieza* casillas[5][5]);
-
     
+// Funci車n para verificar los movimientos posibles de un pe車n
+    static bool esMovimientoValido(const Casilla& origen, const Casilla& destino, Pieza* casillas[5][5]);
 };
 
