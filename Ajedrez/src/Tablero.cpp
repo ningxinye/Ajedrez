@@ -153,6 +153,14 @@ bool Tablero::validarMovimiento(const Casilla& origen, const Casilla& destino)
             break;
         case Torre:
             // Implementar lógica de movimiento de la torre
+       
+
+            for (int i = 0; i < 5; ++i) {
+                for (int j = 0; j < 5; ++j) {
+                    tempCasillas[i][j] = casillas[i][j];
+                }
+            }
+            resultado = Torre::esMovimientoValido(origen, destino, tempCasillas);
             break;
         case Caballo:
             // Implementar lógica de movimiento del caballo
@@ -162,6 +170,12 @@ bool Tablero::validarMovimiento(const Casilla& origen, const Casilla& destino)
             break;
         case Reina:
             // Implementar lógica de movimiento de la reina
+            for (int i = 0; i < 5; ++i) {
+                for (int j = 0; j < 5; ++j) {
+                    tempCasillas[i][j] = casillas[i][j];
+                }
+            }
+            resultado = Torre::esMovimientoValido(origen, destino, tempCasillas);
             break;
         case Rey:
             // Implementar lógica de movimiento del rey

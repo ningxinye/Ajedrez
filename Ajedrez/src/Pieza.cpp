@@ -24,36 +24,36 @@ void Pieza::dibuja(int AUX, int auxmov)
     // Seleccionar la textura adecuada seg¨²n el tipo y color de la pieza
     const char* rutaImagen = nullptr;
 
-    if ( tipo == No_pieza ||color == Sin_color) {
+    if (tipo == No_pieza || color == Sin_color) {
         // Si el color es Sin_color, no hay pieza que dibujar
-        rutaImagen = "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/vacio.png";
+        rutaImagen = "C:/Users/irene/Desktop/2023&2024/Info/Ajedrez/Ajedrez/bin/vacio.png";
     }
     else {
         switch (tipo)
-    {
-    case Peon:
-        rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/peon_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/peon_blanco.png";
-        break;
-    case Caballo:
-        rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/caballo_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/caballo_blanco.png";
-        break;
-    case Alfil:
-        rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/alfil_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/alfil_blanco.png";
-        break;
-    case Torre:
-        rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/torre_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/torre_blanco.png";
-        break;
-    case Rey:
-        rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/rey_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/rey_blanco.png";
-        break;
-    case Reina:
-        rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/reina_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/reina_blanco.png";
-        break;
+        {
+        case Peon:
+            rutaImagen = (color == Negra) ? "C:/Users/irene/Desktop/2023&2024/Info/Ajedrez/Ajedrez/bin/peon_negro.png" : "C:/Users/irene/Desktop/2023&2024/Info/Ajedrez/Ajedrez/bin/peon_blanco.png";
+            break;
+        case Caballo:
+            rutaImagen = (color == Negra) ? "C:/Users/irene/Desktop/2023&2024/Info/Ajedrez/Ajedrez/bin/caballo_negro.png" : "C:/Users/irene/Desktop/2023&2024/Info/Ajedrez/Ajedrez/bin/caballo_blanco.png";
+            break;
+        case Alfil:
+            rutaImagen = (color == Negra) ? "C:/Users/irene/Desktop/2023&2024/Info/Ajedrez/Ajedrez/bin/alfil_negro.png" : "C:/Users/irene/Desktop/2023&2024/Info/Ajedrez/Ajedrez/bin/alfil_blanco.png";
+            break;
+        case Torre:
+            rutaImagen = (color == Negra) ? "C:/Users/irene/Desktop/2023&2024/Info/Ajedrez/Ajedrez/bin/torre_negro.png" : "C:/Users/irene/Desktop/2023&2024/Info/Ajedrez/Ajedrez/bin/torre_blanco.png";
+            break;
+        case Rey:
+            rutaImagen = (color == Negra) ? "C:/Users/irene/Desktop/2023&2024/Info/Ajedrez/Ajedrez/bin/rey_negro.png" : "C:/Users/irene/Desktop/2023&2024/Info/Ajedrez/Ajedrez/bin/rey_blanco.png";
+            break;
+        case Reina:
+            rutaImagen = (color == Negra) ? "C:/Users/irene/Desktop/2023&2024/Info/Ajedrez/Ajedrez/bin/reina_negro.png" : "C:/Users/irene/Desktop/2023&2024/Info/Ajedrez/Ajedrez/bin/reina_blanco.png";
+            break;
 
-    default:
-        // Caso por defecto, para manejar otros tipos de piezas inesperados
-        return;
-    }
+        default:
+            // Caso por defecto, para manejar otros tipos de piezas inesperados
+            return;
+        }
     }
 
     glDisable(GL_LIGHTING);

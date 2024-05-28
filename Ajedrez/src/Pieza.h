@@ -4,6 +4,7 @@
 #include"ETSIDI.h"
 #include "Casilla.h"
 #include"Peon.h"
+#include"Torre.h"
 #include"freeglut.h"
 
 enum  Tipo { No_pieza, Peon, Caballo, Alfil, Torre, Rey, Reina };

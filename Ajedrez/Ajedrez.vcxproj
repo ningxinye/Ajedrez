@@ -25,7 +25,9 @@
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Peon.cpp" />
     <ClCompile Include="src\Pieza.cpp" />
+    <ClCompile Include="src\Reina.cpp" />
     <ClCompile Include="src\Tablero.cpp" />
+    <ClCompile Include="src\Torre.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -34,7 +36,9 @@
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Peon.h" />
     <ClInclude Include="src\Pieza.h" />
+    <ClInclude Include="src\Reina.h" />
     <ClInclude Include="src\Tablero.h" />
+    <ClInclude Include="src\Torre.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Ajedrez.rc" />
