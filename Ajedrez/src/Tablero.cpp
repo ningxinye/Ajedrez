@@ -175,7 +175,7 @@ bool Tablero::validarMovimiento(const Casilla& origen, const Casilla& destino)
                     tempCasillas[i][j] = casillas[i][j];
                 }
             }
-            resultado = Torre::esMovimientoValido(origen, destino, tempCasillas);
+            resultado = Reina::esMovimientoValido(origen, destino, tempCasillas);
             break;
         case Rey:
             // Implementar lógica de movimiento del rey
