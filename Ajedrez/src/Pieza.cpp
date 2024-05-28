@@ -14,54 +14,66 @@ Pieza::~Pieza()
 }
 
 //pintando cada pieza
-void Pieza::dibuja(int AUX, int auxmov)
+void Pieza::dibuja(int aux, int auxmov)
 {
     //std::cout << "Dibujando pieza: Tipo " << tipo << ", Color " << color << " en la casilla (" << casilla.f << ", " << casilla.c << ")\n";
 
     // Habilitar el uso de texturas
     glEnable(GL_TEXTURE_2D);
 
-    // Seleccionar la textura adecuada seg¨²n el tipo y color de la pieza
+    // Seleccionar la textura adecuada segun el tipo y color de la pieza
     const char* rutaImagen = nullptr;
+
+    // !!
+    //obviamente la ruta cambia porque depende de nuestro ordenador, si no funciona comentad la que esta puesta y añadid la vuestra
+    //!!
+
 
     if ( tipo == No_pieza ||color == Sin_color) {
         // Si el color es Sin_color, no hay pieza que dibujar
-        rutaImagen = "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/vacio.png";
+   
+        //rutaImagen = "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/vacio.png";
+        rutaImagen = "C:/Users/User/Documents/GitHub/Ajedrez/Ajedrez/bin/vacio.png";
     }
     else {
         switch (tipo)
-    {
-    case Peon:
-        rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/peon_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/peon_blanco.png";
-        break;
-    case Caballo:
-        rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/caballo_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/caballo_blanco.png";
-        break;
-    case Alfil:
-        rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/alfil_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/alfil_blanco.png";
-        break;
-    case Torre:
-        rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/torre_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/torre_blanco.png";
-        break;
-    case Rey:
-        rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/rey_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/rey_blanco.png";
-        break;
-    case Reina:
-        rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/reina_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/reina_blanco.png";
-        break;
-
-    default:
-        // Caso por defecto, para manejar otros tipos de piezas inesperados
-        return;
-    }
+        {
+        case Peon:
+            //rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/peon_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/peon_blanco.png";
+            rutaImagen = (color == Negra) ? "C:/Users/User/Documents/GitHub/Ajedrez/Ajedrez/bin/peon_negro.png" : "C:/Users/User/Documents/GitHub/Ajedrez/Ajedrez/bin/imagenes/peon_blanco.png";
+            break;
+        case Caballo:
+            //rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/caballo_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/caballo_blanco.png";
+            rutaImagen = (color == Negra) ? "C:/Users/User/Documents/GitHub/Ajedrez/Ajedrez/bin/caballo_negro.png" : "C:/Users/User/Documents/GitHub/Ajedrez/Ajedrez/bin/imagenes/caballo_blanco.png";
+            break;
+        case Alfil:
+            //rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/alfil_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/alfil_blanco.png";
+            rutaImagen = (color == Negra) ? "C:/Users/User/Documents/GitHub/Ajedrez/Ajedrez/bin/alfil_negro.png" : "C:/Users/User/Documents/GitHub/Ajedrez/Ajedrez/bin/imagenes/alfil_blanco.png";
+            break;
+        case Torre:
+            //rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/torre_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/torre_blanco.png";
+            rutaImagen = (color == Negra) ? "C:/Users/User/Documents/GitHub/Ajedrez/Ajedrez/bin/torre_negro.png" : "C:/Users/User/Documents/GitHub/Ajedrez/Ajedrez/bin/imagenes/torre_blanco.png";
+            break;
+        case Rey:
+            //rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/rey_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/rey_blanco.png";
+            rutaImagen = (color == Negra) ? "C:/Users/User/Documents/GitHub/Ajedrez/Ajedrez/bin/rey_negro.png" : "C:/Users/User/Documents/GitHub/Ajedrez/Ajedrez/bin/imagenes/rey_blanco.png";
+            break;
+        case Reina:
+            //rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/reina_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/reina_blanco.png";
+            rutaImagen = (color == Negra) ? "C:/Users/User/Documents/GitHub/Ajedrez/Ajedrez/bin/reina_negro.png" : "C:/Users/User/Documents/GitHub/Ajedrez/Ajedrez/bin/imagenes/reina_blanco.png";
+            break;
+        default:
+            // Caso por defecto, para manejar otros tipos de piezas inesperados
+            return;
+        }
     }
 
     glDisable(GL_LIGHTING);
-    // Seleccionar la textura seg¨²n la ruta de la imagen
+    // Seleccionar la textura segun la ruta de la imagen
 
     glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture(rutaImagen).id);
 
-    // Especificar coordenadas de textura y v¨¦rtices para la pieza
+    // Especificar coordenadas de textura y vertices para la pieza
     glBegin(GL_POLYGON);
 
 
@@ -88,7 +100,7 @@ void Pieza::dibuja(int AUX, int auxmov)
 
 Pieza::Pieza(const Pieza& p)
 {
-    //par¨¢metro constante
+    //parametro constante
     tipo = p.tipo;
     color = p.color;
     casilla = p.casilla;

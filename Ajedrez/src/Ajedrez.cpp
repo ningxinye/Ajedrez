@@ -1,4 +1,3 @@
-
 #include "Ajedrez.h"
 
 using namespace std;
@@ -15,15 +14,12 @@ void Ajedrez::dibuja()
 		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y) 
 	
 	tablero.dibuja();
-
-
 }
 
-void Ajedrez::inicializa()
+void Ajedrez::inicializa(bool est)
 {
-	tablero.posicionInicial();
+	tablero.posicionInicial(est);
 	tablero.setMovInicial();
-	
 }
 
 bool Ajedrez::verificarturno(int color)
@@ -37,24 +33,23 @@ bool Ajedrez::verificarturno(int color)
 }
 
 
-
 int Ajedrez::JUEGO(int button, int state, int x, int y) {
-    // Log: Recepci車n de evento de rat車n
-    std::cout << "Evento del rat車n recibido - Bot車n: " << button << ", Estado: " << state << ", x: " << x << ", y: " << y << std::endl;
+    // Log: Recepcion de evento de raton
+    std::cout << "Evento del raton recibido - Boton: " << button << ", Estado: " << state << ", x: " << x << ", y: " << y << std::endl;
 
-    // Funci車n interna para obtener la casilla en funci車n de las coordenadas del rat車n
+    // Funcion interna para obtener la casilla en funcion de las coordenadas del raton
     auto getCasilla = [](int x, int y) -> Casilla {
         Casilla casilla;
-        casilla.c = static_cast<int>((x - 226) / 70); // Obtenido experimentalmente para el tama?o de ventana del juego
+        casilla.c = static_cast<int>((x - 226) / 70); // Obtenido experimentalmente para el tamano de ventana del juego
         casilla.f = 4 - static_cast<int>((y - 126) / 70);
         return casilla;
         };
 
     if (origen.f == INVALID_POS && origen.c == INVALID_POS) { // Si no hay origen seleccionado, se selecciona uno
         origen = getCasilla(x, y);
-        std::cout << "Origen seleccionado - f: " << origen.f << ", c: " << origen.c << std::endl; // Log: selecci車n de origen
+        std::cout << "Origen seleccionado - f: " << origen.f << ", c: " << origen.c << std::endl; // Log: seleccion de origen
 
-        if (!verificarturno(tablero.getColor(origen))) { // Si no es el turno o se pulsa una casilla vac赤a se borra el origen
+        if (!verificarturno(tablero.getColor(origen))) { // Si no es el turno o se pulsa una casilla vacia se borra el origen
             origen.f = origen.c = INVALID_POS;
             std::cout << "Origen no v芍lido debido a turno o casilla vac赤a" << std::endl; // Log: origen no v芍lido
             return 0;

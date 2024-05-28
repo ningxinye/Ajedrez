@@ -14,7 +14,7 @@ Tablero::Tablero() {
 
     // Inicializar el tablero con piezas en las posiciones iniciales
    // casillas.resize(5, std::vector<Pieza*>(5, nullptr)); // Tablero de 5*5
-    posicionInicial(); // Asegúrate de que las piezas están configuradas desde el inicio
+    posicionInicial(false); // Asegúrate de que las piezas están configuradas desde el inicio
 }
 
 Tablero::~Tablero()
@@ -35,8 +35,9 @@ Tablero::~Tablero()
 
 void Tablero::dibuja() {
 
-  //  std::cout << "Dibujando tablero.\n";
+    //  std::cout << "Dibujando tablero.\n";
     int aux = 0;
+
     // Dibujar tablero y piezas juntos
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
@@ -54,11 +55,7 @@ void Tablero::dibuja() {
                 glColor3ub(189, 236, 182); // verde claro
             }
             aux++;   
-
-           
-            casillas[i][j]->dibuja(aux, mov[i][j]);//Llama al dibuja de pieza
-
-   
+            casillas[i][j]->dibuja(aux, mov[i][j]); //Llama al dibuja de pieza
         }
 
         glBegin(GL_POLYGON);
@@ -74,41 +71,77 @@ void Tablero::dibuja() {
 
 }
 
-void Tablero::posicionInicial()//Posicion iniciales de las piezas en el tablero
+void Tablero::posicionInicial( bool est )//Posicion iniciales de las piezas en el tablero
 {
+    est = true; //true BABY, false GARDNER
+    if (est)
+    {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
 
-    for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < 5; j++) {
-      
 
-            // Piezas Blanca
-            casillas[0][0] = new Pieza(Tipo::Torre, Color::Blanca, 0, 0);
-            casillas[0][1] = new Pieza(Tipo::Caballo, Color::Blanca, 0, 1);
-            casillas[0][2] = new Pieza(Tipo::Alfil, Color::Blanca, 0, 2);
-            casillas[0][3] = new Pieza(Tipo::Reina, Color::Blanca, 0, 3);
-            casillas[0][4] = new Pieza(Tipo::Rey, Color::Blanca, 0, 4);
-            for (int i = 0; i < 5; ++i) {
-                casillas[1][i] = new Pieza(Tipo::Peon, Color::Blanca, 1, i);
-            }
+                // Piezas Blancas
+                casillas[0][0] = new Pieza(Tipo::Torre, Color::Blanca, 0, 0);
+                casillas[0][1] = new Pieza(Tipo::Caballo, Color::Blanca, 0, 1);
+                casillas[0][2] = new Pieza(Tipo::Alfil, Color::Blanca, 0, 2);
+                casillas[0][3] = new Pieza(Tipo::Reina, Color::Blanca, 0, 3);
+                casillas[0][4] = new Pieza(Tipo::Rey, Color::Blanca, 0, 4);
+                for (int i = 0; i < 5; ++i) {
+                    casillas[1][i] = new Pieza(Tipo::Peon, Color::Blanca, 1, i);
+                }
 
-            // Piezas Negra
-            casillas[4][0] = new Pieza(Tipo::Rey, Color::Negra, 4, 0);
-            casillas[4][1] = new Pieza(Tipo::Reina, Color::Negra, 4, 1);
-            casillas[4][2] = new Pieza(Tipo::Alfil, Color::Negra, 4, 2);
-            casillas[4][3] = new Pieza(Tipo::Caballo, Color::Negra, 4, 3);
-            casillas[4][4] = new Pieza(Tipo::Torre, Color::Negra, 4, 4);
-            for (int i = 0; i < 5; ++i) {
-                casillas[3][i] = new Pieza(Tipo::Peon, Color::Negra, 3, i);
+                // Piezas Negras
+                casillas[4][0] = new Pieza(Tipo::Rey, Color::Negra, 4, 0);
+                casillas[4][1] = new Pieza(Tipo::Reina, Color::Negra, 4, 1);
+                casillas[4][2] = new Pieza(Tipo::Alfil, Color::Negra, 4, 2);
+                casillas[4][3] = new Pieza(Tipo::Caballo, Color::Negra, 4, 3);
+                casillas[4][4] = new Pieza(Tipo::Torre, Color::Negra, 4, 4);
+                for (int i = 0; i < 5; ++i) {
+                    casillas[3][i] = new Pieza(Tipo::Peon, Color::Negra, 3, i);
+                }
+                // Vacios
+                for (int i = 0; i < 5; ++i) {
+                    casillas[2][i] = new Pieza(Tipo::No_pieza, Color::Sin_color, 2, i);
+                }
+                //Asignación de casilla
+                casillas[i][j]->setCasilla(i, j);
             }
-            // Vacios
-            for (int i = 0; i < 5; ++i) {
-                casillas[2][i] = new Pieza(Tipo::No_pieza, Color::Sin_color, 2, i);
-            }
-            //Asignación de casilla
-            casillas[i][j]->setCasilla(i, j);
         }
     }
+    else
+    {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
 
+
+                // Piezas Blancas
+                casillas[0][0] = new Pieza(Tipo::Torre, Color::Blanca, 0, 0);
+                casillas[0][1] = new Pieza(Tipo::Caballo, Color::Blanca, 0, 1);
+                casillas[0][2] = new Pieza(Tipo::Alfil, Color::Blanca, 0, 2);
+                casillas[0][3] = new Pieza(Tipo::Reina, Color::Blanca, 0, 3);
+                casillas[0][4] = new Pieza(Tipo::Rey, Color::Blanca, 0, 4);
+                for (int i = 0; i < 5; ++i) {
+                    casillas[1][i] = new Pieza(Tipo::Peon, Color::Blanca, 1, i);
+                }
+
+                // Piezas Negras
+                casillas[4][0] = new Pieza(Tipo::Torre, Color::Negra, 4, 0);
+                casillas[4][1] = new Pieza(Tipo::Caballo, Color::Negra, 4, 1);
+                casillas[4][2] = new Pieza(Tipo::Alfil, Color::Negra, 4, 2);
+                casillas[4][3] = new Pieza(Tipo::Reina, Color::Negra, 4, 3);
+                casillas[4][4] = new Pieza(Tipo::Rey, Color::Negra, 4, 4);
+                for (int i = 0; i < 5; ++i) {
+                    casillas[3][i] = new Pieza(Tipo::Peon, Color::Negra, 3, i);
+                }
+                // Vacios
+                for (int i = 0; i < 5; ++i) {
+                    casillas[2][i] = new Pieza(Tipo::No_pieza, Color::Sin_color, 2, i);
+                }
+                //Asignación de casilla
+                casillas[i][j]->setCasilla(i, j);
+            }
+        }
+    }
 }
 
 int Tablero::getColor(Casilla& cas)
@@ -130,9 +163,6 @@ int Tablero::validarEnroque(Casilla& origen, Casilla& destino)
 
 bool Tablero::validarMovimiento(const Casilla& origen, const Casilla& destino)
 {
-    //Comprobación de enroque si procede
-     //cod
-
      // Validación de movimiento basada en las reglas de la pieza
     if (casillas[origen.f][origen.c]->getColor() == casillas[destino.f][destino.c]->getColor() && casillas[destino.f][destino.c]->getTipo() != No_pieza) {
         // Si el color de destino es igual que el de origen y hay una pieza en destino, invalida el movimiento

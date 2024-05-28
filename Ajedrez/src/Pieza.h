@@ -47,8 +47,6 @@ public:
         return false;
     }
 
-    
-
 private:
     Tipo tipo;
     Color color;
