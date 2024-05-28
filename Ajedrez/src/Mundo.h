@@ -9,15 +9,12 @@ private:
 	//estados de la m¨¢quina
 	enum Estados { INICIO, JUEGO_BABY, JUEGO_GARDNER, FIN, PAUSA };
 	Estados estado;
-
-
 public:
 	Mundo();
 	~Mundo();
 
 	void dibuja(); //pantalla
 	void tecla(unsigned char key);
-	//MOMENTOS QUE PUEDEN JUGAR CON EL RATON
-	void JUEGA(int button, int state, int x, int y);
+	void JUEGA(int button, int state, int x, int y); //Momentos para jugar con el raton
 
 };

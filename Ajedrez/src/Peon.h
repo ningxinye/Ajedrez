@@ -5,8 +5,7 @@
 class Peon
 {
 public:
-    
-// Funci¨®n para verificar los movimientos posibles de un pe¨®n
+    // Funcion para verificar los movimientos posibles de un peon
     static bool esMovimientoValido(const Casilla& origen, const Casilla& destino, Pieza* casillas[5][5]);
 };
 

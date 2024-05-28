@@ -24,8 +24,8 @@ public:
 	//void dibujarPiezas();
 
 	//logico
-	void posicionInicial();
-	int getColor(Casilla& cas); // Obtener el color de la pieza de ajedrez en una posici¨®n determinada.
+	void posicionInicial(bool est);
+	int getColor(Casilla& cas); // Obtener el color de la pieza de ajedrez en una posicion determinada.
     int validarEnroque( Casilla& origen,  Casilla& destino);
     bool validarMovimiento(const Casilla& origen, const Casilla& destino);
 	void actualizarMovimiento(Casilla& origen, Casilla& destino);
