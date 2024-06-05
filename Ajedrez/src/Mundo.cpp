@@ -3,6 +3,9 @@
 #include"ETSIDI.h"
 #include "freeglut.h"
 #include <math.h>
+#include <string>
+
+
 
 Mundo::Mundo()
 {
@@ -59,15 +62,49 @@ void Mundo::dibuja()
 
 	}
 	else if (estado == JUEGO_BABY) {
-
 		ajedrez.dibuja();
+
+		// Mostrar el temporizador
+		int tiempoRestante = obtenerTiempoRestante();
+		glDisable(GL_LIGHTING);
+		ETSIDI::setTextColor(1, 1, 1);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 24);
+		ETSIDI::printxy(std::to_string(tiempoRestante).c_str(), 6, 5); // Ajustar la posición según sea necesario
+		glEnable(GL_LIGHTING);
+
+		if (tiempoRestante <= 0) {
+			estado = TIEMPO_LIM;
+		}
 	
 	}
 
 	else if (estado == JUEGO_GARDNER) {
 		ajedrez.dibuja();
 
+		// Mostrar el temporizador
+		int tiempoRestante = obtenerTiempoRestante();
+		glDisable(GL_LIGHTING);
+		ETSIDI::setTextColor(1, 1, 1);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 24);
+		ETSIDI::printxy(std::to_string(tiempoRestante).c_str(), 6, 5); // Ajustar la posición según sea necesario
+		glEnable(GL_LIGHTING);
+
+		if (tiempoRestante <= 0) {
+			estado = TIEMPO_LIM;
+		}
+
 	}
+	else if (estado == TIEMPO_LIM) {
+		gluLookAt(0, 7.5, 30,  // posicion del ojo
+			0.0, 7.5, 0.0,      // hacia que punto mira  (0,0,0) 
+			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)  
+		// Código para el estado FIN
+		ETSIDI::setTextColor(1, 0, 0);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 24);
+		ETSIDI::printxy("Tiempo agotado", -3, 5); // Ajustar la posición según sea necesario
+
+	}
+
 	else if (estado == FIN) {
 
 	}
@@ -85,10 +122,12 @@ void Mundo::tecla(unsigned char key){
 	case INICIO:
 		if (key == 'B' || key == 'b') {
 			ajedrez.inicializa(true);
+			iniciarContador(60); // Establecer el temporizador a 60 segundos
 			estado = JUEGO_BABY;
 		}
 		else if (key == 'G' || key == 'g') {
 			ajedrez.inicializa(false);
+			iniciarContador(60); // Establecer el temporizador a 60 segundos
 			estado = JUEGO_GARDNER;
 		}
 		else if (key == 'S' || key == 's')
@@ -121,6 +160,19 @@ void Mundo::JUEGA(int button, int state, int x, int y)
 		ajedrez.JUEGO(button, state, x, y);
 
 	}
+}
+
+void Mundo::iniciarContador(int segundos)
+{
+	countdownTime = segundos;
+	startTime = time(0);
+}
+
+int Mundo::obtenerTiempoRestante()
+{
+	time_t now = time(0);
+	int elapsed = static_cast<int>(difftime(now, startTime));
+	return countdownTime - elapsed;
 }
 
 
