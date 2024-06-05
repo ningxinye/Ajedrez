@@ -1,3 +1,4 @@
+
 #include "Ajedrez.h"
 
 using namespace std;
@@ -14,12 +15,16 @@ void Ajedrez::dibuja()
 		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y) 
 	
 	tablero.dibuja();
+
+
 }
 
-void Ajedrez::inicializa(bool est)
+void Ajedrez::inicializa(bool est, bool vsAI)
 {
-	tablero.posicionInicial(est);
-	tablero.setMovInicial();
+    this->vsAI = vsAI; // Establecer el modo de juego_ai simple
+    tablero.posicionInicial(est);
+    tablero.setMovInicial();
+    turno = Blanca; // Asegurar que el turno inicial sea de las blancas
 }
 
 bool Ajedrez::verificarturno(int color)
@@ -33,71 +38,73 @@ bool Ajedrez::verificarturno(int color)
 }
 
 
-int Ajedrez::JUEGO(int button, int state, int x, int y) {
-    // Log: Recepcion de evento de raton
-    std::cout << "Evento del raton recibido - Boton: " << button << ", Estado: " << state << ", x: " << x << ", y: " << y << std::endl;
 
-    // Funcion interna para obtener la casilla en funcion de las coordenadas del raton
+int Ajedrez::JUEGO(int button, int state, int x, int y) {
+    if (state != GLUT_DOWN) return 0; // Solo manejar eventos cuando se presiona el bot¨®n
+
+    cout << "Evento del rat¨®n recibido - Bot¨®n: " << button << ", Estado: " << state << ", x: " << x << ", y: " << y << endl;
     auto getCasilla = [](int x, int y) -> Casilla {
         Casilla casilla;
-        casilla.c = static_cast<int>((x - 226) / 70); // Obtenido experimentalmente para el tamano de ventana del juego
+        casilla.c = static_cast<int>((x - 226) / 70);
         casilla.f = 4 - static_cast<int>((y - 126) / 70);
         return casilla;
         };
 
-    if (origen.f == INVALID_POS && origen.c == INVALID_POS) { // Si no hay origen seleccionado, se selecciona uno
+    if (origen.f == INVALID_POS && origen.c == INVALID_POS) {
         origen = getCasilla(x, y);
-        std::cout << "Origen seleccionado - f: " << origen.f << ", c: " << origen.c << std::endl; // Log: seleccion de origen
+        cout << "Origen seleccionado - f: " << origen.f << ", c: " << origen.c << endl;
 
-        if (!verificarturno(tablero.getColor(origen))) { // Si no es el turno o se pulsa una casilla vacia se borra el origen
+        if (!verificarturno(tablero.getColor(origen))) {
             origen.f = origen.c = INVALID_POS;
-            std::cout << "Origen no v¨¢lido debido a turno o casilla vac¨ªa" << std::endl; // Log: origen no v¨¢lido
+            cout << "Origen no v¨¢lido debido a turno o casilla vac¨ªa" << endl;
             return 0;
         }
 
-        tablero.PosiblesMovimientos(origen); // Muestra los posibles movimientos de la pieza seleccionada
+        tablero.PosiblesMovimientos(origen);
         tablero.resaltarMovimientosLegales(origen);
     }
-    else if (origen.f != INVALID_POS && origen.c != INVALID_POS && destino.f == INVALID_POS && destino.c == INVALID_POS) { // Si ya est¨¢ guardado el origen
-        destino = getCasilla(x, y); // Se selecciona el destino
-        std::cout << "Destino seleccionado - f: " << destino.f << ", c: " << destino.c << std::endl; // Log: selecci¨®n de destino
+    else if (origen.f != INVALID_POS && origen.c != INVALID_POS && destino.f == INVALID_POS && destino.c == INVALID_POS) {
+        destino = getCasilla(x, y);
+        cout << "Destino seleccionado - f: " << destino.f << ", c: " << destino.c << endl;
 
-        if (destino == origen) { // Si el origen es igual al destino, se borra el origen y el destino
+        if (destino == origen) {
             origen.f = origen.c = destino.f = destino.c = INVALID_POS;
             tablero.limpiarDestacados();
-            tablero.setMovInicial(); // Borra la matriz de ayuda al movimiento
-            std::cout << "El origen y el destino son los mismos. Reiniciando." << std::endl; // Log: origen y destino son iguales
+            tablero.setMovInicial();
+            cout << "El origen y el destino son los mismos. Reiniciando." << endl;
             return 0;
         }
-        else if (!tablero.validarMovimiento(origen, destino)) { // Si el movimiento no es v¨¢lido borra el destino
+        else if (!tablero.validarMovimiento(origen, destino)) {
             destino.f = destino.c = INVALID_POS;
-            std::cout << "Movimiento no v¨¢lido. Restablecer destino." << std::endl; // Log: movimiento no v¨¢lido
+            cout << "Movimiento no v¨¢lido. Restablecer destino." << endl;
             return 0;
         }
-        else if (tablero.validarEnroque(origen, destino) && tablero.validarMovimiento(origen, destino)) { // Si se dan condiciones de enroque y no hay piezas en medio
-            turno++; // Se completa el movimiento y se aumenta el turno
-            origen.f = origen.c = destino.f = destino.c = INVALID_POS; // Se borran origen y destino
+        else {
+            tablero.actualizarMovimiento(origen, destino);
+            turno = (turno == Blanca) ? Negra : Blanca; // Cambiar el turno
+            origen.f = origen.c = destino.f = destino.c = INVALID_POS;
             tablero.limpiarDestacados();
             tablero.setMovInicial();
-            return 0;
-        }
-        else { // Se valida el movimiento y no es enroque
-            tablero.actualizarMovimiento(origen, destino); // Actualiza la matriz del tablero
-            turno++; // Aumenta el turno
-            origen.f = origen.c = destino.f = destino.c = INVALID_POS; // Resetea las casillas de origen y destino
-            tablero.limpiarDestacados();
-            tablero.setMovInicial(); // Resetea la matriz de ayuda al movimiento
+
+            // Si es el turno de la IA, hacer el movimiento de la IA
+            if (vsAI && turno == Negra) {
+                jugarAI();
+                turno = Blanca; // Cambiar el turno de vuelta a las blancas despu¨¦s de que la IA haga su movimiento
+            }
         }
     }
 
-    if (turno > 9) {
-        turno = 0;
-    }
     return 0;
 }
 
 void Ajedrez::setTurno(int v)
 {
 	turno = v;
+}
+
+void Ajedrez::jugarAI()
+{
+    ai.realizarMovimiento(tablero, Negra);
+   
 }
 

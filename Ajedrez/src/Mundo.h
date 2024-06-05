@@ -8,7 +8,7 @@ class Mundo
 private:
 	Ajedrez ajedrez;
 	//estados de la m¨¢quina
-	enum Estados { INICIO, JUEGO_BABY, JUEGO_GARDNER, FIN, PAUSA, TIEMPO_LIM};
+	enum Estados { INICIO, JUEGO_BABY, JUEGO_GARDNER, JUGADOR_VS_AI, FIN, PAUSA, TIEMPO_LIM};
 	Estados estado;
 
 

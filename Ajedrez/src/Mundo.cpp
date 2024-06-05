@@ -94,6 +94,23 @@ void Mundo::dibuja()
 		}
 
 	}
+
+	else if (estado == JUGADOR_VS_AI) {
+
+		ajedrez.dibuja();
+
+		int tiempoRestante = obtenerTiempoRestante();
+		glDisable(GL_LIGHTING);
+		ETSIDI::setTextColor(1, 1, 1);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 24);
+		ETSIDI::printxy(std::to_string(tiempoRestante).c_str(), 6, 5);
+		glEnable(GL_LIGHTING);
+
+		if (tiempoRestante <= 0) {
+			estado = TIEMPO_LIM;
+		}
+
+	}
 	else if (estado == TIEMPO_LIM) {
 		gluLookAt(0, 7.5, 30,  // posicion del ojo
 			0.0, 7.5, 0.0,      // hacia que punto mira  (0,0,0) 
@@ -121,14 +138,19 @@ void Mundo::tecla(unsigned char key){
 	switch (estado) {
 	case INICIO:
 		if (key == 'B' || key == 'b') {
-			ajedrez.inicializa(true);
+			ajedrez.inicializa(true, false);
 			iniciarContador(60); // Establecer el temporizador a 60 segundos
 			estado = JUEGO_BABY;
 		}
 		else if (key == 'G' || key == 'g') {
-			ajedrez.inicializa(false);
+			ajedrez.inicializa(false, false);
 			iniciarContador(60); // Establecer el temporizador a 60 segundos
 			estado = JUEGO_GARDNER;
+		}
+		else if (key == 'a' || key == 'A') {
+			ajedrez.inicializa(true, true); // Jugador vs AI
+			iniciarContador(60);
+			estado = JUGADOR_VS_AI;
 		}
 		else if (key == 'S' || key == 's')
 			exit(0);
@@ -143,7 +165,7 @@ void Mundo::tecla(unsigned char key){
 		//Agregamos la lógica clave para manejar el estado final del juego
 		break;
 	case PAUSA:
-		if (estado == JUEGO_BABY || estado == JUEGO_GARDNER && (key == 'p' || key == 'P')) {
+		if ((estado == JUEGO_BABY || estado == JUEGO_GARDNER || estado == JUGADOR_VS_AI) && (key == 'p' || key == 'P')) {
 			estado = PAUSA;
 		}
 		// Agrega logica de clave de procesamiento cuando el juego esta en pausa
@@ -156,7 +178,7 @@ void Mundo::tecla(unsigned char key){
 
 void Mundo::JUEGA(int button, int state, int x, int y)
 {
-	if (estado == JUEGO_BABY || estado == JUEGO_GARDNER) {
+	if (estado == JUEGO_BABY || estado == JUEGO_GARDNER || estado == JUGADOR_VS_AI) {
 		ajedrez.JUEGO(button, state, x, y);
 
 	}
