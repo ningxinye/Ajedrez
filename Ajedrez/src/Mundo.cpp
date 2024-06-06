@@ -77,6 +77,7 @@ void Mundo::dibuja()
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 24);
 		ETSIDI::printxy(std::to_string(tiempoRestante).c_str(), 6, 5); // Ajustar la posición según sea necesario
+		ETSIDI::printxy("P pausa", 6, 6);
 		glEnable(GL_LIGHTING);
 
 		if (tiempoRestante <= 0) {
@@ -93,6 +94,7 @@ void Mundo::dibuja()
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 24);
 		ETSIDI::printxy(std::to_string(tiempoRestante).c_str(), 6, 5); // Ajustar la posición según sea necesario
+		ETSIDI::printxy("P pausa", 6, 6);
 		glEnable(GL_LIGHTING);
 
 		if (tiempoRestante <= 0) {
@@ -109,6 +111,7 @@ void Mundo::dibuja()
 		ETSIDI::setTextColor(1, 1, 1);
 		ETSIDI::setFont("fuentes/Bitwise.ttf", 24);
 		ETSIDI::printxy(std::to_string(tiempoRestante).c_str(), 6, 5);
+		ETSIDI::printxy("P pausa", 6, 6);
 		glEnable(GL_LIGHTING);
 
 		if (tiempoRestante <= 0) {
