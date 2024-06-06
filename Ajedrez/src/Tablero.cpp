@@ -181,27 +181,47 @@ bool Tablero::validarMovimiento(const Casilla& origen, const Casilla& destino)
             }
             resultado = Peon::esMovimientoValido(origen, destino, tempCasillas);
             break;
-        case Torre:
-            // Implementar lógica de movimiento de la torre
-            break;
-        case Caballo:
-            // Implementar lógica de movimiento del caballo
-            break;
-        case Alfil:
-            // Implementar lógica de movimiento del alfil
-            break;
-        case Reina:
-            // Implementar lógica de movimiento de la reina
-            break;
-        case Rey:
-            // Implementar lógica de movimiento del rey
-            break;
-        default:
-            resultado = false;  // Si no se reconoce el tipo de pieza, el movimiento es inválido
-            break;
-        }
-        return resultado;  // Devuelve el resultado de la validación del movimiento
-    }
+              case Torre:
+          // Implementar lógica de movimiento de la torre
+         
+          for (int i = 0; i < 5; ++i) {
+              for (int j = 0; j < 5; ++j) {
+                  tempCasillas[i][j] = casillas[i][j];
+              }
+          }
+          resultado = Torre::esMovimientoValido(origen, destino, tempCasillas);        
+          break;
+      case Caballo:
+          // Implementar lógica de movimiento del caballo
+          break;
+      case Alfil:
+          // Implementar lógica de movimiento del alfil
+          break;
+      case Reina:
+          // Implementar lógica de movimiento de la reina
+
+          for (int i = 0; i < 5; ++i) {
+              for (int j = 0; j < 5; ++j) {
+                  tempCasillas[i][j] = casillas[i][j];
+              }
+          }
+          resultado = Reina::esMovimientoValido(origen, destino, tempCasillas);
+          break;
+      case Rey:
+          // Implementar lógica de movimiento del rey
+          for (int i = 0; i < 5; ++i) {
+              for (int j = 0; j < 5; ++j) {
+                  tempCasillas[i][j] = casillas[i][j];
+              }
+          }
+          resultado = Rey::esMovimientoValido(origen, destino, tempCasillas);
+          break;
+      default:
+          resultado = false;  // Si no se reconoce el tipo de pieza, el movimiento es inválido
+          break;
+      }
+      return resultado;  // Devuelve el resultado de la validación del movimiento
+  }
 }
 
 void Tablero::actualizarMovimiento(Casilla& origen, Casilla& destino)
