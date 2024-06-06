@@ -43,7 +43,7 @@ void Tablero::dibuja() {
         for (int j = 0; j < n; j++) {
             // Dibujar tablero  
             aux++;
-            if(mov[i][j] == 1){
+            if (mov[i][j] == 1) {
                 glColor3ub(34, 177, 76);
             }
             else if ((i + j) % 2 == 0) {
@@ -54,8 +54,8 @@ void Tablero::dibuja() {
             else {
                 glColor3ub(189, 236, 182); // verde claro
             }
-            aux++;  
-           
+            aux++;
+
             // Dibujar la pieza si existe
             if (casillas[i][j] != nullptr) {
                 casillas[i][j]->dibuja(aux, mov[i][j]);
@@ -93,7 +93,7 @@ void Tablero::vaciarFila(int fila) {
     }
 }
 
-void Tablero::posicionInicial(bool est) 
+void Tablero::posicionInicial(bool est)
 {
     // Configuración de las piezas
     std::vector<Tipo> piezasBlancas = { Tipo::Torre, Tipo::Caballo, Tipo::Alfil, Tipo::Reina, Tipo::Rey };
@@ -135,7 +135,7 @@ int Tablero::getColor(Casilla& cas)
 
 bool Tablero::validarMovimiento(const Casilla& origen, const Casilla& destino)
 {
-     // Validación de movimiento basada en las reglas de la pieza
+    // Validación de movimiento basada en las reglas de la pieza
     if (casillas[origen.f][origen.c]->getColor() == casillas[destino.f][destino.c]->getColor() && casillas[destino.f][destino.c]->getTipo() != No_pieza) {
         // Si el color de destino es igual que el de origen y hay una pieza en destino, invalida el movimiento
         return false;
@@ -155,49 +155,57 @@ bool Tablero::validarMovimiento(const Casilla& origen, const Casilla& destino)
             ETSIDI::play("musica/lock.mp3");
             break;
         case Torre:
-          for (int i = 0; i < 5; ++i) {
-              for (int j = 0; j < 5; ++j) {
-                  tempCasillas[i][j] = casillas[i][j];
-              }
-          }
-          resultado = Torre::esMovimientoValido(origen, destino, tempCasillas);  
-          ETSIDI::play("musica/lock.mp3");
-          break;
+            // Implementar lógica de movimiento de la torre
+
+            for (int i = 0; i < 5; ++i) {
+                for (int j = 0; j < 5; ++j) {
+                    tempCasillas[i][j] = casillas[i][j];
+                }
+            }
+            resultado = Torre::esMovimientoValido(origen, destino, tempCasillas);
+            ETSIDI::play("musica/lock.mp3");
+            break;
         case Caballo:
-          break;
+            // Implementar lógica de movimiento del caballo
+            break;
         case Alfil:
-          for (int i = 0; i < 5; ++i) {
-              for (int j = 0; j < 5; ++j) {
-                  tempCasillas[i][j] = casillas[i][j];
-              }
-          }
-          resultado = alfil::SePuedeMover(origen, destino, tempCasillas);
-          ETSIDI::play("musica/lock.mp3");
-          break;
+            // Implementar lógica de movimiento del alfil
+            for (int i = 0; i < 5; ++i) {
+                for (int j = 0; j < 5; ++j) {
+                    tempCasillas[i][j] = casillas[i][j];
+                }
+            }
+            resultado = alfil::SePuedeMover(origen, destino, tempCasillas);
+            ETSIDI::play("musica/lock.mp3");
+            break;
         case Reina:
-          for (int i = 0; i < 5; ++i) {
-              for (int j = 0; j < 5; ++j) {
-                  tempCasillas[i][j] = casillas[i][j];
-              }
-          }
-          resultado = Reina::esMovimientoValido(origen, destino, tempCasillas);
-          ETSIDI::play("musica/lock.mp3");
-          break;
-      case Rey:
-          for (int i = 0; i < 5; ++i) {
-              for (int j = 0; j < 5; ++j) {
-                  tempCasillas[i][j] = casillas[i][j];
-              }
-          }
-          resultado = Rey::esMovimientoValido(origen, destino, tempCasillas);
-          ETSIDI::play("musica/lock.mp3");
-          break;
-      default:
-          resultado = false;  // Si no se reconoce el tipo de pieza, el movimiento es inválido
-          break;
-      }
-      return resultado;  // Devuelve el resultado de la validación del movimiento
-  }
+            // Implementar lógica de movimiento de la reina
+
+            for (int i = 0; i < 5; ++i) {
+                for (int j = 0; j < 5; ++j) {
+                    tempCasillas[i][j] = casillas[i][j];
+                }
+            }
+            resultado = Reina::esMovimientoValido(origen, destino, tempCasillas);
+            ETSIDI::play("musica/lock.mp3");
+            break;
+        case Rey:
+            // Implementar lógica de movimiento del rey
+            for (int i = 0; i < 5; ++i) {
+                for (int j = 0; j < 5; ++j) {
+                    tempCasillas[i][j] = casillas[i][j];
+                }
+            }
+            
+            resultado = Rey::esMovimientoValido(origen, destino, tempCasillas);
+            ETSIDI::play("musica/lock.mp3");
+            break;
+        default:
+            resultado = false;  // Si no se reconoce el tipo de pieza, el movimiento es inválido
+            break;
+        }
+        return resultado;  // Devuelve el resultado de la validación del movimiento
+    }
 }
 
 void Tablero::actualizarMovimiento(Casilla& origen, Casilla& destino)
@@ -230,7 +238,7 @@ int Tablero::PosiblesMovimientos(Casilla& origen)
 //Matriz de ayuda al movimiento
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            if (validarMovimiento(origen, casillas[i][j]->getCasilla())) {  mov[i][j] = 1;  }
+            if (validarMovimiento(origen, casillas[i][j]->getCasilla())) { mov[i][j] = 1; }
         }
     }
     return 0;

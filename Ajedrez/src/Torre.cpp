@@ -1,4 +1,4 @@
-#include"Torre.h"
+ï»¿#include"Torre.h"
 #include <math.h>
 #include <iostream> 
 
@@ -13,9 +13,9 @@ bool Torre::esMovimientoValido(const Casilla& origen, const Casilla& destino, Pi
 	if (casillas[origen.f][origen.c]->getColor() == Blanca) {
 		std::cout << "Intento de movimiento de una pieza blanca.\n";
 
-		// Se comprueba si la líena es recta o no
+		// Se comprueba si la lï¿½ena es recta o no
 		if (diferenciaDeFilas != 0 && diferenciaDeColumnas != 0) {
-			std::cout << "No es un movimiento rectilínea\n";
+			std::cout << "No es un movimiento rectilï¿½nea\n";
 			return false;
 		}
 		//Moviemiento de la torre
@@ -54,9 +54,9 @@ bool Torre::esMovimientoValido(const Casilla& origen, const Casilla& destino, Pi
 	else if (casillas[origen.f][origen.c]->getColor() == Negra) {
 		std::cout << "Intento de movimiento de una pieza negra.\n";
 
-		// Se comprueba si la líena es recta o no
+		// Se comprueba si la lï¿½ena es recta o no
 		if (diferenciaDeFilas != 0 && diferenciaDeColumnas != 0) {
-			std::cout << "No es un movimiento rectilínea\n";
+			std::cout << "No es un movimiento rectilï¿½nea\n";
 			return false;
 		}
 		if (diferenciaDeFilas != 0) {
@@ -92,6 +92,6 @@ bool Torre::esMovimientoValido(const Casilla& origen, const Casilla& destino, Pi
 		}
 	}
 
-	return false; 
+	return false;
 
 }

@@ -28,9 +28,9 @@ void Mundo::dibuja()
 			0.0, 7.5, 0.0,      // hacia que punto mira  (0,0,0) 
 			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)  
 
-	
+
 		glEnable(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/inicio.png").id); 
+		glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/inicio.png").id);
 		glDisable(GL_LIGHTING);
 
 		glBegin(GL_POLYGON);
@@ -82,7 +82,7 @@ void Mundo::dibuja()
 		if (tiempoRestante <= 0) {
 			estado = TIEMPO_LIM;
 		}
-		
+
 	}
 	else if (estado == JUEGO_GARDNER) {
 		ajedrez.dibuja();
@@ -98,7 +98,7 @@ void Mundo::dibuja()
 		if (tiempoRestante <= 0) {
 			estado = TIEMPO_LIM;
 		}
-		
+
 	}
 	else if (estado == JUGADOR_VS_AI) {
 
@@ -114,7 +114,7 @@ void Mundo::dibuja()
 		if (tiempoRestante <= 0) {
 			estado = TIEMPO_LIM;
 		}
-	
+
 	}
 	else if (estado == TIEMPO_LIM) {
 		gluLookAt(0, 7.5, 30,  // posicion del ojo
@@ -132,7 +132,7 @@ void Mundo::dibuja()
 	}
 
 	else if (estado == PAUSA) {
-		
+
 		gluLookAt(0, 7.5, 30,  // posicion del ojo
 			0.0, 7.5, 0.0,      // hacia que punto mira  (0,0,0) 
 			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)  
@@ -153,15 +153,13 @@ void Mundo::dibuja()
 		glDisable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, 0);
 
-		
+
 	}
 }
 
 //navegacion por teclado para avanzar el juego
-void Mundo::tecla(unsigned char key){
-
-	bool baby=true; //solo para inicializarlas
-	bool ia=true;
+void Mundo::tecla(unsigned char key) {
+	static bool ia = false; // Variable estática para mantener el estado de IA
 
 	switch (estado) {
 	case INICIO:
@@ -180,54 +178,36 @@ void Mundo::tecla(unsigned char key){
 		break;
 	case SELECCIONAR:
 		if (key == 'B' || key == 'b') {
-			baby = true;
 			ETSIDI::play("musica/seleccionar.wav");
-			iniciarContador(60);
-			if (ia = true)
-				estado = JUGADOR_VS_AI;
-			else
-				estado = JUEGO_BABY;
+			ajedrez.inicializa(true, ia);
+			iniciarContador(60); // Establecer el temporizador a 60 segundos
+			estado = ia ? JUGADOR_VS_AI : JUEGO_BABY;
 		}
 		else if (key == 'G' || key == 'g') {
-			baby = false;
 			ETSIDI::play("musica/seleccionar.wav");
-			iniciarContador(60);
-			if (ia = true)
-				estado = JUGADOR_VS_AI;
-			else
-				estado = JUEGO_GARDNER;		
+			ajedrez.inicializa(false, ia);
+			iniciarContador(60); // Establecer el temporizador a 60 segundos
+			estado = ia ? JUGADOR_VS_AI : JUEGO_GARDNER;
 		}
 		break;
 	case JUEGO_BABY:
-		ajedrez.inicializa(baby, ia);
-		if (key == 'p' || key == 'P'){
-			estado = PAUSA;
-		}
-		break;
 	case JUEGO_GARDNER:
-		ajedrez.inicializa(baby, ia);
-		if (key == 'p' || key == 'P'){
-			estado = PAUSA;
-		}
-		break;
-		break;
 	case JUGADOR_VS_AI:
-		ajedrez.inicializa(baby, ia);
-		if (key == 'p' || key == 'P'){
+		// Lógica para manejar estados del juego
+		if (key == 'p' || key == 'P') {
 			estado = PAUSA;
 		}
-		break;
-		break;
-	case FIN:
-		 //Agregamos la lógica clave para manejar el estado final del juego
 		break;
 	case PAUSA:
 		if (key == 'v' || key == 'V') {
-			estado = ia ? JUGADOR_VS_AI : (baby ? JUEGO_BABY : JUEGO_GARDNER);
+			estado = ia ? JUGADOR_VS_AI : (estado == JUEGO_BABY ? JUEGO_BABY : JUEGO_GARDNER);
 		}
 		else if (key == 's' || key == 'S') {
 			exit(0);
 		}
+		break;
+	case FIN:
+		// Lógica para el estado final del juego
 		break;
 	default:
 		break;
@@ -236,7 +216,7 @@ void Mundo::tecla(unsigned char key){
 
 
 void Mundo::musica() {
-	
+
 
 	if (estado == INICIO) {
 		nueva_musica = "musica/chill.mp3";
@@ -255,7 +235,7 @@ void Mundo::musica() {
 		musica_actual = nueva_musica; // Actualizar el estado actual de la música
 	}
 }
-		
+
 
 void Mundo::JUEGA(int button, int state, int x, int y)
 {
@@ -276,7 +256,6 @@ int Mundo::obtenerTiempoRestante()
 	int elapsed = static_cast<int>(difftime(now, startTime));
 	return countdownTime - elapsed;
 }
-
 
 
 

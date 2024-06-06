@@ -10,7 +10,7 @@ bool Rey::esMovimientoValido(const Casilla& origen, const Casilla& destino, Piez
     //Movimiento del rey
 
     if (diferenciaDeFilas <= 1 && diferenciaDeColumnas <= 1) {
-       
+
         if (casillas[destino.f][destino.c]->getTipo() == No_pieza || casillas[destino.f][destino.c]->getColor() != casillas[origen.f][origen.c]->getColor()) {
             return true;
         }

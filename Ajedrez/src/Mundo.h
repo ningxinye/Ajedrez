@@ -1,14 +1,14 @@
-#pragma once
+ï»¿#pragma once
 #include "Ajedrez.h"
 #include <ctime>
 
-//desde archivo Mundo, implementamos una sensilla m¨¢quina de estado 
+//desde archivo Mundo, implementamos una sensilla mï¿½ï¿½quina de estado 
 class Mundo
 {
 private:
 	Ajedrez ajedrez;
-	//estados de la m¨¢quina
-	enum Estados { INICIO, SELECCIONAR, JUEGO_BABY, JUEGO_GARDNER, JUGADOR_VS_AI, FIN, PAUSA, TIEMPO_LIM};
+	//estados de la mï¿½ï¿½quina
+	enum Estados { INICIO, SELECCIONAR, JUEGO_BABY, JUEGO_GARDNER, JUGADOR_VS_AI, FIN, PAUSA, TIEMPO_LIM };
 	Estados estado;
 	// Variables para el temporizador
 	time_t startTime;
@@ -21,7 +21,7 @@ public:
 	std::string nueva_musica;
 	std::string musica_actual;
 
-	void dibuja(); 
+	void dibuja();
 	void tecla(unsigned char key);
 	void musica();
 	void JUEGA(int button, int state, int x, int y); //jugar con raton

@@ -9,11 +9,11 @@ Ajedrez::Ajedrez()
 
 void Ajedrez::dibuja()
 {
-	gluLookAt(2.5, 2.5, 12,  // posicion del ojo
-		2.5, 2.5, 0.0,    // hacia que punto mira  (0,0,0) 
-		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y) 
-	
-	tablero.dibuja();
+    gluLookAt(2.5, 2.5, 12,  // posicion del ojo
+        2.5, 2.5, 0.0,    // hacia que punto mira  (0,0,0) 
+        0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y) 
+
+    tablero.dibuja();
 }
 
 void Ajedrez::inicializa(bool est, bool vsAI)
@@ -26,12 +26,12 @@ void Ajedrez::inicializa(bool est, bool vsAI)
 
 bool Ajedrez::verificarturno(int color)
 {
-	std::cout << "Verificando turno. Turno actual: " << turno << ", Color de pieza: " << color << std::endl;
-	if ((turno % 2 == 0 && color != Negra) || (turno % 2 == 1 && color != Blanca)) {
-		std::cout << "Volverse incorrecto o color de la pieza incorrecta." << std::endl;
-		return false;
-	}
-	return true;
+    std::cout << "Verificando turno. Turno actual: " << turno << ", Color de pieza: " << color << std::endl;
+    if ((turno % 2 == 0 && color != Negra) || (turno % 2 == 1 && color != Blanca)) {
+        std::cout << "Volverse incorrecto o color de la pieza incorrecta." << std::endl;
+        return false;
+    }
+    return true;
 }
 
 int Ajedrez::JUEGO(int button, int state, int x, int y) {
@@ -94,12 +94,11 @@ int Ajedrez::JUEGO(int button, int state, int x, int y) {
 
 void Ajedrez::setTurno(int v)
 {
-	turno = v;
+    turno = v;
 }
 
 void Ajedrez::jugarAI()
 {
     ai.realizarMovimiento(tablero, Negra);
-   
-}
 
+}

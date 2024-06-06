@@ -13,12 +13,12 @@ bool alfil::SePuedeMover(const Casilla& origen, const Casilla& destino, Pieza* c
     if (casillas[origen.f][origen.c]->getColor() == Blanca) {
         std::cout << "Intento de movimiento de una pieza blanca.\n";
 
-        // ComprobaciÃ³n de que el movimiento no es diagonal
+        // Comprobaci¨®n de que el movimiento no es diagonal
         if (abs(diferenciaDeFilas) != abs(diferenciaDeColumnas)) {
             std::cout << "Movimiento no es diagonal\n";
             return false;
         }
-        
+
 
         if (diferenciaDeFilas != 0) {
             Fila = diferenciaDeFilas / abs(diferenciaDeFilas);
@@ -34,7 +34,7 @@ bool alfil::SePuedeMover(const Casilla& origen, const Casilla& destino, Pieza* c
         else {
             Columna = 0;
         }
-        
+
         int f = origen.f + Fila;
         int c = origen.c + Columna;
         while (f != destino.f || c != destino.c) {
@@ -54,7 +54,7 @@ bool alfil::SePuedeMover(const Casilla& origen, const Casilla& destino, Pieza* c
     else if (casillas[origen.f][origen.c]->getColor() == Negra) {
         std::cout << "Intento de movimiento de una pieza negra.\n";
 
-        // ComprabaciÃ³n de que el movimiento no es lineal
+        // Comprabaci¨®n de que el movimiento no es lineal
         if (abs(diferenciaDeFilas) != abs(diferenciaDeColumnas)) {
             std::cout << "Movimiento no es diagonal\n";
             return false;

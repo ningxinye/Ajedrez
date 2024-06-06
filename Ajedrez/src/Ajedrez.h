@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "Tablero.h"
 #include"AI_SIMPLE.h"
 #include "freeglut.h"
@@ -14,7 +14,7 @@ private:
 	AI ai;
 	int turno = Blanca;// gestion de turno con valor inicial 0
 	//INVALID_POS:Estado no inicializado,Esto es particularmente util cuando se manejan interacciones del usuario (como clics del mouse en un tablero de ajedrez),
-	//  ya que puede verificar facilmente si Casilla todavia esta en este estado de inicializacion y, por lo tanto, si el usuario ha seleccionado una posici¨®n inicial o de destino v¨¢lida.
+	//  ya que puede verificar facilmente si Casilla todavia esta en este estado de inicializacion y, por lo tanto, si el usuario ha seleccionado una posiciï¿½ï¿½n inicial o de destino vï¿½ï¿½lida.
 	Casilla origen{ INVALID_POS, INVALID_POS };  //Casilla de origen para la implementacion del movimeinto por raton
 	Casilla destino{ INVALID_POS, INVALID_POS };  //Casilla de destsino para la implementacion del movimiento por raton
 	bool vsAI = false; // Flag para determinar si es vs AI
@@ -28,7 +28,7 @@ public:
 	bool verificarturno(int color);
 	int JUEGO(int button, int state, int x, int y);	//Coordina los diferentes metodos de tablero para gestionar una jugada
 	void setTurno(int v);
-	int getTurno(){ return turno; }
+	int getTurno() { return turno; }
 	void jugarAI();
 
 };

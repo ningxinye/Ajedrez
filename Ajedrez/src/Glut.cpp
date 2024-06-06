@@ -54,14 +54,14 @@ void OnDraw(void)
 	glLoadIdentity();
 
 	mundo.dibuja();
-	
+
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
 }
 
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
-	//poner aqui el código de teclado
+	//poner aqui el c¨®digo de teclado
 	mundo.tecla(key);
 	glutPostRedisplay();//PARA REPINTAR LA VENTANA
 }
@@ -71,7 +71,7 @@ void OnMouseDown(int button, int state, int x, int y)
 	// Verificar si se ha presionado el boton izquierdo del raton y el estado es de presionado
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN && x >= 205 && x <= 590 && y >= 104 && y <= 493)
 	{
-			// Llama a la funcion de Mundo para procesar el clic del raton
+		// Llama a la funcion de Mundo para procesar el clic del raton
 		mundo.JUEGA(button, state, x, y);
 	}
 }

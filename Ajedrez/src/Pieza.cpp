@@ -1,3 +1,4 @@
+
 #include "Pieza.h"
 #include <iostream>
 #include <filesystem>
@@ -13,25 +14,24 @@ Pieza::~Pieza()
 }
 
 //pintando cada pieza
-void Pieza::dibuja(int aux, int auxmov)
+void Pieza::dibuja(int AUX, int auxmov)
 {
     //std::cout << "Dibujando pieza: Tipo " << tipo << ", Color " << color << " en la casilla (" << casilla.f << ", " << casilla.c << ")\n";
 
     // Habilitar el uso de texturas
     glEnable(GL_TEXTURE_2D);
 
-    // Seleccionar la textura adecuada segun el tipo y color de la pieza
+    // Seleccionar la textura adecuada seg¨²n el tipo y color de la pieza
     const char* rutaImagen = nullptr;
 
     if ( tipo == No_pieza ||color == Sin_color) {
         // Si el color es Sin_color, no hay pieza que dibujar
-   
-        //rutaImagen = "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/vacio.png";
+         //rutaImagen = "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/vacio.png";
         rutaImagen = "imagenes/vacio.png";
     }
     else {
         switch (tipo)
-        {
+    {
         case Peon:
             //rutaImagen = (color == Negra) ? "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/peon_negro.png" : "D:/download/trabajo_inf_2024/NUEVA CARPETA/Ajedrez/Ajedrez/Ajedrez/bin/peon_blanco.png";
             rutaImagen = (color == Negra) ? "imagenes/peon_negro.png" : "imagenes/peon_blanco.png";
@@ -63,11 +63,11 @@ void Pieza::dibuja(int aux, int auxmov)
     }
 
     glDisable(GL_LIGHTING);
-    // Seleccionar la textura segun la ruta de la imagen
+    // Seleccionar la textura seg¨²n la ruta de la imagen
 
     glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture(rutaImagen).id);
 
-    // Especificar coordenadas de textura y vertices para la pieza
+    // Especificar coordenadas de textura y v¨¦rtices para la pieza
     glBegin(GL_POLYGON);
 
 
@@ -94,7 +94,7 @@ void Pieza::dibuja(int aux, int auxmov)
 
 Pieza::Pieza(const Pieza& p)
 {
-    //parametro constante
+    //par¨¢metro constante
     tipo = p.tipo;
     color = p.color;
     casilla = p.casilla;
