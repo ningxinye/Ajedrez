@@ -54,8 +54,13 @@ void Tablero::dibuja() {
             else {
                 glColor3ub(189, 236, 182); // verde claro
             }
-            aux++;   
-            casillas[i][j]->dibuja(aux, mov[i][j]); //Llama al dibuja de pieza
+            aux++;  
+           
+            // Dibujar la pieza si existe
+            if (casillas[i][j] != nullptr) {
+                casillas[i][j]->dibuja(aux, mov[i][j]);
+            }
+            //casillas[i][j]->dibuja(aux, mov[i][j]); //Llama al dibuja de pieza
         }
 
         glBegin(GL_POLYGON);
@@ -68,81 +73,52 @@ void Tablero::dibuja() {
 
         glEnable(GL_LIGHTING);
     }
-
 }
 
-void Tablero::posicionInicial( bool est )//Posicion iniciales de las piezas en el tablero
+void Tablero::colocarPiezasIniciales(int fila, Color color, std::vector<Tipo> piezas) {
+    for (int j = 0; j < 5; j++) {
+        casillas[fila][j] = new Pieza(piezas[j], color, fila, j);
+    }
+}
+
+void Tablero::posicionarPeones(int fila, Color color) {
+    for (int j = 0; j < 5; j++) {
+        casillas[fila][j] = new Pieza(Tipo::Peon, color, fila, j);
+    }
+}
+
+void Tablero::vaciarFila(int fila) {
+    for (int j = 0; j < 5; j++) {
+        casillas[fila][j] = new Pieza(Tipo::No_pieza, Color::Sin_color, fila, j);
+    }
+}
+
+void Tablero::posicionInicial(bool est) 
 {
-    est = true; //true BABY, false GARDNER
-    if (est)
-    {
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
+    // Configuración de las piezas
+    std::vector<Tipo> piezasBlancas = { Tipo::Torre, Tipo::Caballo, Tipo::Alfil, Tipo::Reina, Tipo::Rey };
+    std::vector<Tipo> piezasNegrasBABY = { Tipo::Rey, Tipo::Reina, Tipo::Alfil, Tipo::Caballo, Tipo::Torre };
+    std::vector<Tipo> piezasNegrasGARDNER = { Tipo::Torre, Tipo::Caballo, Tipo::Alfil, Tipo::Reina, Tipo::Rey };
 
+    // Colocar piezas blancas
+    colocarPiezasIniciales(0, Color::Blanca, piezasBlancas);
+    posicionarPeones(1, Color::Blanca);
 
-                // Piezas Blancas
-                casillas[0][0] = new Pieza(Tipo::Torre, Color::Blanca, 0, 0);
-                casillas[0][1] = new Pieza(Tipo::Caballo, Color::Blanca, 0, 1);
-                casillas[0][2] = new Pieza(Tipo::Alfil, Color::Blanca, 0, 2);
-                casillas[0][3] = new Pieza(Tipo::Reina, Color::Blanca, 0, 3);
-                casillas[0][4] = new Pieza(Tipo::Rey, Color::Blanca, 0, 4);
-                for (int i = 0; i < 5; ++i) {
-                    casillas[1][i] = new Pieza(Tipo::Peon, Color::Blanca, 1, i);
-                }
+    // Vaciar la fila central
+    vaciarFila(2);
 
-                // Piezas Negras
-                casillas[4][0] = new Pieza(Tipo::Rey, Color::Negra, 4, 0);
-                casillas[4][1] = new Pieza(Tipo::Reina, Color::Negra, 4, 1);
-                casillas[4][2] = new Pieza(Tipo::Alfil, Color::Negra, 4, 2);
-                casillas[4][3] = new Pieza(Tipo::Caballo, Color::Negra, 4, 3);
-                casillas[4][4] = new Pieza(Tipo::Torre, Color::Negra, 4, 4);
-                for (int i = 0; i < 5; ++i) {
-                    casillas[3][i] = new Pieza(Tipo::Peon, Color::Negra, 3, i);
-                }
-                // Vacios
-                for (int i = 0; i < 5; ++i) {
-                    casillas[2][i] = new Pieza(Tipo::No_pieza, Color::Sin_color, 2, i);
-                }
-                //Asignación de casilla
-                casillas[i][j]->setCasilla(i, j);
-            }
-        }
+    // Colocar peones negros
+    posicionarPeones(3, Color::Negra);
+
+    // Colocar piezas negras según el tipo de ajedrez
+    if (est) { // Configuración BABY
+        colocarPiezasIniciales(4, Color::Negra, piezasNegrasBABY);
     }
-    else
-    {
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-
-
-                // Piezas Blancas
-                casillas[0][0] = new Pieza(Tipo::Torre, Color::Blanca, 0, 0);
-                casillas[0][1] = new Pieza(Tipo::Caballo, Color::Blanca, 0, 1);
-                casillas[0][2] = new Pieza(Tipo::Alfil, Color::Blanca, 0, 2);
-                casillas[0][3] = new Pieza(Tipo::Reina, Color::Blanca, 0, 3);
-                casillas[0][4] = new Pieza(Tipo::Rey, Color::Blanca, 0, 4);
-                for (int i = 0; i < 5; ++i) {
-                    casillas[1][i] = new Pieza(Tipo::Peon, Color::Blanca, 1, i);
-                }
-
-                // Piezas Negras
-                casillas[4][0] = new Pieza(Tipo::Torre, Color::Negra, 4, 0);
-                casillas[4][1] = new Pieza(Tipo::Caballo, Color::Negra, 4, 1);
-                casillas[4][2] = new Pieza(Tipo::Alfil, Color::Negra, 4, 2);
-                casillas[4][3] = new Pieza(Tipo::Reina, Color::Negra, 4, 3);
-                casillas[4][4] = new Pieza(Tipo::Rey, Color::Negra, 4, 4);
-                for (int i = 0; i < 5; ++i) {
-                    casillas[3][i] = new Pieza(Tipo::Peon, Color::Negra, 3, i);
-                }
-                // Vacios
-                for (int i = 0; i < 5; ++i) {
-                    casillas[2][i] = new Pieza(Tipo::No_pieza, Color::Sin_color, 2, i);
-                }
-                //Asignación de casilla
-                casillas[i][j]->setCasilla(i, j);
-            }
-        }
+    else { // Configuración GARDNER
+        colocarPiezasIniciales(4, Color::Negra, piezasNegrasGARDNER);
     }
 }
+
 
 int Tablero::getColor(Casilla& cas)
 {
@@ -156,10 +132,6 @@ int Tablero::getColor(Casilla& cas)
     return color;
 }
 
-int Tablero::validarEnroque(Casilla& origen, Casilla& destino)
-{
-    return 0;
-}
 
 bool Tablero::validarMovimiento(const Casilla& origen, const Casilla& destino)
 {
@@ -220,7 +192,7 @@ bool Tablero::validarMovimiento(const Casilla& origen, const Casilla& destino)
                   tempCasillas[i][j] = casillas[i][j];
               }
           }
-          resultado = Rey::esMovimientoValido(origen, destino, tempCasillas);
+          //resultado = Rey::esMovimientoValido(origen, destino, tempCasillas);
           break;
       default:
           resultado = false;  // Si no se reconoce el tipo de pieza, el movimiento es inválido

@@ -19,14 +19,18 @@ public:
 	Tablero();
 	~Tablero();
 
-	//gr¨¢fico
+	//grafico
 	void dibuja();
+	void colocarPiezasIniciales(int fila, Color color, std::vector<Tipo> piezas);
 	//void dibujarPiezas();
+
+	void posicionarPeones(int fila, Color color);
+
+	void vaciarFila(int fila);
 
 	//logico
 	void posicionInicial(bool est);
 	int getColor(Casilla& cas); // Obtener el color de la pieza de ajedrez en una posicion determinada.
-    int validarEnroque( Casilla& origen,  Casilla& destino);
     bool validarMovimiento(const Casilla& origen, const Casilla& destino);
 	void actualizarMovimiento(Casilla& origen, Casilla& destino);
 	int PosiblesMovimientos(Casilla& origen);
