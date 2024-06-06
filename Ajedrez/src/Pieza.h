@@ -5,6 +5,7 @@
 #include "Casilla.h"
 #include"Peon.h"
 #include"Torre.h"
+#include"alfil.h"
 #include"Reina.h"
 #include"Rey.h"
 #include"freeglut.h"
