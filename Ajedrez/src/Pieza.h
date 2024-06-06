@@ -4,9 +4,6 @@
 #include"ETSIDI.h"
 #include "Casilla.h"
 #include"Peon.h"
-#include"Torre.h"
-#include"Reina.h"
-#include"Rey.h"
 #include"freeglut.h"
 
 enum  Tipo { No_pieza, Peon, Caballo, Alfil, Torre, Rey, Reina };
@@ -49,8 +46,6 @@ public:
         // De forma predeterminada, retorna false (los subtipos deben anular este m¨¦todo)
         return false;
     }
-
-    
 
 private:
     Tipo tipo;
