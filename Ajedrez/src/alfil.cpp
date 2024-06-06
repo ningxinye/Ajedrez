@@ -4,7 +4,7 @@
 
 bool alfil::SePuedeMover(const Casilla& origen, const Casilla& destino, Pieza* casillas[5][5])
 {
-    std::cout << "Comprobando movimiento de la reina: desde (" << origen.f << ", " << origen.c << ") hasta (" << destino.f << ", " << destino.c << ")\n";
+    std::cout << "Comprobando movimiento del alfil: desde (" << origen.f << ", " << origen.c << ") hasta (" << destino.f << ", " << destino.c << ")\n";
 
     int diferenciaDeFilas = destino.f - origen.f;
     int diferenciaDeColumnas = destino.c - origen.c;
