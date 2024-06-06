@@ -7,7 +7,7 @@
 #include"Torre.h"
 #include"alfil.h"
 #include"Reina.h"
-//#include"Rey.h"
+#include"Rey.h"
 #include"freeglut.h"
 
 enum  Tipo { No_pieza, Peon, Caballo, Alfil, Torre, Rey, Reina };
