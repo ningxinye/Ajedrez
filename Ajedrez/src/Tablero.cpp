@@ -179,6 +179,13 @@ bool Tablero::validarMovimiento(const Casilla& origen, const Casilla& destino)
             break;
         case Rey:
             // Implementar lógica de movimiento del rey
+
+            for (int i = 0; i < 5; ++i) {
+                for (int j = 0; j < 5; ++j) {
+                    tempCasillas[i][j] = casillas[i][j];
+                }
+            }
+            resultado = Rey::esMovimientoValido(origen, destino, tempCasillas);
             break;
         default:
             resultado = false;  // Si no se reconoce el tipo de pieza, el movimiento es inválido
