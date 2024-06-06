@@ -152,47 +152,45 @@ bool Tablero::validarMovimiento(const Casilla& origen, const Casilla& destino)
                 }
             }
             resultado = Peon::esMovimientoValido(origen, destino, tempCasillas);
+            ETSIDI::play("musica/lock.mp3");
             break;
-              case Torre:
-          // Implementar lógica de movimiento de la torre
-         
+        case Torre:
           for (int i = 0; i < 5; ++i) {
               for (int j = 0; j < 5; ++j) {
                   tempCasillas[i][j] = casillas[i][j];
               }
           }
-          resultado = Torre::esMovimientoValido(origen, destino, tempCasillas);        
+          resultado = Torre::esMovimientoValido(origen, destino, tempCasillas);  
+          ETSIDI::play("musica/lock.mp3");
           break;
-      case Caballo:
-          // Implementar lógica de movimiento del caballo
+        case Caballo:
           break;
-      case Alfil:
-          // Implementar lógica de movimiento del alfil
+        case Alfil:
           for (int i = 0; i < 5; ++i) {
               for (int j = 0; j < 5; ++j) {
                   tempCasillas[i][j] = casillas[i][j];
               }
           }
           resultado = alfil::SePuedeMover(origen, destino, tempCasillas);
+          ETSIDI::play("musica/lock.mp3");
           break;
-      case Reina:
-          // Implementar lógica de movimiento de la reina
-
+        case Reina:
           for (int i = 0; i < 5; ++i) {
               for (int j = 0; j < 5; ++j) {
                   tempCasillas[i][j] = casillas[i][j];
               }
           }
           resultado = Reina::esMovimientoValido(origen, destino, tempCasillas);
+          ETSIDI::play("musica/lock.mp3");
           break;
       case Rey:
-          // Implementar lógica de movimiento del rey
           for (int i = 0; i < 5; ++i) {
               for (int j = 0; j < 5; ++j) {
                   tempCasillas[i][j] = casillas[i][j];
               }
           }
           resultado = Rey::esMovimientoValido(origen, destino, tempCasillas);
+          ETSIDI::play("musica/lock.mp3");
           break;
       default:
           resultado = false;  // Si no se reconoce el tipo de pieza, el movimiento es inválido
