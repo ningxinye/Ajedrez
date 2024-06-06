@@ -196,6 +196,12 @@ bool Tablero::validarMovimiento(const Casilla& origen, const Casilla& destino)
           break;
       case Alfil:
           // Implementar lógica de movimiento del alfil
+          for (int i = 0; i < 5; ++i) {
+              for (int j = 0; j < 5; ++j) {
+                  tempCasillas[i][j] = casillas[i][j];
+              }
+          }
+          resultado = alfil::SePuedeMover(origen, destino, tempCasillas);
           break;
       case Reina:
           // Implementar lógica de movimiento de la reina
