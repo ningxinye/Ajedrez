@@ -1,6 +1,5 @@
 
 #include "Ajedrez.h"
-
 using namespace std;
 
 
@@ -15,8 +14,6 @@ void Ajedrez::dibuja()
 		0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y) 
 	
 	tablero.dibuja();
-
-
 }
 
 void Ajedrez::inicializa(bool est, bool vsAI)
@@ -37,12 +34,10 @@ bool Ajedrez::verificarturno(int color)
 	return true;
 }
 
-
-
 int Ajedrez::JUEGO(int button, int state, int x, int y) {
-    if (state != GLUT_DOWN) return 0; // Solo manejar eventos cuando se presiona el bot¨®n
+    if (state != GLUT_DOWN) return 0; // Solo manejar eventos cuando se presiona el boton
 
-    cout << "Evento del rat¨®n recibido - Bot¨®n: " << button << ", Estado: " << state << ", x: " << x << ", y: " << y << endl;
+    cout << "Evento del raton recibido - Boton: " << button << ", Estado: " << state << ", x: " << x << ", y: " << y << endl;
     auto getCasilla = [](int x, int y) -> Casilla {
         Casilla casilla;
         casilla.c = static_cast<int>((x - 226) / 70);
@@ -56,7 +51,7 @@ int Ajedrez::JUEGO(int button, int state, int x, int y) {
 
         if (!verificarturno(tablero.getColor(origen))) {
             origen.f = origen.c = INVALID_POS;
-            cout << "Origen no v¨¢lido debido a turno o casilla vac¨ªa" << endl;
+            cout << "Origen no valido debido a turno o casilla vacia" << endl;
             return 0;
         }
 
@@ -76,7 +71,7 @@ int Ajedrez::JUEGO(int button, int state, int x, int y) {
         }
         else if (!tablero.validarMovimiento(origen, destino)) {
             destino.f = destino.c = INVALID_POS;
-            cout << "Movimiento no v¨¢lido. Restablecer destino." << endl;
+            cout << "Movimiento no valido. Restablecer destino." << endl;
             return 0;
         }
         else {
@@ -89,7 +84,7 @@ int Ajedrez::JUEGO(int button, int state, int x, int y) {
             // Si es el turno de la IA, hacer el movimiento de la IA
             if (vsAI && turno == Negra) {
                 jugarAI();
-                turno = Blanca; // Cambiar el turno de vuelta a las blancas despu¨¦s de que la IA haga su movimiento
+                turno = Blanca; // Cambiar el turno de vuelta a las blancas despues de que la IA haga su movimiento
             }
         }
     }

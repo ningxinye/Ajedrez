@@ -11,7 +11,7 @@ Mundo mundo;
 void OnDraw(void); //esta funcion sera llamada para dibujar
 void OnTimer(int value); //esta funcion sera llamada cuando transcurra una temporizacion
 void OnKeyboardDown(unsigned char key, int x, int y); //cuando se pulse una tecla	
-void OnMouseDown(int button, int state, int x, int y);//cuando se pulse el rat車n
+void OnMouseDown(int button, int state, int x, int y);//cuando se pulse el raton
 
 int main(int argc, char* argv[])
 {
@@ -54,10 +54,11 @@ void OnDraw(void)
 	glLoadIdentity();
 
 	mundo.dibuja();
-
+	
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
 }
+
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
 	//poner aqui el c鏚igo de teclado
@@ -67,10 +68,10 @@ void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 
 void OnMouseDown(int button, int state, int x, int y)
 {
-	// Verificar si se ha presionado el bot車n izquierdo del rat車n y el estado es de presionado
+	// Verificar si se ha presionado el boton izquierdo del raton y el estado es de presionado
 	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN && x >= 205 && x <= 590 && y >= 104 && y <= 493)
 	{
-			// Llama a la funci車n de Mundo para procesar el clic del rat車n
+			// Llama a la funcion de Mundo para procesar el clic del raton
 		mundo.JUEGA(button, state, x, y);
 	}
 }

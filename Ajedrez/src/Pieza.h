@@ -6,7 +6,7 @@
 #include"Peon.h"
 #include"Torre.h"
 #include"Reina.h"
-#include"Rey.h"
+//#include"Rey.h"
 #include"freeglut.h"
 
 enum  Tipo { No_pieza, Peon, Caballo, Alfil, Torre, Rey, Reina };
@@ -44,7 +44,7 @@ public:
     int setFila(int nuevaFila) { fila = nuevaFila; }
     int setCol(int nuevaCol) { col = nuevaCol; }
 
-     // Define el m¨¦todo virtual puedeMoverse
+     // Define el metodo virtual puedeMoverse
     virtual bool puedeMoverse(const Casilla& origen, const Casilla& destino, Pieza* casillas[5][5]) {
         // De forma predeterminada, retorna false (los subtipos deben anular este m¨¦todo)
         return false;
