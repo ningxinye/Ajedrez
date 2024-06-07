@@ -13,7 +13,6 @@ private:
 	std::vector<std::vector<Pieza*>> casillas; // Representaci¨®n del tablero
 	// Pieza** PIE; //PIE es una matriz de piezas
 	int** mov; //matriz auxiliar para implementar la ayuda al movimiento
-	//bool necesitoRedibujo[5][5];
 
 public:
 	Tablero();
@@ -22,13 +21,11 @@ public:
 	//grafico
 	void dibuja();
 	void colocarPiezasIniciales(int fila, Color color, std::vector<Tipo> piezas);
-	//void dibujarPiezas();
 
 	void posicionarPeones(int fila, Color color);
-
 	void vaciarFila(int fila);
 
-	//logico
+	//logica
 	void posicionInicial(bool est);
 	int getColor(Casilla& cas); // Obtener el color de la pieza de ajedrez en una posicion determinada.
 	bool validarMovimiento(const Casilla& origen, const Casilla& destino);

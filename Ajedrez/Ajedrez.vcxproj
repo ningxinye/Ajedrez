@@ -22,6 +22,7 @@
     <ClCompile Include="src\AI_SIMPLE.cpp" />
     <ClCompile Include="src\Ajedrez.cpp" />
     <ClCompile Include="src\alfil.cpp" />
+    <ClCompile Include="src\caballo.cpp" />
     <ClCompile Include="src\Casilla.cpp" />
     <ClCompile Include="src\Glut.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
@@ -37,6 +38,7 @@
     <ClInclude Include="src\AI_SIMPLE.h" />
     <ClInclude Include="src\Ajedrez.h" />
     <ClInclude Include="src\alfil.h" />
+    <ClInclude Include="src\caballo.h" />
     <ClInclude Include="src\Casilla.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Peon.h" />

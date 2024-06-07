@@ -1,2 +1,21 @@
-﻿  Tablero.cpp
+﻿  AI_SIMPLE.cpp
+C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\AI_SIMPLE.cpp(7,25): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  Ajedrez.cpp
+  alfil.cpp
+  caballo.cpp
+C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\caballo.cpp(11,15): warning C4101: 'Columna': variable local sin referencia
+C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\caballo.cpp(11,9): warning C4101: 'Fila': variable local sin referencia
+  Glut.cpp
+  Mundo.cpp
+  Peon.cpp
+  Pieza.cpp
+  Reina.cpp
+C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Reina.cpp(18,26): warning C4566: el carácter representado por el nombre de carácter universal '\uFFFD' no se puede representar en la página de códigos actual (1252)
+C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Reina.cpp(60,26): warning C4566: el carácter representado por el nombre de carácter universal '\uFFFD' no se puede representar en la página de códigos actual (1252)
+  Rey.cpp
+  Tablero.cpp
+  Torre.cpp
+C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Torre.cpp(18,17): warning C4566: el carácter representado por el nombre de carácter universal '\uFFFD' no se puede representar en la página de códigos actual (1252)
+C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\src\Torre.cpp(59,17): warning C4566: el carácter representado por el nombre de carácter universal '\uFFFD' no se puede representar en la página de códigos actual (1252)
+  Generando código...
   Ajedrez.vcxproj -> C:\Users\User\Documents\GitHub\Ajedrez\Ajedrez\x64\Debug\Ajedrez.exe

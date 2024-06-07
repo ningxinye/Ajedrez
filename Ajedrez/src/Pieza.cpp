@@ -6,7 +6,6 @@
 Pieza::Pieza()
 {
     movida = 0;
-
 }
 
 Pieza::~Pieza()
@@ -94,7 +93,7 @@ void Pieza::dibuja(int AUX, int auxmov)
 
 Pieza::Pieza(const Pieza& p)
 {
-    //par¨¢metro constante
+    //parametro constante
     tipo = p.tipo;
     color = p.color;
     casilla = p.casilla;
