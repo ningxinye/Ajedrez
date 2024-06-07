@@ -30,5 +30,7 @@ public:
 	void setTurno(int v);
 	int getTurno() { return turno; }
 	void jugarAI();
+	int jaque();
+	Tablero& obtenerTablero();
 
 };

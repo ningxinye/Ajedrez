@@ -14,18 +14,18 @@ bool caballo::SePuedeMover(const Casilla& origen, const Casilla& destino, Pieza*
         std::cout << "Intento de movimiento de una pieza blanca.\n";
 
         // Comprabacion
-   
+
         if (abs(diferenciaDeColumnas) != 2 && abs(diferenciaDeColumnas) != 1)
         {
             std::cout << "Movimiento no es en L\n";
             return false;
         }
-        else if (abs(diferenciaDeColumnas) ==2 ) {
+        else if (abs(diferenciaDeColumnas) == 2) {
             if (abs(diferenciaDeFilas) != 1) {
                 std::cout << "Movimiento no es en L\n";
                 return false;
             }
-            
+
         }
         else if (abs(diferenciaDeColumnas) == 1) {
             if (abs(diferenciaDeFilas) != 2) {
@@ -34,8 +34,8 @@ bool caballo::SePuedeMover(const Casilla& origen, const Casilla& destino, Pieza*
             }
 
         }
-                 
-       
+
+
 
         if (casillas[destino.f][destino.c]->getTipo() != No_pieza && casillas[destino.f][destino.c]->getColor() == casillas[origen.f][origen.c]->getColor()) {
             std::cout << "Hay una pieza del mismo color en el destino en (" << destino.f << ", " << destino.c << ")\n";
@@ -79,6 +79,4 @@ bool caballo::SePuedeMover(const Casilla& origen, const Casilla& destino, Pieza*
     }
 
     return false;
-
-
 }

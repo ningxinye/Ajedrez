@@ -14,6 +14,22 @@ void Ajedrez::dibuja()
         0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y) 
 
     tablero.dibuja();
+
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture("imagenes/ETSIDI.png").id);
+    glDisable(GL_LIGHTING);
+
+    glBegin(GL_POLYGON);
+    glColor3f(1, 1, 1);
+    glTexCoord2d(0, 1);    glVertex3f(-14.5f, -3.5f, 0.0f); //esquina inferior izquierda
+    glTexCoord2d(1, 1);    glVertex3f(14.5f, -3.5f, 0.0f);
+    glTexCoord2d(1, 0);    glVertex3f(14.5f, 18.5f, 0.0f);
+    glTexCoord2d(0, 0);    glVertex3f(-14.5f, 18.5f, 0.0f); //esquina superior izquierda
+    glEnd();
+
+    glEnable(GL_LIGHTING);
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 void Ajedrez::inicializa(bool est, bool vsAI)
@@ -101,4 +117,14 @@ void Ajedrez::jugarAI()
 {
     ai.realizarMovimiento(tablero, Negra);
 
+}
+
+int Ajedrez::jaque()
+{
+    return tablero.jaque(turno);
+}
+
+Tablero& Ajedrez::obtenerTablero()
+{
+    return tablero;
 }

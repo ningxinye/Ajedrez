@@ -38,4 +38,19 @@ public:
 	void resaltarMovimientosLegales(const Casilla& origen);
 	void limpiarDestacados();
 
+	//jaque y sus funciones auxiliares
+
+	//Busca la posición del rey en el tablero según su color.
+	Casilla encontrarRey(Color color);
+	//Verifica si el rey de un color específico está en jaque.
+	bool estaEnJaque(Color color);
+	// Verifica si el rey puede escapar del jaque moviéndose a una posición segura, capturando la pieza enemiga o bloqueando el ataque.
+	bool puedeEscaparDeJaque(Color color);
+	//Verifica si una posición específica está bajo amenaza de piezas enemigas.
+	bool estaAmenazado(const Casilla& pos, Color colorEnemigo);
+	//Determina si el rey está en jaque o jaque mate y retorna un valor basado en el estado actual del juego.
+	int jaque(int turn);
+
+	bool reyExiste(Color color);
+
 };

@@ -84,6 +84,11 @@ void Mundo::dibuja()
 			estado = TIEMPO_LIM;
 		}
 
+		if (!ajedrez.obtenerTablero().reyExiste(Blanca) || !ajedrez.obtenerTablero().reyExiste(Negra)) {
+			estado = FIN;
+
+		}
+
 	}
 	else if (estado == JUEGO_GARDNER) {
 		ajedrez.dibuja();
@@ -99,6 +104,10 @@ void Mundo::dibuja()
 
 		if (tiempoRestante <= 0) {
 			estado = TIEMPO_LIM;
+		}
+		if (!ajedrez.obtenerTablero().reyExiste(Blanca) || !ajedrez.obtenerTablero().reyExiste(Negra)) {
+			estado = FIN;
+
 		}
 
 	}
@@ -117,8 +126,23 @@ void Mundo::dibuja()
 		if (tiempoRestante <= 0) {
 			estado = TIEMPO_LIM;
 		}
+		if (!ajedrez.obtenerTablero().reyExiste(Blanca) || !ajedrez.obtenerTablero().reyExiste(Negra)) {
+			estado = FIN;
 
+		}
 	}
+	else if (estado == JAQUEBLANCO) {
+		ajedrez.dibuja();
+		ETSIDI::setTextColor(1, 0, 0);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 24);
+		ETSIDI::printxy("Jaque al Blanco", -3, 5); // Ajustar la posición según sea necesario
+	}
+	else if (estado == JAQUENEGRO) {
+		ajedrez.dibuja();
+		ETSIDI::setTextColor(1, 0, 0);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 24);
+		ETSIDI::printxy("Jaque al Negro", -3, 5); // Ajustar la posición según sea necesario
+}
 	else if (estado == TIEMPO_LIM) {
 		gluLookAt(0, 7.5, 30,  // posicion del ojo
 			0.0, 7.5, 0.0,      // hacia que punto mira  (0,0,0) 
@@ -131,6 +155,15 @@ void Mundo::dibuja()
 	}
 
 	else if (estado == FIN) {
+		gluLookAt(0, 7.5, 30,  // posicion del ojo
+			0.0, 7.5, 0.0,      // hacia que punto mira  (0,0,0) 
+			0.0, 1.0, 0.0);      // definimos hacia arriba (eje Y)  
+
+		ETSIDI::setTextColor(1, 0, 0);
+		ETSIDI::setFont("fuentes/Bitwise.ttf", 24);
+		ETSIDI::printxy("Fin del juego", -3, 5); // Ajustar la posición según sea necesario
+		ETSIDI::printxy("PULSE LA TECLA -C- PARA CONTINUAR", -12, 4);
+		ETSIDI::printxy("PULSE LA TECLA -S- PARA SALIR", -12,3);
 
 	}
 
@@ -162,41 +195,31 @@ void Mundo::dibuja()
 
 //navegacion por teclado para avanzar el juego
 void Mundo::tecla(unsigned char key) {
-	static bool ia = false; // Variable estática para mantener el estado de IA
+	static bool ia = false;
 
 	switch (estado) {
 	case INICIO:
-		if (key == '1') {
-			ia = true;
+		if (key == '1' || key == '2') {
+			ia = (key == '1');
 			ETSIDI::play("musica/seleccionar.wav");
 			estado = SELECCIONAR;
 		}
-		else if (key == '2') {
-			ia = false;
-			ETSIDI::play("musica/seleccionar.wav");
-			estado = SELECCIONAR;
-		}
-		else if (key == 'S' || key == 's')
+		else if (key == 'S' || key == 's') {
 			exit(0);
+		}
 		break;
 	case SELECCIONAR:
-		if (key == 'B' || key == 'b') {
+		if (key == 'B' || key == 'b' || key == 'G' || key == 'g') {
 			ETSIDI::play("musica/seleccionar.wav");
-			ajedrez.inicializa(true, ia);
+			bool isBaby = (key == 'B' || key == 'b');
+			ajedrez.inicializa(isBaby, ia);
 			iniciarContador(60); // Establecer el temporizador a 60 segundos
-			estado = ia ? JUGADOR_VS_AI : JUEGO_BABY;
-		}
-		else if (key == 'G' || key == 'g') {
-			ETSIDI::play("musica/seleccionar.wav");
-			ajedrez.inicializa(false, ia);
-			iniciarContador(60); // Establecer el temporizador a 60 segundos
-			estado = ia ? JUGADOR_VS_AI : JUEGO_GARDNER;
+			estado = ia ? JUGADOR_VS_AI : (isBaby ? JUEGO_BABY : JUEGO_GARDNER);
 		}
 		break;
 	case JUEGO_BABY:
 	case JUEGO_GARDNER:
 	case JUGADOR_VS_AI:
-		// Lógica para manejar estados del juego
 		if (key == 'p' || key == 'P') {
 			estado = PAUSA;
 		}
@@ -210,12 +233,18 @@ void Mundo::tecla(unsigned char key) {
 		}
 		break;
 	case FIN:
-		// Lógica para el estado final del juego
+		if (key == 'c' || key == 'C') {
+			estado = INICIO;
+		}
+		else if (key == 's' || key == 'S') {
+			exit(0);
+		}
 		break;
 	default:
 		break;
 	}
 }
+
 
 
 void Mundo::musica() {
@@ -239,13 +268,45 @@ void Mundo::musica() {
 	}
 }
 
-
 void Mundo::JUEGA(int button, int state, int x, int y)
 {
-	if (estado == JUEGO_BABY || estado == JUEGO_GARDNER || estado == JUGADOR_VS_AI) {
+	if (estado == JUEGO_BABY || estado == JUEGO_GARDNER || estado == JUGADOR_VS_AI || estado == JAQUEBLANCO || estado == JAQUENEGRO) {
 		ajedrez.JUEGO(button, state, x, y);
 	}
+	jaque();
 }
+
+void Mundo::jaque()
+{
+	if (estado == JUEGO_BABY || estado == JUEGO_GARDNER || estado == JUGADOR_VS_AI || estado == JAQUEBLANCO || estado == JAQUENEGRO) {
+		int resultadoJaque = ajedrez.jaque();
+		if (resultadoJaque == 1) {
+			estadoanterior = estado;
+			estado = JAQUEBLANCO;
+			jaqueBlanco = true;
+		}
+		else if (resultadoJaque == 2) {
+			  estadoanterior = estado; 
+			estado = JAQUENEGRO;
+			jaqueNegro = true;
+		}
+		else if (resultadoJaque == 3 || resultadoJaque == 4) {
+			estado = FIN;
+		}
+		else if (estado == JAQUEBLANCO || estado == JAQUENEGRO) {
+			if (ajedrez.jaque() == 0) {
+				jaqueNegro = false;
+				jaqueBlanco = false;
+				estado = estadoanterior;
+			}
+			else if (ajedrez.jaque() == 3 || ajedrez.jaque() == 4) { estado = FIN; }
+		}
+	}
+}
+
+
+
+
 
 void Mundo::iniciarContador(int segundos)
 {

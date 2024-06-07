@@ -280,6 +280,144 @@ void Tablero::limpiarDestacados()
     }
 }
 
+Casilla Tablero::encontrarRey(Color color)
+{
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            if (casillas[i][j] != nullptr && casillas[i][j]->getTipo() == Rey && casillas[i][j]->getColor() == color) {
+                return Casilla(i, j);
+            }
+        }
+    }
+    return Casilla(-1, -1);  // Indicador de que no se encontró
+}
+
+bool Tablero::estaEnJaque(Color color)
+{
+    Casilla reyPos = encontrarRey(color);
+    if (reyPos.f == -1 && reyPos.c == -1) return false;
+
+    Color colorEnemigo = (color == Blanca) ? Negra : Blanca;
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            if (casillas[i][j] != nullptr && casillas[i][j]->getColor() == colorEnemigo) {
+                if (validarMovimiento(Casilla(i, j), reyPos)) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+bool Tablero::puedeEscaparDeJaque(Color color)
+{
+    Casilla reyPos = encontrarRey(color);
+    if (reyPos.f == -1 && reyPos.c == -1) return false;
+
+    Color colorEnemigo = (color == Blanca) ? Negra : Blanca;
+
+    for (int i = -1; i <= 1; ++i) {
+        for (int j = -1; j <= 1; ++j) {
+            if (i != 0 || j != 0) {
+                Casilla nuevaPosicion(reyPos.f + i, reyPos.c + j);
+                if (nuevaPosicion.f >= 0 && nuevaPosicion.f < n && nuevaPosicion.c >= 0 && nuevaPosicion.c < n) {
+                    if (validarMovimiento(reyPos, nuevaPosicion) && !estaAmenazado(nuevaPosicion, colorEnemigo)) {
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            if (casillas[i][j] != nullptr && casillas[i][j]->getColor() == color) {
+                for (int x = 0; x < n; ++x) {
+                    for (int y = 0; y < n; ++y) {
+                        Casilla destino(x, y);
+                        if (validarMovimiento(Casilla(i, j), destino)) {
+                            Pieza* piezaOriginal = casillas[destino.f][destino.c];
+                            casillas[destino.f][destino.c] = casillas[i][j];
+                            casillas[i][j] = nullptr;
+
+                            bool sigueEnJaque = estaEnJaque(color);
+
+                            casillas[i][j] = casillas[destino.f][destino.c];
+                            casillas[destino.f][destino.c] = piezaOriginal;
+
+                            if (!sigueEnJaque) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return false;
+  
+}
+
+bool Tablero::estaAmenazado(const Casilla& pos, Color colorEnemigo)
+{
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            if (casillas[i][j] != nullptr && casillas[i][j]->getColor() == colorEnemigo) {
+                if (validarMovimiento(Casilla(i, j), pos)) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+int Tablero::jaque(int turn)
+{
+    Color colorRey = (turn == Blanca) ? Blanca : Negra;
+    Color colorEnemigo = (colorRey == Blanca) ? Negra : Blanca;
+
+    if (!reyExiste(colorRey)) {
+        std::cout << "El rey del color " << (colorRey == Blanca ? "Blanco" : "Negro") << " no existe.\n";
+        return (colorRey == Blanca) ? 4 : 3;  // Jaque mate al blanco o al negro
+    }
+
+    Casilla reyPos = encontrarRey(colorRey);
+
+    if (estaAmenazado(reyPos, colorEnemigo)) {
+        std::cout << "El rey del color " << (colorRey == Blanca ? "Blanco" : "Negro") << " está en jaque.\n";
+
+        // Verificar si el rey puede escapar
+        if (puedeEscaparDeJaque(colorRey)) {
+            std::cout << "El rey del color " << (colorRey == Blanca ? "Blanco" : "Negro") << " puede escapar del jaque.\n";
+            return (colorRey == Blanca) ? 1 : 2;  // Jaque al blanco o al negro
+        }
+        else {
+            std::cout << "El rey del color " << (colorRey == Blanca ? "Blanco" : "Negro") << " está en jaque mate.\n";
+            return (colorRey == Blanca) ? 4 : 3;  // Jaque mate al blanco o al negro
+        }
+    }
+    else {
+        std::cout << "El rey del color " << (colorRey == Blanca ? "Blanco" : "Negro") << " no está en jaque.\n";
+        return 0;  // No hay jaque
+    }
+
+}
+
+bool Tablero::reyExiste(Color color)
+{
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            if (casillas[i][j] != nullptr && casillas[i][j]->getTipo() == Rey && casillas[i][j]->getColor() == color) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 /*void Tablero::muevePieza(int x1, int y1, int x2, int y2)
 {
     //logica del mov de las piezas
